@@ -1,19 +1,17 @@
 <?php
 include_once 'config/config_app.php';
-include_once 'controller/IndexController.php';
-include_once 'controller/FixtureController.php';
-include_once 'controller/EquiposController.php';
-include_once 'controller/ContactoController.php';
-include_once 'controller/AdminController.php';
-include_once 'controller/JugadoresController.php';
+include_once 'controllers/IndexController.php';
+//include_once 'controllers/FixtureController.php';
+//include_once 'controllers/EquiposController.php';
+//include_once 'controllers/ContactoController.php';
+//include_once 'controllers/AdminController.php';
+//include_once 'controllers/JugadoresController.php';
 
-if(!array_key_exists(ConfigApp::$ACTION, $_REQUEST) ||
-$_REQUEST[ConfigApp::$ACTION] == ConfigApp::$ACTION_DEFAULT)
+if(!array_key_exists(ConfigApp::$ACTION, $_REQUEST) || $_REQUEST[ConfigApp::$ACTION] == ConfigApp::$ACTION_DEFAULT)
 {
-$indexController = new indexController();
-$indexController->mostrarIndex();
-}
-else {
+  $indexController = new indexController();
+  $indexController->mostrarIndex();
+} else {
   switch ($_REQUEST[ConfigApp::$ACTION]) {
    // Listo
     case ConfigApp::$ACTION_MOSTRAR_INICIO:
@@ -64,5 +62,5 @@ else {
       }
 
   }
-
+echo "holaaaa";
    ?>
