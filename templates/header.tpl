@@ -20,7 +20,7 @@
         <li class="navItem" name="fixture"><a href="#">Fixture</a></li>
         <li class="navItem" name="equipos"><a href="#">Equipos</a></li>
         <li class="navItem" name="contacto"><a href="#">Contacto</a></li>
-        <li id="admin"><a href="#">Admin Jugadores</a></li>
+        <li class="navItem" name="adminjugadores"><a href="#">Admin Jugadores</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
 </nav>

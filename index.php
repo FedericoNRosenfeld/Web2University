@@ -1,23 +1,31 @@
 <?php
 
-require('controllers/NavController.php');
-require('controllers/EquiposController.php');
-require('controllers/JugadoresController.php');
-require('controllers/FixtureController.php');
-require('config/ConfigApp.php');
+include_once 'controllers/NavController.php';
+include_once 'controllers/EquiposController.php';
+include_once 'controllers/JugadoresController.php';
+include_once 'controllers/FixtureController.php';
+include_once 'config/ConfigApp.php';
 
 $controller = new NavController();
 
 switch ($_REQUEST[ConfigApp::$ACTION]) {
     case ConfigApp::$ACTION_MOSTRAR_INICIO:
+      $controller->MostrarInicio();
     break;
     case ConfigApp::$ACTION_MOSTRAR_FIXTURE:
+      $controller->MostrarFixture();
     break;
     case ConfigApp::$ACTION_MOSTRAR_EQUIPOS:
+      $controller->MostrarEquipos();
     break;
     case ConfigApp::$ACTION_MOSTRAR_CONTACTO:
+      $controller->MostrarContacto();
     break;
     case ConfigApp::$ACTION_MOSTRAR_ADM:
+      $controller->MostrarAdminJugadores();
+    break;
+    case ConfigApp::$ACTION_MOSTRAR_HOME:
+      $controller->MostrarHome();
     break;
     // Acciones respecto a los Jugadores
     case ConfigApp::$ACTION_AGREGAR_JUGADOR:
@@ -30,7 +38,8 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     case ConfigApp::$ACTION_VER_EQUIPO:
     break;
   default:
-    $controller->MostrarIndex();
+    $controller->MostrarInicio();
     break;
 }
+
 ?>

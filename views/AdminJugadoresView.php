@@ -1,7 +1,7 @@
 <?php
 include_once 'libs/Smarty.class.php';
 
-class IndexView
+class AdminJugadoresView
 {
   private $smarty;
 
@@ -11,11 +11,8 @@ class IndexView
   }
 
   function mostrar(){
-    $this->smarty->display('index.tpl');
+    $this->smarty->display('adminjugadores.tpl');
   }
 
 }
-
-
-
  ?>

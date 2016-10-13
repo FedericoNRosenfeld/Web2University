@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-13 04:10:11
+/* Smarty version 3.1.30, created on 2016-10-13 05:09:13
   from "/var/www/html/tpeweb2/templates/header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57ff3353e71b62_52592361',
+  'unifunc' => 'content_57ff412992d1d7_35802067',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7115808cc1c5f5c967d0901766a807b05d547625' => 
     array (
       0 => '/var/www/html/tpeweb2/templates/header.tpl',
-      1 => 1476342597,
+      1 => 1476346131,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_57ff3353e71b62_52592361 (Smarty_Internal_Template $_smarty_tpl) {
+function content_57ff412992d1d7_35802067 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <header class="container hidden-xs">
   <div class="row">
@@ -44,7 +44,7 @@ function content_57ff3353e71b62_52592361 (Smarty_Internal_Template $_smarty_tpl)
         <li class="navItem" name="fixture"><a href="#">Fixture</a></li>
         <li class="navItem" name="equipos"><a href="#">Equipos</a></li>
         <li class="navItem" name="contacto"><a href="#">Contacto</a></li>
-        <li id="admin"><a href="#">Admin Jugadores</a></li>
+        <li class="navItem" name="adminjugadores"><a href="#">Admin Jugadores</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
 </nav>

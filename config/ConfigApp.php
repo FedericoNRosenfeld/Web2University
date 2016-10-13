@@ -1,13 +1,14 @@
 <?php
 class ConfigApp{
   public static $ACTION = 'action';
-  
+
   // Acciones de Mostrar
-  public static $ACTION_MOSTRAR_INICIO = 'mostrar_inicio';
-  public static $ACTION_MOSTRAR_FIXTURE = 'mostrar_fixture';
-  public static $ACTION_MOSTRAR_EQUIPOS = 'mostrar_equipos';
-  public static $ACTION_MOSTRAR_CONTACTO = 'mostrar_contacto';
-  public static $ACTION_MOSTRAR_ADM = 'mostrar_adm';
+  public static $ACTION_MOSTRAR_INICIO = 'inicio';
+  public static $ACTION_MOSTRAR_FIXTURE = 'fixture';
+  public static $ACTION_MOSTRAR_EQUIPOS = 'equipos';
+  public static $ACTION_MOSTRAR_CONTACTO = 'contacto';
+  public static $ACTION_MOSTRAR_HOME = 'home';
+  public static $ACTION_MOSTRAR_ADM = 'adminjugadores';
   // Acciones respecto a los Jugadores
   public static $ACTION_AGREGAR_JUGADOR = 'agregar_jugador';
   public static $ACTION_MODIFICAR_JUGADOR = 'agregar_jugador';
