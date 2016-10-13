@@ -1,18 +1,19 @@
 <?php
+require('views/IndexView.php');
 
-include_once 'view/IndexView.php';
+class IndexController
+{
+  private $vista;
 
-class IndexController {
-
-  private $view;
-
-  function __construct() {
-    $this->view = new indexView();
+  function __construct()
+  {
+    $this->vista = new IndexView();
   }
 
-  function mostrarInicio(){
-    $this->view->mostrarIndex();
+  function iniciar(){
+    $this->vista->mostrar();
   }
 
 }
-?>
+
+ ?>

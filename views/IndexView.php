@@ -1,16 +1,21 @@
 <?php
-include_once 'libs/Smarty.class.php';
+require('libs/Smarty.class.php');
 
-class indexView {
+class IndexView
+{
   private $smarty;
 
-  function __construct(){
+  function __construct()
+  {
     $this->smarty = new Smarty();
   }
 
-  function mostrarIndex(){
+  function mostrar(){
     $this->smarty->display('index.tpl');
   }
 
 }
-?>
+
+
+
+ ?>
