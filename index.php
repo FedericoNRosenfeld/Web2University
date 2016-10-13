@@ -8,27 +8,29 @@ require('config/ConfigApp.php');
 
 $controller = new NavController();
 
-//if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
-  $controller->MostrarIndex();
-//  die();
-//}
-echo ConfigApp::$ACTION,$_REQUEST;
-/*
 switch ($_REQUEST[ConfigApp::$ACTION]) {
-  case ConfigApp::$ACTION_MOSTRAR_TAREAS:
-    $controller->iniciar();
+    case ConfigApp::$ACTION_MOSTRAR_INICIO:
     break;
-  case ConfigApp::$ACTION_GUARDAR_TAREA:
-    $controller->guardar();
+    case ConfigApp::$ACTION_MOSTRAR_FIXTURE:
     break;
-  case ConfigApp::$ACTION_ELIMINAR_TAREA:
-    $controller->eliminar();
+    case ConfigApp::$ACTION_MOSTRAR_EQUIPOS:
     break;
-  case ConfigApp::$ACTION_REALIZAR_TAREA:
-    $controller->realizar();
+    case ConfigApp::$ACTION_MOSTRAR_CONTACTO:
+    break;
+    case ConfigApp::$ACTION_MOSTRAR_ADM:
+    break;
+    // Acciones respecto a los Jugadores
+    case ConfigApp::$ACTION_AGREGAR_JUGADOR:
+    break;
+    case ConfigApp::$ACTION_MODIFICAR_JUGADOR:
+    break;
+    case ConfigApp::$ACTION_BORRAR_JUGADOR:
+    break;
+    // Seccion de equipos
+    case ConfigApp::$ACTION_VER_EQUIPO:
     break;
   default:
-    $controller->iniciar();
+    $controller->MostrarIndex();
     break;
-}*/
+}
 ?>
