@@ -32,6 +32,31 @@ CREATE TABLE `Equipos` (
   `imagen` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+--
+-- Volcado de datos para la tabla `Equipos`
+--
+
+-- BUSCAR COMO SE HACE PARA QUE LEVANTE AUTOMATICAMENTE LAS IMAGENES DE LOS EQUIPOS
+
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (1,  'GSW', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (2,  'HOU', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (3,  'LAC', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (4,  'POR', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (5,  'OKC', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (6,  'DAL', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (7,  'SAS', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (8,  'MEM', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (9,  'CLE', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (10, 'DET', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (11, 'ATL', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (12, 'BOS', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (13, 'MIA', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (14, 'CHA', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (15, 'TOR', 'imagen');
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (16, 'IND', 'imagen');
+
+
 -- --------------------------------------------------------
 
 --
@@ -40,7 +65,7 @@ CREATE TABLE `Equipos` (
 
 CREATE TABLE `Jugadores` (
   `id` int(11) NOT NULL,
-  `equipo` int(11) DEFAULT NULL,
+  `fk_id_equipo` int(11) DEFAULT NULL,
   `nombre` varchar(45) DEFAULT NULL,
   `posicion` tinyint(4) NOT NULL,
   `numero` tinyint(4) NOT NULL
