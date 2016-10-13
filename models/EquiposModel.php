@@ -1,5 +1,5 @@
 <?php
-class JugadoresController {
+class EquiposModel {
   function __construct() {
   }
 }

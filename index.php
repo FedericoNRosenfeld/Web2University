@@ -1,14 +1,18 @@
 <?php
 
-require('controllers/IndexController.php');
+require('controllers/NavController.php');
+require('controllers/EquiposController.php');
+require('controllers/JugadoresController.php');
+require('controllers/FixtureController.php');
 require('config/ConfigApp.php');
 
-$controller = new IndexController();
+$controller = new NavController();
 
 //if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
-  $controller->iniciar();
-  //die();
+  $controller->MostrarIndex();
+//  die();
 //}
+echo ConfigApp::$ACTION,$_REQUEST;
 /*
 switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_MOSTRAR_TAREAS:

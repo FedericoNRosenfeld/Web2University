@@ -1,16 +1,17 @@
 <?php
 require('views/IndexView.php');
 
-class IndexController
+class NavController
 {
   private $vista;
 
   function __construct()
   {
-    $this->vista = new IndexView();
+
   }
 
-  function iniciar(){
+  function MostrarIndex(){
+    $this->vista = new IndexView();
     $this->vista->mostrar();
   }
 
