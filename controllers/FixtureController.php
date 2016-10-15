@@ -1,6 +1,17 @@
 <?php
+
+include_once 'views/FixtureView.php';
+
 class FixtureController {
-  function __construct() {
-  }
+private $view;
+
+function __construct() {
+  $this->view = new FixtureView();
 }
- ?>
+
+function MostrarFixture(){
+  $this->view->mostrar();
+}
+
+}
+?>

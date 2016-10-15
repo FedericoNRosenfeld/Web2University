@@ -4,15 +4,16 @@ $("document").ready(function(){
   });
 });
 
+function createRow(name,position,number){
+  return "<tr><td>"+name+"</td><td>"+position+"</td><td>"+number+"</td></tr>";
+}
+
 function Player(name, position, number){
   this.name = name;
   this.position = position;
   this.number = number;
 }
 
-function createRow(name,position,number){
-  return "<tr><td>"+name+"</td><td>"+position+"</td><td>"+number+"</td></tr>";
-}
 
 function getJugadores(){
   $.ajax({
@@ -33,4 +34,5 @@ function getJugadores(){
       console.log(errorThrown);
     }
   });
+
 }
