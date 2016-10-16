@@ -2,10 +2,7 @@
 include_once 'views/IndexView.php';
 //include_once 'views/HomeView.php';
 
-
-
-class IndexController
-{
+class IndexController{
   private $vista;
 
   function __construct(){
@@ -13,15 +10,14 @@ class IndexController
   }
 
   function MostrarIndex(){
-
     $this->vista->mostrar();
   }
-/*
+
   function MostrarHome(){
     $this->vista = new HomeView();
     $this->vista->mostrar();
   }
-*/
+
 }
 
  ?>

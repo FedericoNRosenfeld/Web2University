@@ -1,18 +1,17 @@
 <?php
 include_once 'libs/Smarty.class.php';
 
-class AdminJugadoresView
-{
+class AdminJugadoresView{
   private $smarty;
 
-  function __construct()
-  {
+  function __construct(){
     $this->smarty = new Smarty();
   }
 
-  function mostrar(){
+  function mostrar($juagdores,$equipos){
+    $this->smarty->assign('jugadores', $jugadores);
+    $this->smarty->assign('equipos', $equipos);
     $this->smarty->display('adminjugadores.tpl');
   }
 
-}
  ?>

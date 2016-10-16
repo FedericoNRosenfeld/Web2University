@@ -16,7 +16,7 @@ if(!array_key_exists(ConfigApp::$ACTION, $_REQUEST) || $_REQUEST[ConfigApp::$ACT
 switch ($_REQUEST[ConfigApp::$ACTION]) {
     case ConfigApp::$ACTION_MOSTRAR_INICIO:
       $inicioController = new IndexController();
-      $inicioController->MostrarIndex();
+      $inicioController->MostrarHome();
     break;
     case ConfigApp::$ACTION_MOSTRAR_FIXTURE:
       $fixtureController = new FixtureController();
@@ -30,28 +30,35 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
       $contactoController = new ContactoController();
       $contactoController->MostrarContacto();
     break;
+
+
     case ConfigApp::$ACTION_MOSTRAR_ADM:
-      $adminController = new AdminController();
+      $adminController = new AdminJugadoresControler();
       $adminController->MostrarAdminJugadores();
     break;
+  //---------------------------------------------------------------------------------------------
     // Acciones respecto a los Jugadores
+
     case ConfigApp::$ACTION_AGREGAR_JUGADOR:
-      $agregarjugadorController = new JugadoresControler();
-      $agregarjugadorController->agregarjugador();
-      break;
-  case ConfigApp::$ACTION_MODIFICAR_JUGADOR:
-      $modificarjugadorController = new JugadoresControler();
-      $modificarjugadorController->modificarjugador();
-      break;
-  case ConfigApp::$ACTION_BORRAR_JUGADOR:
-      $borrarjugadorController = new JugadoresControler();
-      $borrarjugadorController->eliminarjugador();
+      $agregarjugadorController = new AdminJugadoresController();
+      $agregarjugadorController->AgregarJugador();
       break;
 
+  case ConfigApp::$ACTION_BORRAR_JUGADOR:
+      $borrarjugadorController = new AdminJugadoresController();
+      $borrarjugadorController->EliminarJugador();
+      break;
+//---------------------------------------------------------------------------------------------
 // Ver jugadores de un Equipo en especifico
-  case ConfigApp::$ACTION_VER_EQUIPO:
+  case ConfigApp::$ACTION_VER_JUGADORES_EQUIPO:
+      $adminController = new JugadoresController();
+      $adminController->ListarJugadoresTeam();
+      break;
+
+// Ver todos los jugadores
+  case ConfigApp::$ACTION_VER_JUGADORES:
       $adminController = new EquiposController();
-      $adminController->mostrarequipo();
+      $adminController->ListarJugadores();
       break;
 
   default:

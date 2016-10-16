@@ -10,7 +10,8 @@ class EquiposView
     $this->smarty = new Smarty();
   }
 
-  function mostrar(){
+  function mostrar($equipos){
+    $this->smarty->assign('equipos',$equipos);
     $this->smarty->display('equipos.tpl');
   }
 
