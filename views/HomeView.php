@@ -1,8 +1,7 @@
 <?php
 include_once 'libs/Smarty.class.php';
 
-class HomeView
-{
+class HomeView{
   private $smarty;
 
   function __construct()
@@ -11,8 +10,7 @@ class HomeView
   }
 
   function mostrar(){
-    $this->smarty->display('home.tpl');
+    $this->smarty->display('templates/home.tpl');
   }
-
 }
  ?>

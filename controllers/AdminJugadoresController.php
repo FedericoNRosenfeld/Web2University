@@ -9,7 +9,7 @@ class AdminJugadoresController{
   private $view;
 
   function __construct() {
-    $this->view = new adminView();
+    $this->view = new AdminJugadoresView();
     $this->model = new AdminModel();
     $this->modelJ = new JugadoresModel(); // derivar responsabilidades de jugadores
     $this->modelE = new EquiposModel(); // derivar responsabilidades de equipos

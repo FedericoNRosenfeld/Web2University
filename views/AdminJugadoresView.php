@@ -11,7 +11,7 @@ class AdminJugadoresView{
   function mostrar($juagdores,$equipos){
     $this->smarty->assign('jugadores', $jugadores);
     $this->smarty->assign('equipos', $equipos);
-    $this->smarty->display('adminjugadores.tpl');
+    $this->smarty->display('templates/adminjugadores.tpl');
   }
-
+}
  ?>

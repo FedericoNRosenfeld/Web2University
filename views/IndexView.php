@@ -1,8 +1,7 @@
 <?php
 include_once 'libs/Smarty.class.php';
 
-class IndexView
-{
+class IndexView{
   private $smarty;
 
   function __construct()
@@ -11,11 +10,7 @@ class IndexView
   }
 
   function mostrar(){
-    $this->smarty->display('index.tpl');
+    $this->smarty->display('templates/index.tpl');
   }
-
 }
-
-
-
- ?>
+?>

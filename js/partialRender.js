@@ -6,7 +6,7 @@ $("document").ready(function(){
 
 function injectContentByName(name){
   $.ajax({
-    url:name,
+    url:'index.php?action='+name,
     method:"GET",
     dataType:"html",
     success: function(resultData){

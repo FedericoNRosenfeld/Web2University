@@ -11,7 +11,7 @@ class FixtureView
   }
 
   function mostrar(){
-    $this->smarty->display('fixture.tpl');
+    $this->smarty->display('templates/fixture.tpl');
   }
 
 }

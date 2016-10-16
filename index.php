@@ -1,21 +1,24 @@
 <?php
 
+include_once 'config/ConfigApp.php';
 include_once 'controllers/IndexController.php';
 include_once 'controllers/FixtureController.php';
 include_once 'controllers/EquiposController.php';
 include_once 'controllers/ContactoController.php';
 include_once 'controllers/AdminJugadoresController.php';
 include_once 'controllers/JugadoresController.php';
-include_once 'config/ConfigApp.php';
 
-if(!array_key_exists(ConfigApp::$ACTION, $_REQUEST) || $_REQUEST[ConfigApp::$ACTION] == ConfigApp::$ACTION_DEFAULT)
+$indexController = new indexController();
+
+if(!array_key_exists(ConfigApp::$ACTION, $_REQUEST))
 {
-  $indexController = new IndexController();
-  $indexController->MostrarIndex();
-} else {
-switch ($_REQUEST[ConfigApp::$ACTION]) {
+  $indexController->mostrarIndex();
+  die();
+}
+else{
+  switch ($_REQUEST[ConfigApp::$ACTION]) {
     case ConfigApp::$ACTION_MOSTRAR_INICIO:
-      $inicioController = new IndexController();
+      $inicioController = new HomeController();
       $inicioController->MostrarHome();
     break;
     case ConfigApp::$ACTION_MOSTRAR_FIXTURE:
@@ -31,9 +34,8 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
       $contactoController->MostrarContacto();
     break;
 
-
     case ConfigApp::$ACTION_MOSTRAR_ADM:
-      $adminController = new AdminJugadoresControler();
+      $adminController = new AdminJugadoresController();
       $adminController->MostrarAdminJugadores();
     break;
   //---------------------------------------------------------------------------------------------
@@ -61,7 +63,7 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
       $adminController->ListarJugadores();
       break;
 
-  default:
+      default:
       echo 'Pagina no encontrada';
       break;
     }

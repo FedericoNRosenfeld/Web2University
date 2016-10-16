@@ -7,7 +7,6 @@ class ConfigApp{
   public static $ACTION_MOSTRAR_FIXTURE = 'fixture';
   public static $ACTION_MOSTRAR_EQUIPOS = 'equipos';
   public static $ACTION_MOSTRAR_CONTACTO = 'contacto';
-  //public static $ACTION_MOSTRAR_HOME = 'home';
   public static $ACTION_MOSTRAR_ADM = 'adminjugadores';
   // Acciones respecto a los Jugadores
   public static $ACTION_AGREGAR_JUGADOR = 'agregar_jugador';

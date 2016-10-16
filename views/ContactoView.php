@@ -1,8 +1,7 @@
 <?php
 include_once 'libs/Smarty.class.php';
 
-class ContactoView
-{
+class ContactoView{
   private $smarty;
 
   function __construct()
@@ -11,7 +10,7 @@ class ContactoView
   }
 
   function mostrar(){
-    $this->smarty->display('contacto.tpl');
+    $this->smarty->display('templates/contacto.tpl');
   }
 
 }

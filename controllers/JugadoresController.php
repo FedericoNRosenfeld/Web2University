@@ -1,6 +1,6 @@
 <?php
 include_once "models/JugadoresModel.php";
-include_once "views/JugadoresViews.php";
+include_once "views/JugadoresView.php";
 
 // listar todos los jugadores
 // listar  los jugadores de un equipo

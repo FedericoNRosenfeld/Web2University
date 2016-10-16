@@ -1,14 +1,14 @@
 
 <?php
-include_once 'views/ContactoView.php';
+include_once 'views/HomeView.php';
 class ContactoController{
   private $vista;
 
   function __construct(){
-    $this->vista=new ContactoView();
+    $this->vista = new HomeView();
   }
 
-  function MostrarContacto(){
+  function MostrarHome(){
     $this->vista->mostrar();
   }
 }
