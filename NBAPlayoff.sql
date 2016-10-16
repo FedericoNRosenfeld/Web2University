@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 07, 2016 at 07:14 PM
+-- Generation Time: Oct 16, 2016 at 07:24 PM
 -- Server version: 5.7.15-0ubuntu0.16.04.1
 -- PHP Version: 5.6.24-0+deb8u1
 
@@ -29,33 +29,63 @@ SET time_zone = "+00:00";
 CREATE TABLE `Equipos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(45) DEFAULT NULL,
-  `imagen` varchar(45) DEFAULT NULL
+  `imagen` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `Equipos`
+--
+
+INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES
+(1, 'GSW', 1),
+(2, 'HOU', 2),
+(3, 'LAC', 3),
+(4, 'POR', 4),
+(5, 'OKC', 5),
+(6, 'DAL', 6),
+(7, 'SAS', 7),
+(8, 'MEM', 8),
+(9, 'CLE', 9),
+(10, 'DET', 10),
+(11, 'ATL', 11),
+(12, 'BOS', 12),
+(13, 'MIA', 13),
+(14, 'CHA', 14),
+(15, 'TOR', 15),
+(16, 'IND', 16);
+
+-- --------------------------------------------------------
 
 --
--- Volcado de datos para la tabla `Equipos`
+-- Table structure for table `Imagenes`
 --
 
--- BUSCAR COMO SE HACE PARA QUE LEVANTE AUTOMATICAMENTE LAS IMAGENES DE LOS EQUIPOS
+CREATE TABLE `Imagenes` (
+  `id` int(6) NOT NULL,
+  `url` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (1,  'GSW', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (2,  'HOU', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (3,  'LAC', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (4,  'POR', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (5,  'OKC', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (6,  'DAL', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (7,  'SAS', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (8,  'MEM', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (9,  'CLE', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (10, 'DET', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (11, 'ATL', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (12, 'BOS', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (13, 'MIA', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (14, 'CHA', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (15, 'TOR', 'imagen');
-INSERT INTO `Equipos` (`id`, `nombre`, `imagen`) VALUES (16, 'IND', 'imagen');
+--
+-- Dumping data for table `Imagenes`
+--
 
+INSERT INTO `Imagenes` (`id`, `url`) VALUES
+(1, ''),
+(2, ''),
+(3, ''),
+(4, ''),
+(5, ''),
+(6, ''),
+(7, ''),
+(8, ''),
+(9, ''),
+(10, ''),
+(11, ''),
+(12, ''),
+(13, ''),
+(14, ''),
+(15, ''),
+(16, '');
 
 -- --------------------------------------------------------
 
@@ -67,7 +97,7 @@ CREATE TABLE `Jugadores` (
   `id` int(11) NOT NULL,
   `fk_id_equipo` int(11) DEFAULT NULL,
   `nombre` varchar(45) DEFAULT NULL,
-  `posicion` tinyint(4) NOT NULL,
+  `posicion` int(4) NOT NULL,
   `numero` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -86,6 +116,17 @@ CREATE TABLE `Partidos` (
   `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Posiciones`
+--
+
+CREATE TABLE `Posiciones` (
+  `id` int(4) NOT NULL,
+  `Posicion` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -94,6 +135,13 @@ CREATE TABLE `Partidos` (
 -- Indexes for table `Equipos`
 --
 ALTER TABLE `Equipos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `imagen` (`imagen`);
+
+--
+-- Indexes for table `Imagenes`
+--
+ALTER TABLE `Imagenes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -101,7 +149,8 @@ ALTER TABLE `Equipos`
 --
 ALTER TABLE `Jugadores`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `equipo` (`equipo`);
+  ADD KEY `equipo` (`fk_id_equipo`),
+  ADD KEY `posicion` (`posicion`);
 
 --
 -- Indexes for table `Partidos`
@@ -112,14 +161,27 @@ ALTER TABLE `Partidos`
   ADD KEY `equipo2` (`equipo2`);
 
 --
+-- Indexes for table `Posiciones`
+--
+ALTER TABLE `Posiciones`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `Equipos`
+--
+ALTER TABLE `Equipos`
+  ADD CONSTRAINT `imagen` FOREIGN KEY (`imagen`) REFERENCES `Imagenes` (`id`);
 
 --
 -- Constraints for table `Jugadores`
 --
 ALTER TABLE `Jugadores`
-  ADD CONSTRAINT `equipo` FOREIGN KEY (`equipo`) REFERENCES `Equipos` (`id`);
+  ADD CONSTRAINT `equipo` FOREIGN KEY (`fk_id_equipo`) REFERENCES `Equipos` (`id`),
+  ADD CONSTRAINT `posicion` FOREIGN KEY (`posicion`) REFERENCES `Posiciones` (`id`);
 
 --
 -- Constraints for table `Partidos`
