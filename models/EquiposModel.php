@@ -4,7 +4,7 @@ require_once "BaseModel.php";
 class EquiposModel extends BaseModel {
 
   function GetAll(){
-    $consulta = $this->db->prepare("SELECT * FROM Equipos");
+    $consulta = $this->db->prepare("SELECT *, Imagenes.url FROM Equipos INNER JOIN Imagenes ON Equipos.imagen = Imagenes.id");
     $consulta->execute();
     return $consulta->fetchAll();
   }

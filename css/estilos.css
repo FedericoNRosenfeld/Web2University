@@ -1,5 +1,9 @@
 *{
-  color: white;
+  color:#fff;
+}
+
+.form-group, select,option{
+  color:#000;
 }
 
 html,body{

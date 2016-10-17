@@ -3,23 +3,27 @@
 include_once 'views/AdminJugadoresView.php';
 include_once 'models/EquiposModel.php';
 include_once 'models/JugadoresModel.php';
+include_once 'models/PosicionesModel.php';
 
 class AdminJugadoresController{
 
   private $view;
   private $MJugadores;
   private $MEquipos;
+  private $MPosiciones;
 
   function __construct() {
     $this->view = new AdminJugadoresView();
     $this->MJugadores = new JugadoresModel(); // derivar responsabilidades de jugadores
     $this->MEquipos = new EquiposModel(); // derivar responsabilidades de equipos
+    $this->MPosiciones = new PosicionesModel();
   }
 
   function MostrarAdminJugadores(){
     $Jugadores = $this->MJugadores->getAll();
     $Equipos = $this->MEquipos-> getAll();
-    $this->view->mostrar($Jugadores,$Equipos);
+    $Posiciones = $this->MPosiciones -> getAll();
+    $this->view->mostrar($Jugadores,$Equipos,$Posiciones);
 
   }
 
