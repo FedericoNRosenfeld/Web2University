@@ -31,13 +31,13 @@ class JugadoresModel extends BaseModel {
     }
 
     function getJugadoresEquipo($id_equipo){
-      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id WHERE fk_id_equipo=$id_equipo");
+      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion WHERE fk_id_equipo=$id_equipo");
       $consulta->execute();
       return $consulta->fetchAll();
     }
 
     function GetAll(){
-      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id");
+      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion");
       $consulta->execute();
       return $consulta->fetchAll();
     }

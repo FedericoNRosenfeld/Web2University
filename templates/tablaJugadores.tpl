@@ -10,7 +10,7 @@
     {foreach from=$jugadores key=index item=jugador}
     <tr>
       <td>{$jugador['nombre']}</td>
-      <td>{$jugador['posicion']}</td>
+      <td>{$jugador['nombre_posicion']}</td>
       <td>{$jugador['numero']}</td>
       <td>{$jugador['rk_nombre_equipo']}</td>
       <td>Borrar | Editar</td>
