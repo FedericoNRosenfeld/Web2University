@@ -9,6 +9,7 @@ class ConfigApp{
   public static $ACTION_MOSTRAR_EQUIPOS = 'equipos';
   public static $ACTION_MOSTRAR_CONTACTO = 'contacto';
   public static $ACTION_MOSTRAR_ADM = 'adminjugadores';
+  public static $ACTION_MOSTRAR_ADM_TEAM = 'adminequipos';
   // Acciones respecto a los Jugadores
   public static $ACTION_AGREGAR_JUGADOR = 'agregar_jugador';
   public static $ACTION_BORRAR_JUGADOR = 'borrar_jugador';

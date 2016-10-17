@@ -40,6 +40,11 @@ else{
       $Controller = new AdminJugadoresController();
       $Controller-> MostrarAdminJugadores();
     break;
+
+    case ConfigApp::$ACTION_MOSTRAR_ADM_TEAM:
+      $Controller = new AdminEquiposController();
+      $Controller-> mostrar();
+    break;
   //---------------------------------------------------------------------------------------------
     // Acciones respecto a los Jugadores
 
