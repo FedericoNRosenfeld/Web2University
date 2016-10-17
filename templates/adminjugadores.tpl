@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-6">
-    {include file='FormJugador.tpl'}
+    <h2 class="text-center">Añadir jugador</h2>
+    {include file='FormJugador.tpl' links=$equipos}
   </div>
   <div class="col-md-6">
     <table class="table table-bordered table-responsive">

@@ -1,5 +1,12 @@
   <form>
-    <h2 class="text-center">Añadir jugador</h2>
+    <div class="form-group">
+      <label for="equipoJugador">Equipo</label>
+      <select name="equipoJugador">
+        {foreach from=$equipos key=index item=equipo}
+          <option>{$equipo['nombre']}</option>
+        {/foreach}
+      </select>
+    </div>
     <div class="form-group">
       <label for="nombreJugador">Nombre</label>
       <input type="text" class="form-control" id="nombreJugador" placeholder="Lebron James" required>
