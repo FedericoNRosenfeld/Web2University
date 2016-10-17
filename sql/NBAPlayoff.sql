@@ -39,22 +39,22 @@ CREATE TABLE `Equipos` (
 --
 
 INSERT INTO `Equipos` (`id`, `nombre`, `abreviacion`, `imagen`, `Categoria`) VALUES
-(1, 'glasgow', 'GSW', 1, 'este'),
-(2, 'houston', 'HOU', 2, 'oeste'),
-(3, 'LAC', '', 3, 'este'),
-(4, 'POR', '', 4, 'oeste'),
-(5, 'OKC', '', 5, 'este'),
-(6, 'DAL', '', 6, 'oeste'),
-(7, 'SAS', '', 7, 'este'),
-(8, 'MEM', '', 8, 'oeste'),
-(9, 'CLE', '', 9, 'este'),
-(10, 'DET', '', 10, 'oeste'),
-(11, 'ATL', '', 11, 'este'),
-(12, 'BOS', '', 12, 'oeste'),
-(13, 'MIA', '', 13, 'este'),
-(14, 'CHA', '', 14, 'oeste'),
-(15, 'TOR', '', 15, 'este'),
-(16, 'IND', '', 16, 'oeste');
+(1, 'Golden State Warriors', 'GSW', 1, 'oeste'),
+(2, 'Houston Rockets', 'HOU', 2, 'oeste'),
+(3, 'Los Angeles Clippers', 'LAC', 3, 'oeste'),
+(4, 'Trail Blazzers', 'POR', 4, 'oeste'),
+(5, 'Thunders', 'OKC', 5, 'oeste'),
+(6, 'Mavericks', 'DAL', 6, 'oeste'),
+(7, 'Spurs', 'SAS', 7, 'oeste'),
+(8, 'Grizzlies', 'MEM', 8, 'oeste'),
+(9, 'Cavaliers', 'CLE', 9, 'este'),
+(10, 'Pistons', 'DET', 10, 'este'),
+(11, 'Hawks', 'ATL', 11, 'este'),
+(12, 'Celtics', 'BOS', 12, 'este'),
+(13, 'Heat', 'MIA', 13, 'este'),
+(14, 'Hornets', 'CHA', 14, 'este'),
+(15, 'Raptors', 'TOR', 15, 'este'),
+(16, 'Pacers', 'IND', 16, 'este');
 
 -- --------------------------------------------------------
 
@@ -72,22 +72,22 @@ CREATE TABLE `Imagenes` (
 --
 
 INSERT INTO `Imagenes` (`id`, `url`) VALUES
-(1, ''),
-(2, ''),
-(3, ''),
-(4, ''),
-(5, ''),
-(6, ''),
-(7, ''),
-(8, ''),
-(9, ''),
-(10, ''),
-(11, ''),
-(12, ''),
-(13, ''),
-(14, ''),
-(15, ''),
-(16, '');
+(1, 'warriors.png'),
+(2, 'rockets.png'),
+(3, 'clippers.png'),
+(4, 'blazers.png'),
+(5, 'thunder.png'),
+(6, 'mavericks.png'),
+(7, 'spurs.png'),
+(8, 'grizzlies.png'),
+(9, 'cavaliers.png'),
+(10, 'pistons.png'),
+(11, 'hawks.png'),
+(12, 'celtics.png'),
+(13, 'heat.png'),
+(14, 'hornets.png'),
+(15, 'raptors.png'),
+(16, 'pacers.png');
 
 -- --------------------------------------------------------
 
