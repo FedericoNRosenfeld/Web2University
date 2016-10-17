@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-16 22:40:22
+/* Smarty version 3.1.30, created on 2016-10-16 23:23:57
   from "/var/www/html/muddy/tpeweb2/templates/footer.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58042c06df1696_47951269',
+  'unifunc' => 'content_5804363d55f364_03096879',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58042c06df1696_47951269 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5804363d55f364_03096879 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <footer class="container">
   <div class="row">
