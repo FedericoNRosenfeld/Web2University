@@ -15,7 +15,7 @@ class EquiposController {
   }
 
   function MostrarEquipos(){
-      $equipos =$this->model->GetEquipos();
+      $equipos =$this->model->GetEquiposConferencias();
       $this->view->mostrar($equipos);
   }
 
