@@ -10,7 +10,7 @@ class EquiposModel extends BaseModel {
   }
 
   function GetEquiposConferencias(){
-    $Campos = "Equipos.id, Equipos.nombre, Imagenes.url";
+    $Campos = "Equipos.id, Imagenes.url";
     $consulta = $this->db->prepare("SELECT ".$Campos." FROM Equipos INNER JOIN Imagenes ON Equipos.imagen = Imagenes.id WHERE Equipos.categoria = 'este'");
     $consulta->execute();
     $equipos["ConfEste"]=$consulta->fetchAll();

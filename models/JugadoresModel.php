@@ -30,8 +30,8 @@ class JugadoresModel extends BaseModel {
       return $sentencia->rowCount();
     }
 
-    function GetJugadoresEquipo($id_equipo){
-      $consulta = $this->db->prepare("SELECT * FROM Jugadores WHERE  fk_id_equipo=$id_equipo");
+    function getJugadoresEquipo($id_equipo){
+      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id WHERE fk_id_equipo=$id_equipo");
       $consulta->execute();
       return $consulta->fetchAll();
     }

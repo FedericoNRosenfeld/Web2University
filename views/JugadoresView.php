@@ -8,9 +8,9 @@ class JugadoresView{
     $this->smarty = new Smarty();
   }
 
-  function mostrar($jugadores){
-    //$this->smarty->assign('jugadores',$jugadores)
-    $this->smarty->display('templates/latabla.tpl');
+  function mostrarEquipo($jugadores){
+    $this->smarty->assign('jugadores',$jugadores);
+    $this->smarty->display('tablaJugadores.tpl');
   }
 }
 ?>

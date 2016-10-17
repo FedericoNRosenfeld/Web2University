@@ -8,12 +8,17 @@ include_once "views/JugadoresView.php";
 // eliminar jugador LO HACE ADMINJUGADORES
 
 class JugadoresController {
-  function __construct() {
+  private $model;
+  private $view;
 
+  function __construct() {
+      $this->model = new JugadoresModel();
+      $this->view = new JugadoresView();
   }
 
     function ListarJugadoresTeam(){
-      $this->view->mostrarEquipo($this->model->GetJugadoresEquipo($_REQUEST['id']));// con esto va a mostrar los juagdores que tengan como equipo el id del Equipo solicitado
+
+      $this->view->mostrarEquipo($this->model->getJugadoresEquipo($_REQUEST['id']));// con esto va a mostrar los juagdores que tengan como equipo el id del Equipo solicitado
     }
 
     function ListarJugadores(){
