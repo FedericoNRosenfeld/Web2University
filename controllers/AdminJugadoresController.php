@@ -23,6 +23,14 @@ class AdminJugadoresController{
 
   }
 
+  function MostrarAdmJugadorTeam(){
+    if(isset($_REQUEST['id']))  {
+      $Jugadores = $this->MJugadores->getJugadoresEquipo($_REQUEST['id']);
+      $Equipos = $this->MEquipos-> getAll();
+      $this->view->mostrar($Jugadores,$Equipos);
+    }
+  }
+
   function AgregarJugador(){ // agregar un jugador a la BD --->
     if( (isset($_REQUEST['nombre'])) && (isset($_REQUEST['equipo']))  && (isset($_REQUEST['posicion'])) && (isset($_REQUEST['numero'])))  {
        $jugador = array(

@@ -5,7 +5,7 @@
   </div>-->
   <div class="col-xs-12">
     <h2>Seleccionar equipo:<h2>
-    {$nombreSelector='nombreJugador'}
+    {$nombreSelector='PlayersSelectEquipo'}
     {include file='selectorEquipo.tpl' links=$equipos links=$nombreSelector}
     {include file='tablaJugadores.tpl' links=$jugadores}
   </div>

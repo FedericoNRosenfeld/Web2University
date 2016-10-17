@@ -25,4 +25,8 @@ function ActualizarBindeos(){
   $(".EnlaceEquipo").on("click",function(){
     injectContentByName("ver_jugadores_equipo","&id="+$(this).attr("id"));
   });
+  //si se elige una opcion del selector de equipos en la vista de admin de equipos
+  $("#PlayersSelectEquipo").on("change",function(){
+    injectContentByName("adm_jugador_team","&id="+$(this).val());
+  });
 }

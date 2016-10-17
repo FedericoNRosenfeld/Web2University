@@ -10,7 +10,7 @@ class JugadoresView{
 
   function mostrarEquipo($jugadores){
     $this->smarty->assign('jugadores',$jugadores);
-    $this->smarty->display('tablaJugadores.tpl');
+    $this->smarty->display('tablaJugadoresPublico.tpl');
   }
 }
 ?>

@@ -52,6 +52,11 @@ else{
       $Controller = new AdminJugadoresController();
       $Controller->EliminarJugador();
       break;
+      //muestra la misma vista que el admin de jugadores pero filtrada por equipo
+  case ConfigApp::$ACTION_ADM_JUGADOR_TEAM:
+      $Controller = new AdminJugadoresController();
+      $Controller-> MostrarAdmJugadorTeam();
+      break;
   //-------------------------------------------------------------------------------------------
   //acciones respecto a Equipos
 

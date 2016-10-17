@@ -12,6 +12,7 @@ class ConfigApp{
   // Acciones respecto a los Jugadores
   public static $ACTION_AGREGAR_JUGADOR = 'agregar_jugador';
   public static $ACTION_BORRAR_JUGADOR = 'borrar_jugador';
+  public static $ACTION_ADM_JUGADOR_TEAM = 'adm_jugador_team';
   // Seccion de vistas
   public static $ACTION_VER_JUGADORES_EQUIPO = 'ver_jugadores_equipo';
   public static $ACTION_VER_JUGADORES = 'ver_jugadores';
