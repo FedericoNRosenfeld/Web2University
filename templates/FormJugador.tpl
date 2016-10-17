@@ -1,11 +1,7 @@
   <form>
     <div class="form-group">
       <label for="equipoJugador">Equipo</label>
-      <select name="equipoJugador">
-        {foreach from=$equipos key=index item=equipo}
-          <option>{$equipo['nombre']}</option>
-        {/foreach}
-      </select>
+      {include file='selectorEquipo.tpl' links=$equipos links=$nombreSelector}
     </div>
     <div class="form-group">
       <label for="nombreJugador">Nombre</label>

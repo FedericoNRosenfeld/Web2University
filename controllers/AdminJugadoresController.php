@@ -31,7 +31,7 @@ class AdminJugadoresController{
            ,"posicion"=>$_REQUEST['posicion']
            ,"posicion"=>$_REQUEST['numero']
          );
-       if (!$this->modelJ->agregarJugador($jugador))
+       if (!$this->MJugadores->agregarJugador($jugador))
        {
          echo "error al subir a la DB";
        }

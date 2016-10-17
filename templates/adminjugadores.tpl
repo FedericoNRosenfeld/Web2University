@@ -1,19 +1,12 @@
 <div class="row">
-  <div class="col-md-6">
+  <!--<div class="col-md-6">
     <h2 class="text-center">Añadir jugador</h2>
     {include file='FormJugador.tpl' links=$equipos}
-  </div>
-  <div class="col-md-6">
-    <table class="table table-bordered table-responsive">
-
-      <thead>
-        <th>Nombre</th>
-        <th>Posicion</th>
-        <th>Numero</th>
-        <th>Borrar</th>
-      </thead>
-      <tbody id="tablaJugadoresAdmin">
-      </tbody>
-    </table>
+  </div>-->
+  <div class="col-xs-12">
+    <h2>Seleccionar equipo:<h2>
+    {$nombreSelector='nombreJugador'}
+    {include file='selectorEquipo.tpl' links=$equipos links=$nombreSelector}
+    {include file='tablaJugadores.tpl' links=$jugadores}
   </div>
 </div>

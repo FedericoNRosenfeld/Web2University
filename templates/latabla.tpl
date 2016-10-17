@@ -1,3 +1,0 @@
-<div class="row">
-  <p> HOLA MUNDO , ACA TENES QUE METER LA TABLA DE LOS JUGADORES DE ESTE EQUIPO !! </P>
-</div>
