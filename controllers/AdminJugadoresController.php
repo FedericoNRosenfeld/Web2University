@@ -7,22 +7,23 @@ include_once 'models/JugadoresModel.php';
 class AdminJugadoresController{
 
   private $view;
+  private $MJugadores;
+  private $MEquipos;
 
   function __construct() {
     $this->view = new AdminJugadoresView();
-    $this->model = new AdminModel();
-    $this->modelJ = new JugadoresModel(); // derivar responsabilidades de jugadores
-    $this->modelE = new EquiposModel(); // derivar responsabilidades de equipos
+    $this->MJugadores = new JugadoresModel(); // derivar responsabilidades de jugadores
+    $this->MEquipos = new EquiposModel(); // derivar responsabilidades de equipos
+  }
 
+  function MostrarAdminJugadores(){
+    $Jugadores = $this->MJugadores->getAll();
+    $Equipos = $this->MEquipos-> getAll();
+    $this->view->mostrar($Jugadores,$Equipos);
 
-function MostrarAdminJugadores(){
-    $jugadores = $this->modelJ->GetAllJugadores();
-    $equipos = $this->modelE->GetEquipos();
-    $this->view->mostrar($this->model->ArmarListado($jugadores,$equipos)); // HAY QUE EDITARLO PARA QUE CON ESTOS 2 PARAMETROS ARME LA TABLA EQUIPO/JUGADOR
+  }
 
- }
-
-function AgregarJugador(){ // agregar un jugador a la BD --->
+  function AgregarJugador(){ // agregar un jugador a la BD --->
     if( (isset($_REQUEST['nombre'])) && (isset($_REQUEST['equipo']))  && (isset($_REQUEST['posicion'])) && (isset($_REQUEST['numero'])))  {
        $jugador = array(
             "nombre"=>$_REQUEST['nombre']
@@ -44,8 +45,8 @@ function AgregarJugador(){ // agregar un jugador a la BD --->
        $key = $_GET['id'];
        $this->modelJ->eliminarJugador($key);
        $this->MostrarAdminJugadores();
-     }
  }
+
 
 
 }

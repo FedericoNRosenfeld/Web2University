@@ -3,7 +3,7 @@ require_once "BaseModel.php";
 
 class EquiposModel extends BaseModel {
 
-  function GetEquipos(){
+  function GetAll(){
     $consulta = $this->db->prepare("SELECT * FROM Equipos");
     $consulta->execute();
     return $consulta->fetchAll();

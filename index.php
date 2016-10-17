@@ -8,6 +8,7 @@ include_once 'controllers/EquiposController.php';
 include_once 'controllers/ContactoController.php';
 include_once 'controllers/AdminJugadoresController.php';
 include_once 'controllers/JugadoresController.php';
+include_once 'controllers/AdminEquiposController.php';
 
 $indexController = new indexController();
 
@@ -19,49 +20,52 @@ if(!array_key_exists(ConfigApp::$ACTION, $_REQUEST))
 else{
   switch ($_REQUEST[ConfigApp::$ACTION]) {
     case ConfigApp::$ACTION_MOSTRAR_HOME:
-      $inicioController = new HomeController();
-      $inicioController->MostrarHome();
+      $Controller = new HomeController();
+      $Controller->MostrarHome();
     break;
     case ConfigApp::$ACTION_MOSTRAR_FIXTURE:
-      $fixtureController = new FixtureController();
-      $fixtureController->MostrarFixture();
+      $Controller = new FixtureController();
+      $Controller->MostrarFixture();
     break;
     case ConfigApp::$ACTION_MOSTRAR_EQUIPOS:
-      $equiposController = new EquiposController();
-      $equiposController->MostrarEquipos();
+      $Controller = new EquiposController();
+      $Controller->MostrarEquipos();
     break;
     case ConfigApp::$ACTION_MOSTRAR_CONTACTO:
-      $contactoController = new ContactoController();
-      $contactoController->MostrarContacto();
+      $Controller = new ContactoController();
+      $Controller->MostrarContacto();
     break;
 
     case ConfigApp::$ACTION_MOSTRAR_ADM:
-      $adminController = new AdminJugadoresController();
-      $adminController->MostrarAdminJugadores();
+      $Controller = new AdminJugadoresController();
+      $Controller-> MostrarAdminJugadores();
     break;
   //---------------------------------------------------------------------------------------------
     // Acciones respecto a los Jugadores
 
     case ConfigApp::$ACTION_AGREGAR_JUGADOR:
-      $agregarjugadorController = new AdminJugadoresController();
-      $agregarjugadorController->AgregarJugador();
+      $Controller = new AdminJugadoresController();
+      $Controller->AgregarJugador();
       break;
 
   case ConfigApp::$ACTION_BORRAR_JUGADOR:
-      $borrarjugadorController = new AdminJugadoresController();
-      $borrarjugadorController->EliminarJugador();
+      $Controller = new AdminJugadoresController();
+      $Controller->EliminarJugador();
       break;
+  //-------------------------------------------------------------------------------------------
+  //acciones respecto a Equipos
+
 //---------------------------------------------------------------------------------------------
 // Ver jugadores de un Equipo en especifico
   case ConfigApp::$ACTION_VER_JUGADORES_EQUIPO:
-      $adminController = new JugadoresController();
-      $adminController->ListarJugadoresTeam();
+      $Controller = new JugadoresController();
+      $Controller->ListarJugadoresTeam();
       break;
 
 // Ver todos los jugadores
   case ConfigApp::$ACTION_VER_JUGADORES:
-      $adminController = new EquiposController();
-      $adminController->ListarJugadores();
+      $Controller = new EquiposController();
+      $Controller->ListarJugadores();
       break;
 
       default:

@@ -36,11 +36,10 @@ class JugadoresModel extends BaseModel {
       return $consulta->fetchAll();
     }
 
-    function GetAllJugadores(){
+    function GetAll(){
       $consulta = $this->db->prepare("SELECT * FROM Jugadores");
       $consulta->execute();
       return $consulta->fetchAll();
     }
-
 }
  ?>

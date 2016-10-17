@@ -16,8 +16,8 @@ class ConfigApp{
   public static $ACTION_VER_JUGADORES_EQUIPO = 'ver_jugadores_equipo';
   public static $ACTION_VER_JUGADORES = 'ver_jugadores';
 
-  //base de datos
-  public static $Server = 'localhost';
+  //En cuanto a equipos
+  public static $ACTION_LISTA_EQUIPOS = 'lista_equipos';
 
 }
 
