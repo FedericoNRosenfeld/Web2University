@@ -2,6 +2,7 @@
 
 include_once 'config/ConfigApp.php';
 include_once 'controllers/IndexController.php';
+include_once 'controllers/HomeController.php';
 include_once 'controllers/FixtureController.php';
 include_once 'controllers/EquiposController.php';
 include_once 'controllers/ContactoController.php';
@@ -17,7 +18,7 @@ if(!array_key_exists(ConfigApp::$ACTION, $_REQUEST))
 }
 else{
   switch ($_REQUEST[ConfigApp::$ACTION]) {
-    case ConfigApp::$ACTION_MOSTRAR_INICIO:
+    case ConfigApp::$ACTION_MOSTRAR_HOME:
       $inicioController = new HomeController();
       $inicioController->MostrarHome();
     break;

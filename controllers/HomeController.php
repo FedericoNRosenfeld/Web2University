@@ -1,7 +1,7 @@
 
 <?php
 include_once 'views/HomeView.php';
-class ContactoController{
+class HomeController{
   private $vista;
 
   function __construct(){

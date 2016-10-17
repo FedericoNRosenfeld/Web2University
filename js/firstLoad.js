@@ -1,3 +1,3 @@
-//$("document").ready(function(){
-  //  injectContentByName("home");
-//});
+$("document").ready(function(){
+    injectContentByName("home");
+});
