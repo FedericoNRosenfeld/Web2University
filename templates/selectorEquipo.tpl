@@ -1,5 +1,5 @@
 <select name="{$nombreSelector}">
   {foreach from=$equipos key=index item=equipo}
-    <option>{$equipo['nombre']}</option>
+    <option>{$equipo['rk_nombre_equipo']}</option>
   {/foreach}
 </select>

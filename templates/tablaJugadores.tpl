@@ -12,7 +12,7 @@
       <td>{$jugador['nombre']}</td>
       <td>{$jugador['posicion']}</td>
       <td>{$jugador['numero']}</td>
-      <td>{$jugador['fk_id_equipo']}</td>
+      <td>{$jugador['rk_nombre_equipo']}</td>
       <td>Borrar | Editar</td>
     </tr>
     {/foreach}

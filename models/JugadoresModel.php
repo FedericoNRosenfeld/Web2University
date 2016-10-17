@@ -37,7 +37,7 @@ class JugadoresModel extends BaseModel {
     }
 
     function GetAll(){
-      $consulta = $this->db->prepare("SELECT * FROM Jugadores");
+      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id");
       $consulta->execute();
       return $consulta->fetchAll();
     }
