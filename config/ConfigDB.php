@@ -1,8 +1,11 @@
 <?php
-class ConfigDB{
-  public static $Server = 'localhost';
-  public static $DBName = 'NBAPlayoff';
-	public static $User = 'root';
-	public static $Pass = '';
+class ConfigDB {
+
+  public static function getDBParams() {
+    return ["Server"=>"localhost",
+            "DBName"=>"NBAPlayoff",
+            "User" => 'NBAPlayoff',
+            "Pass" => 'NBAPlayoff'];
+  }
+
 }
-?>

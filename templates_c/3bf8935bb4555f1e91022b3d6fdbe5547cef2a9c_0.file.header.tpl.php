@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-16 22:25:57
+/* Smarty version 3.1.30, created on 2016-10-16 22:40:22
   from "/var/www/html/muddy/tpeweb2/templates/header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580428a568c571_85320043',
+  'unifunc' => 'content_58042c06de0cf9_58732327',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_580428a568c571_85320043 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58042c06de0cf9_58732327 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <header class="container hidden-xs">
   <div class="row">

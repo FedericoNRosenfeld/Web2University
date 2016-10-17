@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-16 22:26:23
+/* Smarty version 3.1.30, created on 2016-10-16 22:40:19
   from "/var/www/html/muddy/tpeweb2/templates/contacto.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580428bfd800d4_38263682',
+  'unifunc' => 'content_58042c03d87505_57184322',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_580428bfd800d4_38263682 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58042c03d87505_57184322 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
   <div class="row">
     <form class="col-md-6 col-md-offset-3">

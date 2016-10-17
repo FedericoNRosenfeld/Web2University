@@ -13,8 +13,11 @@ class ConfigApp{
   public static $ACTION_AGREGAR_JUGADOR = 'agregar_jugador';
   public static $ACTION_BORRAR_JUGADOR = 'borrar_jugador';
   // Seccion de vistas
-  public static   $ACTION_VER_JUGADORES_EQUIPO = 'ver_jugadores_equipo';
-  public static   $ACTION_VER_JUGADORES = 'ver_jugadores';
+  public static $ACTION_VER_JUGADORES_EQUIPO = 'ver_jugadores_equipo';
+  public static $ACTION_VER_JUGADORES = 'ver_jugadores';
+
+  //base de datos
+  public static $Server = 'localhost';
 
 }
 

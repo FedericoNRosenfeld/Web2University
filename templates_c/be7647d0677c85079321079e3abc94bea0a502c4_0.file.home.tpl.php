@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-16 22:26:19
+/* Smarty version 3.1.30, created on 2016-10-16 22:40:23
   from "/var/www/html/muddy/tpeweb2/templates/home.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580428bbd33921_14144872',
+  'unifunc' => 'content_58042c07a7cc30_14162864',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_580428bbd33921_14144872 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58042c07a7cc30_14162864 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="row">
   <img class="bracket hidden-xs" src="images/bracket.jpg"></img>
