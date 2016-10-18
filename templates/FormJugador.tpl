@@ -1,4 +1,4 @@
-  <form>
+  <form id="form-carga-jugador">
     <div class="form-group">
       <label for="equipoJugador">Equipo</label>
       {$ItemsSelector=$equipos}

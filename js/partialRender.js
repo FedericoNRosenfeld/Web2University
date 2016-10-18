@@ -7,7 +7,7 @@ $("document").ready(function(){
 
 function injectContentByName(name,params){
   $.ajax({
-    url:'index.php?action='+name+params,
+    url:PREFIJO_ACTION+name+params,
     method:"GET",
     dataType:"html",
     success: function(resultData){
@@ -35,6 +35,19 @@ function ActualizarBindeos(){
   });
   //Botones de eliminar
   $("."+CLASE_BTN_ELIMINAR).on("click",function(){
-    
+
+  });
+  //Si se apreta en el boton crear jugador
+  $("#"+BOTON_CREAR_JUGADOR).on("click", function(){
+    $.ajax(
+        url:PREFIJO_ACTION+ACTION_AGREGAR_JUGADOR,
+        method:"POST",
+        data:$(REF_FORMULARIO_CARGA).serialize(),
+        success: function(resultData){
+        },
+        error:function(jqxml, status, errorThrown){
+          console.log(errorThrown);
+        }
+      );
   });
 }
