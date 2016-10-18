@@ -23,10 +23,13 @@ function injectContentByName(name,params){
 function ActualizarBindeos(){
   //Se hace click en los botones identificatorios de los equipos
   $(".EnlaceEquipo").on("click",function(){
-    injectContentByName("ver_jugadores_equipo","&id="+$(this).attr("id"));
+    injectContentByName(ACTION_VER_JUGADORES_EQUIPO,"&id="+$(this).attr("id"));
   });
   //si se elige una opcion del selector de equipos en la vista de admin de equipos
   $("#PlayersSelectEquipo").on("change",function(){
-    injectContentByName("adm_jugador_team","&id="+$(this).val());
+    injectContentByName(ACTION_ADM_JUGADOR_TEAM,"&id="+$(this).val());
   });
+  //Botones de editar
+  //Botones de eliminar
+  
 }
