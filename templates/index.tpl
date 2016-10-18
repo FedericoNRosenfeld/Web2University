@@ -25,6 +25,7 @@
     <!-- bootstrap -->
     <script src="js/bootstrap.min.js"></script>
     <!-- JS propio -->
+    <script src="js/constantes.js"></script>
     <script src="js/partialRender.js"></script>
     <script src="js/players.js"></script>
     <script src="js/postDeletePlayer.js"></script>
