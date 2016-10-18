@@ -13,7 +13,10 @@
       <td>{$equipo['abreviacion']}</td>
       <td><img id="{$equipo['id']}" class="EnlaceEquipo" src="images/{$equipo['url']}"></img></td>
       <td>{$equipo['Categoria']}</td>
-      <td>Borrar | Editar</td>
+      <td>
+        <div class="btn btn-info btn-editar" data-id="{$equipo['id']}">Editar</div>
+        <div class="btn btn-danger btn-eliminar" data-id="{$equipo['id']}">Eliminar</div>
+      </td>
     </tr>
     {/foreach}
   </tbody>

@@ -7,7 +7,10 @@
     {foreach from=$posiciones key=index item=posicion}
     <tr>
       <td>{$posicion['nombre_posicion']}</td>
-      <td>Borrar | Editar</td>
+      <td>
+        <div class="btn btn-info btn-editar" data-id="{$posicion['rk_id_posicion']}">Editar</div>
+        <div class="btn btn-danger btn-eliminar" data-id="{$posicion['rk_id_posicion']}">Eliminar</div>
+      </td>
     </tr>
     {/foreach}
   </tbody>

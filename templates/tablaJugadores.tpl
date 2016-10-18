@@ -13,7 +13,10 @@
       <td>{$jugador['nombre_posicion']}</td>
       <td>{$jugador['numero']}</td>
       <td>{$jugador['rk_nombre_equipo']}</td>
-      <td>Borrar | Editar</td>
+      <td>
+        <div class="btn btn-info btn-eliminar" data-id="{$jugador['id']}">Borrar</div>
+        <div class="btn btn-danger btn-editar" data-id="{$jugador['id']}">Editar</div>
+      </td>
     </tr>
     {/foreach}
   </tbody>
