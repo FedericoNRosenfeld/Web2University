@@ -21,5 +21,5 @@
       <label for="numeroJugador">Numero</label>
       <input type="number" class="form-control" id="numeroJugador" placeholder="23">
     </div>
-    <button id="crear" class="btn btn-default center-block">Crear</button>
+    <button id="crear-jugador" class="btn btn-default center-block">Crear</button>
   </form>

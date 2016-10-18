@@ -1,4 +1,4 @@
-<table class="table table-bordered table-responsive">
+<table class="table table-bordered table-responsive" data-action-editar="" data-action-borrar="">
   <thead>
     <th>Posicion</th>
     <th>Acciones</th>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2016 at 03:58 AM
+-- Generation Time: Oct 18, 2016 at 05:35 PM
 -- Server version: 5.7.15-0ubuntu0.16.04.1
 -- PHP Version: 5.6.24-0+deb8u1
 
@@ -97,20 +97,18 @@ INSERT INTO `Imagenes` (`id`, `url`) VALUES
 --
 
 CREATE TABLE `Jugadores` (
-  `id` int(11) NOT NULL,
+  `id_jugador` int(11) NOT NULL,
   `fk_id_equipo` int(11) DEFAULT NULL,
   `nombre` varchar(45) DEFAULT NULL,
   `posicion` int(4) NOT NULL,
   `numero` tinyint(4) NOT NULL
-  `imagen` int(6) NOT NULL,
-
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Jugadores`
 --
 
-INSERT INTO `Jugadores` (`id`, `fk_id_equipo`, `nombre`, `posicion`, `numero`) VALUES
+INSERT INTO `Jugadores` (`id_jugador`, `fk_id_equipo`, `nombre`, `posicion`, `numero`) VALUES
 (1, 1, 'Ian Clark', 1, 21),
 (2, 1, 'JaVale MgGee', 2, 1),
 (3, 9, 'Markel Broun', 1, 10),
@@ -171,7 +169,7 @@ ALTER TABLE `Imagenes`
 -- Indexes for table `Jugadores`
 --
 ALTER TABLE `Jugadores`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_jugador`),
   ADD KEY `equipo` (`fk_id_equipo`),
   ADD KEY `posicion` (`posicion`);
 
@@ -197,7 +195,7 @@ ALTER TABLE `Posiciones`
 -- AUTO_INCREMENT for table `Jugadores`
 --
 ALTER TABLE `Jugadores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `Partidos`
 --

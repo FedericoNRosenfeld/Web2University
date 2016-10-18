@@ -49,13 +49,13 @@ class JugadoresModel extends BaseModel {
     }
 
     function eliminarJugador($key){
-      $consulta = $this->db->prepare('DELETE FROM Jugadores WHERE id=?');
+      $consulta = $this->db->prepare('DELETE FROM Jugadores WHERE id_jugador=?');
       $sentencia->execute(array($key));
     }
 
     function modificarJugador($jugador){
       // ME ESTOY GUIANDO DEL UPDATE DE W3SCHOOL ('UPDATE Customers SET ContactName='Alfred Schmidt', City='Hamburg' WHERE CustomerName='Alfreds Futterkiste';
-      $consulta = $this->db->prepare('UPDATE Jugadores SET posicion= '.$jugador['posicion'].',numero='.$jugador['numero'].',imagen='.$jugador['imagen'].'WHERE nombre='.$jugador['nombre'].'');
+      $consulta = $this->db->prepare('UPDATE Jugadores SET posicion= '.$jugador['posicion'].',numero='.$jugador['numero'].',imagen='.$jugador['imagen'].'WHERE id_jugador='.$jugador['id_jugador'].'');
       $sentencia->execute(array($key));
     }
 

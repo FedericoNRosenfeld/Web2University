@@ -30,6 +30,11 @@ function ActualizarBindeos(){
     injectContentByName(ACTION_ADM_JUGADOR_TEAM,"&id="+$(this).val());
   });
   //Botones de editar
+  $("."+CLASE_BTN_EDITAR).on("click",function(){
+
+  });
   //Botones de eliminar
-  
+  $("."+CLASE_BTN_ELIMINAR).on("click",function(){
+    
+  });
 }
