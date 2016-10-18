@@ -25,7 +25,7 @@ class AdminJugadoresController{
   function MostrarAdminJugadores(){
     $Jugadores = $this->MJugadores->getAll();
     $Equipos = $this->MEquipos-> getAll();
-    $Posiciones = $this->mostrarPosiciones(); // La Funcion esta definida abajo , si no carga , tratar de poder la funcion arriba de esto
+    $Posiciones = $this->MPosiciones->getAll(); 
     $this->view->mostrar($Jugadores,$Equipos,$Posiciones);
 
   }
@@ -37,9 +37,9 @@ class AdminJugadoresController{
       $this->view->mostrar($Jugadores,$Equipos);
     }
   }
-// SECTOR DE JUGADORES 
+// SECTOR DE JUGADORES
   function AgregarJugador(){ // agregar un jugador a la BD ---> JUGADORES
-    if( (isset($_REQUEST['nombre'])) && (isset($_REQUEST['equipo']))  && (isset($_REQUEST['posicion'])) && (isset($_REQUEST['numero'])&& (isset($_FILES['imagen'])))  {
+    if( (isset($_REQUEST['nombre'])) && (isset($_REQUEST['equipo']))  && (isset($_REQUEST['posicion'])) && (isset($_REQUEST['numero']))&& (isset($_FILES['imagen'])))  {
        $jugador = array(
          "nombre"=>$_REQUEST['nombre'],
          "equipo"=>$_REQUEST['equipo'],
@@ -77,9 +77,7 @@ class AdminJugadoresController{
    }
 
 // SECTOR DE POSICIONES
-function mostrarPosiciones(){
-    $this->view->mostrar($this->MPosiciones->getAll());
-  }
+
   function agregarPosicion(){
     if(isset($_REQUEST['posicion'])){
         if(!(empty($_REQUEST['posicion']))){
