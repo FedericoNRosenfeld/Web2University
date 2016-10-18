@@ -10,16 +10,28 @@ class ConfigApp{
   public static $ACTION_MOSTRAR_CONTACTO = 'contacto';
   public static $ACTION_MOSTRAR_ADM = 'adminjugadores';
   public static $ACTION_MOSTRAR_ADM_TEAM = 'adminequipos';
+
+  // Acciones respecto a las Posiciones en los Equipos
+  public static $ACTION_AGREGAR_POSICION = 'agregar_posicion';
+  public static $ACTION_BORRAR_POSICION = 'borrar_posicion';
+  public static $ACTION_MODIFICAR_POSICION = 'modificar_posicion';
+
   // Acciones respecto a los Jugadores
   public static $ACTION_AGREGAR_JUGADOR = 'agregar_jugador';
   public static $ACTION_BORRAR_JUGADOR = 'borrar_jugador';
+  public static $ACTION_MODIFICAR_JUGADOR = 'modificar_jugador';
   public static $ACTION_ADM_JUGADOR_TEAM = 'adm_jugador_team';
+
   // Seccion de vistas
   public static $ACTION_VER_JUGADORES_EQUIPO = 'ver_jugadores_equipo';
   public static $ACTION_VER_JUGADORES = 'ver_jugadores';
 
   //En cuanto a equipos
   public static $ACTION_LISTA_EQUIPOS = 'lista_equipos';
+
+  //En cuanto a posiciones
+  public static $ACTION_VER_POSICIONES = 'ver_posiciones';
+
 
 }
 

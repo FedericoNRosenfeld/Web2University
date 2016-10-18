@@ -102,6 +102,8 @@ CREATE TABLE `Jugadores` (
   `nombre` varchar(45) DEFAULT NULL,
   `posicion` int(4) NOT NULL,
   `numero` tinyint(4) NOT NULL
+  `imagen` int(6) NOT NULL,
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

@@ -57,6 +57,11 @@ else{
       $Controller = new AdminJugadoresController();
       $Controller->EliminarJugador();
       break;
+
+    case ConfigApp::$ACTION_MODIFICAR_JUGADOR:
+        $Controller = new AdminJugadoresController();
+        $Controller->EliminarJugador();
+        break;
       //muestra la misma vista que el admin de jugadores pero filtrada por equipo
   case ConfigApp::$ACTION_ADM_JUGADOR_TEAM:
       $Controller = new AdminJugadoresController();
@@ -64,6 +69,24 @@ else{
       break;
   //-------------------------------------------------------------------------------------------
   //acciones respecto a Equipos
+
+  //-------------------------------------------------------------------------------------------
+  //acciones respecto a Posiciones
+
+  case ConfigApp::$ACTION_AGREGAR_POSICION:
+    $Controller = new AdminJugadoresController();
+    $Controller->AgregarPosicion();
+    break;
+
+case ConfigApp::$ACTION_BORRAR_POSICION:
+    $Controller = new AdminJugadoresController();
+    $Controller->EliminarPosicion();
+    break;
+
+  case ConfigApp::$ACTION_MODIFICAR_POSICION:
+      $Controller = new AdminJugadoresController();
+      $Controller->ModificarPosicion();
+      break;
 
 //---------------------------------------------------------------------------------------------
 // Ver jugadores de un Equipo en especifico
@@ -77,10 +100,16 @@ else{
       $Controller = new EquiposController();
       $Controller->ListarJugadores();
       break;
+// Ver todas las posiciones existentes
+  case ConfigApp::$ACTION_VER_POSICIONES:
+      $Controller = new AdminJugadoresController();
+      $Controller->ListarPosiciones();
+      break;
 
       default:
       echo 'Pagina no encontrada';
       break;
+
     }
 }
 
