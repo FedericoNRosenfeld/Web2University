@@ -62,13 +62,13 @@ class JugadoresModel extends BaseModel {
 
     function getJugadoresEquipo($id_equipo){
       // Estas linea aparte de hacer la consulta une la tabla jugadores con la de posiciones y equipos para poder usar las claves foraneas
-      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion WHERE fk_id_equipo=$id_equipo");
+      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion INNER JOIN Imagenes ON Jugadores.fk_imagen = Imagenes.rk_id_imagen WHERE fk_id_equipo=$id_equipo");
       $consulta->execute();
       return $consulta->fetchAll();
     }
 
     function GetAll(){
-      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion");
+      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion INNER JOIN Imagenes ON Jugadores.fk_imagen = Imagenes.rk_id_imagen");
       $consulta->execute();
       return $consulta->fetchAll();
     }
