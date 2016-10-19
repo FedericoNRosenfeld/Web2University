@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 18, 2016 at 05:35 PM
+-- Generation Time: Oct 19, 2016 at 07:56 PM
 -- Server version: 5.7.15-0ubuntu0.16.04.1
 -- PHP Version: 5.6.24-0+deb8u1
 
@@ -63,7 +63,7 @@ INSERT INTO `Equipos` (`id`, `rk_nombre_equipo`, `abreviacion`, `imagen`, `Categ
 --
 
 CREATE TABLE `Imagenes` (
-  `id` int(6) NOT NULL,
+  `rk_id_imagen` int(6) NOT NULL,
   `url` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -71,7 +71,7 @@ CREATE TABLE `Imagenes` (
 -- Dumping data for table `Imagenes`
 --
 
-INSERT INTO `Imagenes` (`id`, `url`) VALUES
+INSERT INTO `Imagenes` (`rk_id_imagen`, `url`) VALUES
 (0, 'nada'),
 (1, 'warriors.png'),
 (2, 'rockets.png'),
@@ -101,18 +101,20 @@ CREATE TABLE `Jugadores` (
   `fk_id_equipo` int(11) DEFAULT NULL,
   `nombre` varchar(45) DEFAULT NULL,
   `posicion` int(4) NOT NULL,
-  `numero` tinyint(4) NOT NULL
+  `numero` tinyint(4) NOT NULL,
+  `fk_imagen` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Jugadores`
 --
 
-INSERT INTO `Jugadores` (`id_jugador`, `fk_id_equipo`, `nombre`, `posicion`, `numero`) VALUES
-(1, 1, 'Ian Clark', 1, 21),
-(2, 1, 'JaVale MgGee', 2, 1),
-(3, 9, 'Markel Broun', 1, 10),
-(4, 9, 'Chris Andersen', 2, 0);
+INSERT INTO `Jugadores` (`id_jugador`, `fk_id_equipo`, `nombre`, `posicion`, `numero`, `fk_imagen`) VALUES
+(1, 1, 'Ian Clark', 1, 21, 0),
+(2, 1, 'JaVale MgGee', 2, 1, 0),
+(3, 9, 'Markel Broun', 1, 10, 0),
+(4, 9, 'Chris Andersen', 2, 0, 0),
+(5, 2, '34', 2, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -163,7 +165,7 @@ ALTER TABLE `Equipos`
 -- Indexes for table `Imagenes`
 --
 ALTER TABLE `Imagenes`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`rk_id_imagen`);
 
 --
 -- Indexes for table `Jugadores`
@@ -171,7 +173,8 @@ ALTER TABLE `Imagenes`
 ALTER TABLE `Jugadores`
   ADD PRIMARY KEY (`id_jugador`),
   ADD KEY `equipo` (`fk_id_equipo`),
-  ADD KEY `posicion` (`posicion`);
+  ADD KEY `posicion` (`posicion`),
+  ADD KEY `fk_imagen` (`fk_imagen`);
 
 --
 -- Indexes for table `Partidos`
@@ -192,15 +195,30 @@ ALTER TABLE `Posiciones`
 --
 
 --
+-- AUTO_INCREMENT for table `Equipos`
+--
+ALTER TABLE `Equipos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `Imagenes`
+--
+ALTER TABLE `Imagenes`
+  MODIFY `rk_id_imagen` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
 -- AUTO_INCREMENT for table `Jugadores`
 --
 ALTER TABLE `Jugadores`
-  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `Partidos`
 --
 ALTER TABLE `Partidos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `Posiciones`
+--
+ALTER TABLE `Posiciones`
+  MODIFY `rk_id_posicion` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
@@ -209,12 +227,13 @@ ALTER TABLE `Partidos`
 -- Constraints for table `Equipos`
 --
 ALTER TABLE `Equipos`
-  ADD CONSTRAINT `imagen` FOREIGN KEY (`imagen`) REFERENCES `Imagenes` (`id`);
+  ADD CONSTRAINT `imagen` FOREIGN KEY (`imagen`) REFERENCES `Imagenes` (`rk_id_imagen`);
 
 --
 -- Constraints for table `Jugadores`
 --
 ALTER TABLE `Jugadores`
+  ADD CONSTRAINT `Jugadores_ibfk_1` FOREIGN KEY (`fk_imagen`) REFERENCES `Imagenes` (`rk_id_imagen`) ON DELETE NO ACTION,
   ADD CONSTRAINT `equipo` FOREIGN KEY (`fk_id_equipo`) REFERENCES `Equipos` (`id`),
   ADD CONSTRAINT `posicion` FOREIGN KEY (`posicion`) REFERENCES `Posiciones` (`rk_id_posicion`);
 
