@@ -9,5 +9,8 @@ const CLASE_BTN_EDITAR = 'btn-editar';
 const CLASE_BTN_ELIMINAR = 'btn-eliminar';
 
 const BOTON_CREAR_JUGADOR="crear-jugador";
+const BOTON_CREAR_POSICION="crear-posicion";
 
-const REF_FORMULARIO_CARGA = "form-carga-jugador";
+const REF_FORMULARIO_CARGA_JUGADOR = "form-carga-jugador";
+
+const ACTION_AGREGAR_POSICION = 'agregar_posicion';

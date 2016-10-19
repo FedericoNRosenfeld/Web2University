@@ -27,8 +27,6 @@
     <!-- JS propio -->
     <script src="js/constantes.js"></script>
     <script src="js/partialRender.js"></script>
-    <script src="js/players.js"></script>
-    <script src="js/postDeletePlayer.js"></script>
     <script src="js/firstLoad.js"></script>
   </body>
 </html>

@@ -25,7 +25,7 @@ class AdminJugadoresController{
   function MostrarAdminJugadores(){
     $Jugadores = $this->MJugadores->getAll();
     $Equipos = $this->MEquipos-> getAll();
-    $Posiciones = $this->MPosiciones->getAll(); 
+    $Posiciones = $this->MPosiciones->getAll();
     $this->view->mostrar($Jugadores,$Equipos,$Posiciones);
 
   }
@@ -34,18 +34,23 @@ class AdminJugadoresController{
     if(isset($_REQUEST['id']))  {
       $Jugadores = $this->MJugadores->getJugadoresEquipo($_REQUEST['id']);
       $Equipos = $this->MEquipos-> getAll();
-      $this->view->mostrar($Jugadores,$Equipos);
+      $Posiciones = $this->MPosiciones->getAll();
+      $this->view->mostrar($Jugadores,$Equipos,$Posiciones);
     }
   }
 // SECTOR DE JUGADORES
   function AgregarJugador(){ // agregar un jugador a la BD ---> JUGADORES
-    if( (isset($_REQUEST['nombre'])) && (isset($_REQUEST['equipo']))  && (isset($_REQUEST['posicion'])) && (isset($_REQUEST['numero']))&& (isset($_FILES['imagen'])))  {
+    if( (isset($_REQUEST['nombre']))
+     && (isset($_REQUEST['equipo']))
+     && (isset($_REQUEST['posicion']))
+     && (isset($_REQUEST['numero']))
+     && (isset($_FILES['imagen'])))  {
        $jugador = array(
          "nombre"=>$_REQUEST['nombre'],
          "equipo"=>$_REQUEST['equipo'],
          "posicion"=>$_REQUEST['posicion'] ,
-         "posicion"=>$_REQUEST['numero'],
-         "imagen"=>$_REQUEST['imagen']
+         "numero"=>$_REQUEST['numero'],
+         "imagen"=>$_FILES['imagen']
          );
        if (!$this->MJugadores->agregarJugador($jugador)){
          echo "error al subir a la DB";

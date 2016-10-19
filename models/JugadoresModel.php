@@ -28,24 +28,24 @@ class JugadoresModel extends BaseModel {
 
   function agregarJugador($jugador){
       // agrega un jugador a la BD
-      try {
-        $consulta = $this->db->prepare('INSERT INTO Jugadores(nombre, fk_id_equipo, posicion, numero,imagen) VALUES(:nombre, :equipo, :posicion, :numero, :imagen)');
+      //try {
+        $consulta = $this->db->prepare('INSERT INTO Jugadores(nombre, fk_id_equipo, posicion, numero) VALUES(:nombre, :equipo, :posicion, :numero)');
         $consulta->execute(array(
           ":nombre"=>$jugador['nombre']
           ,":equipo"=>$jugador['equipo']
           ,":posicion"=>$jugador['posicion']
           ,":numero"=>$jugador['numero']
-          ,":imagen"=>$jugador['imagen']
+        //  ,":imagen"=>$jugador['imagen']
         ));
 
         $id = $this->db->lastInsertId();
 
         return true;
-      }
-      catch(PDOException $ex)
-      {
-        return false;
-      }
+    //  }
+    //  catch(PDOException $ex)
+  //    {
+  //      return false;
+  //    }
     }
 
     function eliminarJugador($key){

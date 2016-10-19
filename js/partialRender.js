@@ -39,15 +39,24 @@ function ActualizarBindeos(){
   });
   //Si se apreta en el boton crear jugador
   $("#"+BOTON_CREAR_JUGADOR).on("click", function(){
-    $.ajax(
+    var Info = new FormData(document.getElementById(REF_FORMULARIO_CARGA_JUGADOR));
+    //var Archivo = document.getElementById("jugador-imagen").files[0];
+    //Info.append("imagen",Archivo);
+    $.post({
         url:PREFIJO_ACTION+ACTION_AGREGAR_JUGADOR,
-        method:"POST",
-        data:$(REF_FORMULARIO_CARGA).serialize(),
-        success: function(resultData){
-        },
-        error:function(jqxml, status, errorThrown){
+        type:"POST",
+        data:Info,
+        processData: false,  // tell jQuery not to process the data
+        contentType: false   // tell jQuery not to set contentType
+        }).success(function(resultData){
+          alert(resultData);
+        }).error(function(jqxml, status, errorThrown){
           console.log(errorThrown);
-        }
-      );
+      });
+      return false;
+  });
+  //Si se apreta el boton crear posicion
+  $("#"+BOTON_CREAR_POSICION).on("click", function(){
+
   });
 }
