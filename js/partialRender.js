@@ -45,6 +45,21 @@ function ActualizarBindeos(){
       return false;
   });
 
+  //Eliminar posicion BOTON_ELIMINAR_POSICION
+  $("."+ACTION_BORRAR_POSICION).on("click",function(){
+    $.post({
+        url:PREFIJO_ACTION+ACTION_BORRAR_POSICION,
+        type:"POST",
+        data:{"rk_id_posicion":$(this).attr("data-id")},
+      }).success(function(resultData){
+          alert(resultData);
+          injectContentByName(ACTION_MOSTRAR_ADM,"");
+        }).error(function(jqxml, status, errorThrown){
+          console.log(errorThrown);
+      });
+      return false;
+  });
+
   //Borrar jugador
   $("."+ACTION_BORRAR_JUGADOR).on("click",function(){
     var IdElemento = $(this).attr("data-id");

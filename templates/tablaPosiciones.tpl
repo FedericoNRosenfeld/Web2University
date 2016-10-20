@@ -8,8 +8,8 @@
     <tr>
       <td>{$posicion['nombre_posicion']}</td>
       <td>
-        <div class="btn btn-info btn-editar btn-xs" data-id="{$posicion['rk_id_posicion']}">Editar</div>
-        <div class="btn btn-danger btn-eliminar btn-xs" data-id="{$posicion['rk_id_posicion']}">Eliminar</div>
+        <div class="btn btn-info  btn-xs" data-id="{$posicion['rk_id_posicion']}">Editar</div>
+        <div class="btn btn-danger borrar_posicion btn-xs" data-id="{$posicion['rk_id_posicion']}">Eliminar</div>
       </td>
     </tr>
     {/foreach}

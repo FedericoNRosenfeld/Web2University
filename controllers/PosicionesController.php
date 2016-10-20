@@ -22,13 +22,19 @@ class PosicionesController{
 
   function borrarPosicion(){
     if(isset($_REQUEST['rk_id_posicion'])){
-      $this->model->borrarPosicion($_REQUEST['rk_id_posicion']);
+      if($this->MPosiciones->borrarPosicion($_REQUEST['rk_id_posicion'])) {
+        echo "Posicion borrada satisfactoriamente";
+      } else {
+        echo "Ocurrio un error al intentar borrar la posicion";
+      }
+    } else {
+      echo "id no especificado";
     }
   }
 
   function modificarPosicion(){
     if(isset($_REQUEST['posicion'])){
-      $this->model->modificarPosicion($_REQUEST['posicion']);
+      $this->MPosiciones->modificarPosicion($_REQUEST['posicion']);
     }
   }
 }

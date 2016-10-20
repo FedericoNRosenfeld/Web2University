@@ -81,7 +81,7 @@ else{
 
 case ConfigApp::$ACTION_BORRAR_POSICION:
     $Controller = new PosicionesController();
-    $Controller->EliminarPosicion();
+    $Controller->borrarPosicion();
     break;
 
   case ConfigApp::$ACTION_MODIFICAR_POSICION:
