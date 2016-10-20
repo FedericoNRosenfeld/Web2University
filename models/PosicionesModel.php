@@ -23,6 +23,10 @@ class PosicionesModel extends BaseModel {
 
   function borrarPosicion($id_pos){
     try {
+      //borramos todos los registros de la tabla Jugadores que contengan la posicion que se va a borrar
+      $consulta = $this->db->prepare('DELETE FROM Jugadores WHERE posicion=?');
+      $consulta->execute(array($id_pos));
+      //borramos la posicion
       $consulta = $this->db->prepare('DELETE FROM Posiciones WHERE rk_id_posicion=?');
       $consulta->execute(array($id_pos));
       return true;
