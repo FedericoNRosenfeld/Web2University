@@ -61,7 +61,7 @@ else{
 
     case ConfigApp::$ACTION_MODIFICAR_JUGADOR:
         $Controller = new AdminJugadoresController();
-        $Controller->EliminarJugador();
+        $Controller->vistaModificarJugador();
         break;
       //muestra la misma vista que el admin de jugadores pero filtrada por equipo
   case ConfigApp::$ACTION_ADM_JUGADOR_TEAM:

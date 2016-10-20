@@ -1,6 +1,7 @@
 <?php
 
 include_once 'views/AdminJugadoresView.php';
+include_once 'views/EditJugadoresView.php';
 include_once 'models/EquiposModel.php';
 include_once 'models/JugadoresModel.php';
 include_once 'models/PosicionesModel.php';
@@ -14,7 +15,6 @@ class AdminJugadoresController{
   private $MPosiciones;
 
   function __construct() {
-    $this->view = new AdminJugadoresView();
     $this->MJugadores = new JugadoresModel(); // derivar responsabilidades de jugadores
     $this->MEquipos = new EquiposModel(); // derivar responsabilidades de equipos
     $this->MPosiciones = new PosicionesModel();
@@ -24,7 +24,9 @@ class AdminJugadoresController{
     $Jugadores = $this->MJugadores->getAll();
     $Equipos = $this->MEquipos-> getAll();
     $Posiciones = $this->MPosiciones->getAll();
-    $this->view->mostrar($Jugadores,$Equipos,$Posiciones);
+
+    $view = new AdminJugadoresView();
+    $view->mostrar($Jugadores,$Equipos,$Posiciones);
 
   }
 
@@ -66,6 +68,15 @@ class AdminJugadoresController{
        //$this->modelimagen->borrarImagen($this->modelImagenes($this->modelJ->getImagenAsociada('id')));  BORRAR LA IAMGEN ASOCIADA AL JUGADOR
        $this->MJugadores->eliminarJugador($key);
        $this->MostrarAdminJugadores();
+ }
+
+ function vistaModificarJugador(){
+   $Jugadores = $this->MJugadores->getAll();
+   $Equipos = $this->MEquipos-> getAll();
+   $Posiciones = $this->MPosiciones->getAll();
+
+   $view = new EditJugadoresView();
+   $view->mostrar($Jugadores,$Equipos,$Posiciones);
  }
 
   function ModificarJugador(){

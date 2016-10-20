@@ -16,8 +16,8 @@
       <td>{$jugador['rk_nombre_equipo']}</td>
       <td><img class=" img-responsive " alt="Imagen no Disponible" src="{$jugador['url']}"></img></td>
       <td>
-        <div class="btn btn-info btn-eliminar borrar_jugador btn-xs" data-id="{$jugador['id_jugador']}">Borrar</div>
-        <div class="btn btn-danger btn-editar btn-xs" data-id="{$jugador['id_jugador']}">Editar</div>
+        <div class="btn btn-danger btn-eliminar borrar_jugador btn-xs" data-id="{$jugador['id_jugador']}">Borrar</div>
+        <div class="btn btn-info btn-editar modificar_jugador btn-xs" data-id="{$jugador['id_jugador']}">Editar</div>
       </td>
     </tr>
     {/foreach}
