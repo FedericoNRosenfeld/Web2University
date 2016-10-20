@@ -33,7 +33,7 @@ function ActualizarBindeos(){
   //Agregar posicion
   $("#"+BOTON_CREAR_POSICION).on("click",function(){
     $.post({
-        url:PREFIJO_ACTION+$ACTION_AGREGAR_POSICION,
+        url:PREFIJO_ACTION+ACTION_AGREGAR_POSICION,
         type:"POST",
         data:$("#"+REF_FORMULARIO_CARGA_POSICION).serialize(),
       }).success(function(resultData){

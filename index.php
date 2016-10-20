@@ -9,6 +9,7 @@ include_once 'controllers/ContactoController.php';
 include_once 'controllers/AdminJugadoresController.php';
 include_once 'controllers/JugadoresController.php';
 include_once 'controllers/AdminEquiposController.php';
+include_once 'controllers/PosicionesController.php';
 
 $indexController = new indexController();
 
@@ -74,17 +75,17 @@ else{
   //acciones respecto a Posiciones
 
   case ConfigApp::$ACTION_AGREGAR_POSICION:
-    $Controller = new AdminJugadoresController();
+    $Controller = new PosicionesController();
     $Controller->AgregarPosicion();
     break;
 
 case ConfigApp::$ACTION_BORRAR_POSICION:
-    $Controller = new AdminJugadoresController();
+    $Controller = new PosicionesController();
     $Controller->EliminarPosicion();
     break;
 
   case ConfigApp::$ACTION_MODIFICAR_POSICION:
-      $Controller = new AdminJugadoresController();
+      $Controller = new PosicionesController();
       $Controller->ModificarPosicion();
       break;
 

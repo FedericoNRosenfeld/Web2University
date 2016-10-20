@@ -10,9 +10,16 @@ class PosicionesModel extends BaseModel {
   }
 
   function agregarPosicion($posicion){
-    $consulta = $this->db->prepare('INSERT INTO Posiciones(nombre_posicion) VALUES(?)');
-    $consulta->execute(array($posicion));
-    $id_posicion = $this->db->lastInsertId();
+    try {
+      $consulta = $this->db->prepare('INSERT INTO Posiciones(nombre_posicion) VALUES(:nombre_posicion)');
+      $consulta->execute(array(":nombre_posicion"=>$posicion));
+      $id_posicion = $this->db->lastInsertId();
+      return true;
+    } catch(PDOException $ex)
+    {
+      return false;
+    }
+
   }
 
   function borrarPosicion($id_pos){
