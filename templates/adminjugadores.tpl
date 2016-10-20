@@ -1,14 +1,16 @@
-<div class="row">
-  <div class="col-sm-4">
+<div class="row col-sm-6">
+  <div class="col-xs-12">
     <h2 class="text-center">Añadir jugador</h2>
     {$nombreSelector="equipoJugador"}
     {include file='FormJugador.tpl' links=$equipos links=$nombreSelector links=$posiciones}
   </div>
-  <div class="col-sm-4">
+</div>
+<div class="row col-sm-6">
+  <div class="col-xs-12">
     <h2 class="text-center">Añadir posicion</h2>
     {include file='FormPosiciones.tpl'}
   </div>
-  <div class="col-sm-4">
+  <div class="col-xs-12">
     <h2 class="text-center">Listado de posiciones</h2>
     {include file='tablaPosiciones.tpl' links='$posiciones'}
   </div>
