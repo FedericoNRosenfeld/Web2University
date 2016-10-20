@@ -14,5 +14,3 @@ const BOTON_CREAR_POSICION="nueva-posicion";
 
 const REF_FORMULARIO_CARGA_JUGADOR = "form-carga-jugador";
 const REF_FORMULARIO_CARGA_POSICION = "form-agregar-posicion";
-
-const ACTION_AGREGAR_POSICION = 'agregar_posicion';
