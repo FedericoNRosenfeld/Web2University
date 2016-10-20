@@ -33,7 +33,7 @@ class ConfigApp{
   public static $ACTION_VER_POSICIONES = 'ver_posiciones';
 
   //En cuanto a los directorios
-  public static $DIRECTORIO_DE_IMAGENES = 'images';
+  public static $DIRECTORIO_DE_IMAGENES = 'images/';
 }
 
  ?>

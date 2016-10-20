@@ -28,24 +28,30 @@ class JugadoresModel extends BaseModel {
 
   function agregarJugador($jugador){
       // agrega un jugador a la BD
-      //try {
-        $consulta = $this->db->prepare('INSERT INTO Jugadores(nombre, fk_id_equipo, posicion, numero) VALUES(:nombre, :equipo, :posicion, :numero)');
-        $consulta->execute(array(
-          ":nombre"=>$jugador['nombre']
-          ,":equipo"=>$jugador['equipo']
-          ,":posicion"=>$jugador['posicion']
-          ,":numero"=>$jugador['numero']
-        //  ,":imagen"=>$jugador['imagen']
-        ));
+      //agregamos la imagen
+      $MImagenes = new ImagenesModel();
+      if ($MImagenes->agregarImagen($jugador['imagen'])) {
+        //try {
+          $IdImagen = $MImagenes->getIdImg();
+          $consulta = $this->db->prepare('INSERT INTO Jugadores(nombre, fk_id_equipo, posicion, numero, fk_imagen) VALUES(:nombre, :fk_id_equipo, :posicion, :numero, :fk_imagen)');
+          $consulta->execute(array(
+            ":nombre"=>$jugador['nombre']
+            ,":fk_id_equipo"=>$jugador['equipo']
+            ,":posicion"=>$jugador['posicion']
+            ,":numero"=>$jugador['numero']
+            ,":fk_imagen"=>$IdImagen
+          ));
 
-        $id = $this->db->lastInsertId();
+          $id = $this->db->lastInsertId();
 
-        return true;
-    //  }
-    //  catch(PDOException $ex)
-  //    {
-  //      return false;
-  //    }
+          return true;
+      //  }
+      //  catch(PDOException $ex)
+    //    {
+    //      return false;
+    //    }
+      }
+
     }
 
     function eliminarJugador($key){

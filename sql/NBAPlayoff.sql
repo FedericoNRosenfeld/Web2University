@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 19, 2016 at 07:56 PM
+-- Generation Time: Oct 19, 2016 at 09:18 PM
 -- Server version: 5.7.15-0ubuntu0.16.04.1
 -- PHP Version: 5.6.24-0+deb8u1
 
@@ -64,7 +64,7 @@ INSERT INTO `Equipos` (`id`, `rk_nombre_equipo`, `abreviacion`, `imagen`, `Categ
 
 CREATE TABLE `Imagenes` (
   `rk_id_imagen` int(6) NOT NULL,
-  `url` varchar(50) NOT NULL
+  `url` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -72,23 +72,24 @@ CREATE TABLE `Imagenes` (
 --
 
 INSERT INTO `Imagenes` (`rk_id_imagen`, `url`) VALUES
-(0, 'nada'),
-(1, 'warriors.png'),
-(2, 'rockets.png'),
-(3, 'clippers.png'),
-(4, 'blazers.png'),
-(5, 'thunder.png'),
-(6, 'mavericks.png'),
-(7, 'spurs.png'),
-(8, 'grizzlies.png'),
-(9, 'cavaliers.png'),
-(10, 'pistons.png'),
-(11, 'hawks.png'),
-(12, 'celtics.png'),
-(13, 'heat.png'),
-(14, 'hornets.png'),
-(15, 'raptors.png'),
-(16, 'pacers.png');
+(0, 'images/sin-imagen.png'),
+(1, 'images/warriors.png'),
+(2, 'images/rockets.png'),
+(3, 'images/clippers.png'),
+(4, 'images/blazers.png'),
+(5, 'images/thunder.png'),
+(6, 'images/mavericks.png'),
+(7, 'images/spurs.png'),
+(8, 'images/grizzlies.png'),
+(9, 'images/cavaliers.png'),
+(10, 'images/pistons.png'),
+(11, 'images/hawks.png'),
+(12, 'images/celtics.png'),
+(13, 'images/heat.png'),
+(14, 'images/hornets.png'),
+(15, 'images/raptors.png'),
+(16, 'images/pacers.png'),
+(17, 'images/58080b948c666_13873223_1235372273163707_2951754966666823568_n.jpg');
 
 -- --------------------------------------------------------
 
@@ -114,7 +115,8 @@ INSERT INTO `Jugadores` (`id_jugador`, `fk_id_equipo`, `nombre`, `posicion`, `nu
 (2, 1, 'JaVale MgGee', 2, 1, 0),
 (3, 9, 'Markel Broun', 1, 10, 0),
 (4, 9, 'Chris Andersen', 2, 0, 0),
-(5, 2, '34', 2, 2, 0);
+(5, 2, '34', 2, 2, 0),
+(6, 9, 'LuchoV', 1, 3, 17);
 
 -- --------------------------------------------------------
 
@@ -203,12 +205,12 @@ ALTER TABLE `Equipos`
 -- AUTO_INCREMENT for table `Imagenes`
 --
 ALTER TABLE `Imagenes`
-  MODIFY `rk_id_imagen` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `rk_id_imagen` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `Jugadores`
 --
 ALTER TABLE `Jugadores`
-  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `Partidos`
 --

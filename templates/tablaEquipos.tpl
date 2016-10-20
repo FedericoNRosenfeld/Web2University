@@ -11,7 +11,7 @@
     <tr>
       <td>{$equipo['rk_nombre_equipo']}</td>
       <td>{$equipo['abreviacion']}</td>
-      <td><img id="{$equipo['id']}" class="EnlaceEquipo" src="images/{$equipo['url']}"></img></td>
+      <td><img id="{$equipo['id']}" class="EnlaceEquipo" src="{$equipo['url']}"></img></td>
       <td>{$equipo['Categoria']}</td>
       <td>
         <div class="btn btn-info btn-editar btn-xs" data-id="{$equipo['id']}">Editar</div>

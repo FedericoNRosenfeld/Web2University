@@ -4,6 +4,7 @@ include_once 'views/AdminJugadoresView.php';
 include_once 'models/EquiposModel.php';
 include_once 'models/JugadoresModel.php';
 include_once 'models/PosicionesModel.php';
+include_once 'models/ImagenesModel.php';
 
 class AdminJugadoresController{
 
