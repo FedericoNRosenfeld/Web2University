@@ -3,35 +3,12 @@ require_once "BaseModel.php";
 
 class JugadoresModel extends BaseModel {
 
-
-  private function subirArchivos($files){
-    $destinos = array();
-    foreach ($files as $file){
-      $destino = "images/".uniqid().$file['name'];
-      move_uploaded_file($files['tmp_name'],$destino);
-      $destinos[]=$destino;
-    }
-    return $destinos;
-  }
-
-  function agregarNoticia($titulo, $descripcion, $categoria, $files){
-
-    $rutas = $this->subirArchivos($files);
-    $consulta = $this->db->prepare('INSERT INTO noticia(titulo,descripcion,id_cat) VALUES(?,?,?)');
-    $consulta->execute(array($titulo,$descripcion,$categoria));
-    $id_noticia = $this->db->lastInsertId();
-    foreach ($rutas as $ruta) {
-      $imagenes = $this->db->prepare('INSERT INTO imagen(id_noticia,ruta) VALUES(?,?)');
-      $imagenes->execute(array($id_noticia, $ruta));
-    }
-  }
-
   function agregarJugador($jugador){
       // agrega un jugador a la BD
       //agregamos la imagen
       $MImagenes = new ImagenesModel();
       if ($MImagenes->agregarImagen($jugador['imagen'])) {
-        //try {
+        try {
           $IdImagen = $MImagenes->getIdImg();
           $consulta = $this->db->prepare('INSERT INTO Jugadores(nombre, fk_id_equipo, posicion, numero, fk_imagen) VALUES(:nombre, :fk_id_equipo, :posicion, :numero, :fk_imagen)');
           $consulta->execute(array(
@@ -45,18 +22,18 @@ class JugadoresModel extends BaseModel {
           $id = $this->db->lastInsertId();
 
           return true;
-      //  }
-      //  catch(PDOException $ex)
-    //    {
-    //      return false;
-    //    }
+        }
+        catch(PDOException $ex)
+        {
+          return false;
+        }
       }
 
     }
 
     function eliminarJugador($key){
       $consulta = $this->db->prepare('DELETE FROM Jugadores WHERE id_jugador=?');
-      $sentencia->execute(array($key));
+      $consulta->execute(array($key));
     }
 
     function modificarJugador($jugador){

@@ -1,4 +1,4 @@
-<form>
+<form id="form-agregar-posicion">
   <div class="form-group">
     <label for="NombrePosicion">Posicion</label>
     <input type="text" class="form-control" id="nombre" placeholder="Arquero, (re que no)" required>

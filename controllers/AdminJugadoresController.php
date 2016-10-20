@@ -20,9 +20,6 @@ class AdminJugadoresController{
     $this->MPosiciones = new PosicionesModel();
   }
 
-
-
-
   function MostrarAdminJugadores(){
     $Jugadores = $this->MJugadores->getAll();
     $Equipos = $this->MEquipos-> getAll();
@@ -55,6 +52,8 @@ class AdminJugadoresController{
          );
        if (!$this->MJugadores->agregarJugador($jugador)){
          echo "error al subir a la DB";
+       } else {
+         echo "Jugador cargado satisfactoriamente";
        }
      }
      else{
@@ -65,7 +64,7 @@ class AdminJugadoresController{
  function EliminarJugador(){ //ELIMINA UN JUGADOR DE LA BASE DE DATOS Y ACOMODA LA VISTA EN LA TABLA DE ADMINJUGADORES
        $key = $_GET['id'];
        //$this->modelimagen->borrarImagen($this->modelImagenes($this->modelJ->getImagenAsociada('id')));  BORRAR LA IAMGEN ASOCIADA AL JUGADOR
-       $this->modelJ->eliminarJugador($key);
+       $this->MJugadores->eliminarJugador($key);
        $this->MostrarAdminJugadores();
  }
 
@@ -77,35 +76,10 @@ class AdminJugadoresController{
            ,"posicion"=>$_REQUEST['posicion']
            ,"posicion"=>$_REQUEST['numero']
          );
-       $this->modelJ->modificarJugador($jugador);
+       $this->MJugadores->modificarJugador($jugador);
        $this->MostrarAdminJugadores();
      }
    }
-
-// SECTOR DE POSICIONES
-
-  function agregarPosicion(){
-    if(isset($_REQUEST['posicion'])){
-        if(!(empty($_REQUEST['posicion']))){
-            $this->MPosiciones->agregarPosicion($_REQUEST['posicion']);
-        }
-    }
-    $this->mostrarPosiciones();// se recargue la tabla de posiciones en el lugar sin alterar el resto de las cosas
-  }
-
-  function borrarPosicion(){
-    if(isset($_REQUEST['rk_id_posicion'])){
-      $this->model->borrarPosicion($_REQUEST['rk_id_posicion']);
-    }
-    $this->mostrarPosiciones();// se recargue la tabla de posiciones en el lugar sin alterar el resto de las cosas
-  }
-
-  function modificarPosicion(){
-    if(isset($_REQUEST['posicion'])){
-      $this->model->modificarPosicion($_REQUEST['posicion']);
-    }
-    $this->mostrarPosiciones();// se recargue la tabla de posiciones en el lugar sin alterar el resto de las cosas
-  }
 
 }
   ?>
