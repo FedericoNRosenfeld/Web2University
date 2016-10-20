@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 19, 2016 at 09:18 PM
+-- Generation Time: Oct 19, 2016 at 09:24 PM
 -- Server version: 5.7.15-0ubuntu0.16.04.1
 -- PHP Version: 5.6.24-0+deb8u1
 
@@ -89,7 +89,7 @@ INSERT INTO `Imagenes` (`rk_id_imagen`, `url`) VALUES
 (14, 'images/hornets.png'),
 (15, 'images/raptors.png'),
 (16, 'images/pacers.png'),
-(17, 'images/58080b948c666_13873223_1235372273163707_2951754966666823568_n.jpg');
+(17, 'images/luchov.jpg');
 
 -- --------------------------------------------------------
 
