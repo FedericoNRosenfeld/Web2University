@@ -5,7 +5,7 @@
           <ul class="text-center">
             {foreach from=$equipos['ConfOeste'] key=index item=equipo}
             <li>
-              <img id="{$equipo['id']}" class="EnlaceEquipo" src="images/{$equipo['url']}"></img>
+              <img id="{$equipo['id']}" alt="nombre del equipo proximamente"class="EnlaceEquipo" src="images/{$equipo['url']}"></img>
             </li>
             {/foreach}
           </ul>
@@ -16,7 +16,7 @@
           <ul class="text-center">
             {foreach from=$equipos['ConfEste'] key=index item=equipo}
             <li>
-              <img id="{$equipo['id']}" class="EnlaceEquipo" src="images/{$equipo['url']}"></img>
+              <img id="{$equipo['id']}" alt="nombre del equipo proximamente" class="EnlaceEquipo" src="images/{$equipo['url']}"></img>
             </li>
             {/foreach}
           </ul>
