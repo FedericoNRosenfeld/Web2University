@@ -89,7 +89,7 @@ INSERT INTO `Imagenes` (`rk_id_imagen`, `url`) VALUES
 (14, 'images/hornets.png'),
 (15, 'images/raptors.png'),
 (16, 'images/pacers.png'),
-(17, 'images/luchov.jpg');
+
 
 -- --------------------------------------------------------
 
@@ -116,7 +116,7 @@ INSERT INTO `Jugadores` (`id_jugador`, `fk_id_equipo`, `nombre`, `posicion`, `nu
 (3, 9, 'Markel Broun', 1, 10, 0),
 (4, 9, 'Chris Andersen', 2, 0, 0),
 (5, 2, '34', 2, 2, 0),
-(6, 9, 'LuchoV', 1, 3, 17);
+
 
 -- --------------------------------------------------------
 

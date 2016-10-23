@@ -33,9 +33,10 @@ class PosicionesController{
   }
 
   function modificarPosicion(){
-    if(isset($_REQUEST['posicion'])){
-      $this->MPosiciones->modificarPosicion($_REQUEST['posicion']);
-    }
+     // VERSION CON PASO DE NOMBRE E ID VIA PARAMETRO
+      $this->MPosiciones->modificarPosicion($_POST['nombre_posicion'],$_POST['rk_id_posicion']);
   }
+
+
 }
  ?>

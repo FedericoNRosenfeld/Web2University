@@ -13,7 +13,7 @@
       <td>{$jugador['nombre_posicion']}</td>
       <td>{$jugador['numero']}</td>
       <td>{$jugador['rk_nombre_equipo']}</td>
-      <td><img class="EnlaceEquipo" src="images/{$jugador['url']}"></img></td>
+      <td><img class="EnlaceEquipo img-responsive" src="{$jugador['url']}"></img></td>
     </tr>
     {/foreach}
   </tbody>
