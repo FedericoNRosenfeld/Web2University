@@ -4,16 +4,16 @@
       {$ItemsSelector=$equipos}
       {$CampoId='id'}
       {$CampoNombre='rk_nombre_equipo'}
-      {$nombreSelector='equipo'}
-      {include file='Selector.tpl' links=$ItemsSelector links=$CampoId links=$CampoNombre links=$nombreSelector}
+      {$nombreSelector='equipo'}{$OpcionSelecionada=$jugador['fk_id_equipo']}
+      {include file='Selector.tpl' links=$ItemsSelector links=$OpcionSelecionada links=$CampoId links=$CampoNombre links=$nombreSelector}
     </div>
     <div class="form-group">
       <label for="posicionJugador">Posicion</label>
       {$ItemsSelector=$posiciones}
       {$CampoId='rk_id_posicion'}
       {$CampoNombre='nombre_posicion'}
-      {$nombreSelector='posicion'}
-      {include file='Selector.tpl' links=$ItemsSelector links=$CampoId links=$CampoNombre links=$nombreSelector}
+      {$nombreSelector='posicion'}{$OpcionSelecionada=$jugador['posicion']}
+      {include file='Selector.tpl' links=$OpcionSelecionada links=$ItemsSelector links=$CampoId links=$CampoNombre links=$nombreSelector}
     </div>
     <div class="form-group">
       <label for="nombreJugador">Nombre</label>
