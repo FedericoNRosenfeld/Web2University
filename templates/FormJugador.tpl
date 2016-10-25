@@ -1,4 +1,4 @@
-  <form id="form-carga-jugador" method="post" enctype="multipart/form-data">
+  <form id="{$IdFormularioJugador}" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="equipoJugador">Equipo</label>
       {$ItemsSelector=$equipos}

@@ -66,10 +66,15 @@ function ActualizarBindeos(){
     injectContentByName(ACTION_BORRAR_JUGADOR,"&id="+IdElemento);
   });
 
-  //Editar Jugador
+  //Mostrar Editar Jugador
   $("."+ACTION_MODIFICAR_JUGADOR).on("click",function(){
     var IdElemento = $(this).attr("data-id");
     injectContentByName(ACTION_MODIFICAR_JUGADOR,"&id="+IdElemento);
+  });
+
+  //Si se presiona el boton editar
+  $("#"+REF_FORMULARIO_EDITA_JUGADOR).on("click",function(){
+    alert("");
   });
 
   //Si se apreta en el boton crear jugador
