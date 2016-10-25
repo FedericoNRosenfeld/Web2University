@@ -66,6 +66,12 @@ function ActualizarBindeos(){
     injectContentByName(ACTION_BORRAR_JUGADOR,"&id="+IdElemento);
   });
 
+  //Editar Jugador
+  $("."+ACTION_MODIFICAR_JUGADOR).on("click",function(){
+    var IdElemento = $(this).attr("data-id");
+    injectContentByName(ACTION_MODIFICAR_JUGADOR,"&id="+IdElemento);
+  });
+
   //Si se apreta en el boton crear jugador
   $("#"+BOTON_CREAR_JUGADOR).on("click", function(){
     var Info = new FormData(document.getElementById(REF_FORMULARIO_CARGA_JUGADOR));
@@ -85,8 +91,5 @@ function ActualizarBindeos(){
       });
       return false;
   });
-  //Si se apreta el boton crear posicion
-  $("#"+BOTON_CREAR_POSICION).on("click", function(){
 
-  });
 }

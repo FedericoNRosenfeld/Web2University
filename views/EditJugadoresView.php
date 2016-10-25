@@ -12,7 +12,7 @@ class EditJugadoresView{
     $this->smarty->assign('jugadores', $jugadores);
     $this->smarty->assign('equipos', $equipos);
     $this->smarty->assign('posiciones', $posiciones);
-    $this->smarty->display('templates/adminjugadores.tpl');
+    $this->smarty->display('templates/EditJugador.tpl');
   }
 }
  ?>

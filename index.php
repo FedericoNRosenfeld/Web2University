@@ -54,20 +54,19 @@ else{
       $Controller->AgregarJugador();
       break;
 
-  case ConfigApp::$ACTION_BORRAR_JUGADOR:
+    case ConfigApp::$ACTION_BORRAR_JUGADOR:
       $Controller = new AdminJugadoresController();
       $Controller->EliminarJugador();
       break;
-
     case ConfigApp::$ACTION_MODIFICAR_JUGADOR:
         $Controller = new AdminJugadoresController();
-        $Controller->vistaModificarJugador();
+        $Controller->MostrarEditarJugador();
         break;
       //muestra la misma vista que el admin de jugadores pero filtrada por equipo
-  case ConfigApp::$ACTION_ADM_JUGADOR_TEAM:
-      $Controller = new AdminJugadoresController();
-      $Controller-> MostrarAdmJugadorTeam();
-      break;
+      case ConfigApp::$ACTION_ADM_JUGADOR_TEAM:
+        $Controller = new AdminJugadoresController();
+        $Controller-> MostrarAdmJugadorTeam();
+        break;
   //-------------------------------------------------------------------------------------------
   //acciones respecto a Equipos
 

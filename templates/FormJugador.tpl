@@ -17,11 +17,11 @@
     </div>
     <div class="form-group">
       <label for="nombreJugador">Nombre</label>
-      <input type="text" class="form-control" name="nombre" placeholder="Lebron James" required>
+      <input type="text" class="form-control" id="form-jugador-nombre" name="nombre" placeholder="Lebron James" required>
     </div>
     <div class="form-group">
       <label for="numeroJugador">Numero</label>
-      <input type="number" class="form-control" name="numero"  placeholder="23">
+      <input type="number" class="form-control" id="form-jugador-numero" name="numero"  placeholder="23">
     </div>
     <div class="form-group">
       <label for="numeroJugador">Imagen</label>

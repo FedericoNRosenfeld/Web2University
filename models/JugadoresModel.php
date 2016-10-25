@@ -50,6 +50,12 @@ class JugadoresModel extends BaseModel {
       return $consulta->fetchAll();
     }
 
+    function getJugador($id_jugador){
+      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion INNER JOIN Imagenes ON Jugadores.fk_imagen = Imagenes.rk_id_imagen WHERE id_jugador=$id_jugador");
+      $consulta->execute();
+      return $consulta->fetchAll();
+    }
+
     function GetAll(){
       $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion INNER JOIN Imagenes ON Jugadores.fk_imagen = Imagenes.rk_id_imagen");
       $consulta->execute();

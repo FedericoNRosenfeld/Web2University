@@ -30,6 +30,15 @@ class AdminJugadoresController{
 
   }
 
+  function MostrarEditarJugador(){
+    $Jugadores = $this->MJugadores->getAll();
+    $Equipos = $this->MEquipos-> getAll();
+    $Posiciones = $this->MPosiciones->getAll();
+
+    $view = new EditJugadoresView();
+    $view->mostrar($Jugadores,$Equipos,$Posiciones);
+  }
+
   function MostrarAdmJugadorTeam(){
     if(isset($_REQUEST['id']))  {
       $Jugadores = $this->MJugadores->getJugadoresEquipo($_REQUEST['id']);
@@ -68,15 +77,6 @@ class AdminJugadoresController{
        //$this->modelimagen->borrarImagen($this->modelImagenes($this->modelJ->getImagenAsociada('id')));  BORRAR LA IAMGEN ASOCIADA AL JUGADOR
        $this->MJugadores->eliminarJugador($key);
        $this->MostrarAdminJugadores();
- }
-
- function vistaModificarJugador(){
-   $Jugadores = $this->MJugadores->getAll();
-   $Equipos = $this->MEquipos-> getAll();
-   $Posiciones = $this->MPosiciones->getAll();
-
-   $view = new EditJugadoresView();
-   $view->mostrar($Jugadores,$Equipos,$Posiciones);
  }
 
   function ModificarJugador(){
