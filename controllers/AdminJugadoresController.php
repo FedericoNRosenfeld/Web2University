@@ -31,12 +31,14 @@ class AdminJugadoresController{
   }
 
   function MostrarEditarJugador(){
-    $Jugadores = $this->MJugadores->getAll();
-    $Equipos = $this->MEquipos-> getAll();
-    $Posiciones = $this->MPosiciones->getAll();
+    if(isset($_REQUEST['id']))  {
+      $Jugador = $this->MJugadores->getJugador($_REQUEST['id']);
+      $Equipos = $this->MEquipos-> getAll();
+      $Posiciones = $this->MPosiciones->getAll();
 
-    $view = new EditJugadoresView();
-    $view->mostrar($Jugadores,$Equipos,$Posiciones);
+      $view = new EditJugadoresView();
+      $view->mostrar($Jugador,$Equipos,$Posiciones);
+    }
   }
 
   function MostrarAdmJugadorTeam(){

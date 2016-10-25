@@ -12,6 +12,7 @@ class AdminJugadoresView{
     $this->smarty->assign('jugadores', $jugadores);
     $this->smarty->assign('equipos', $equipos);
     $this->smarty->assign('posiciones', $posiciones);
+    $this->smarty->assign('TextBotonFormJugadores',"Crear");
     $this->smarty->display('templates/adminjugadores.tpl');
   }
 }

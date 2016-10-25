@@ -2,7 +2,8 @@
   <div class="col-xs-12">
     <h2 class="text-center">Añadir jugador</h2>
     {$nombreSelector="equipoJugador"}
-    {include file='FormJugador.tpl' links=$equipos links=$nombreSelector links=$posiciones}
+    {$jugador['nombre']=""}{$jugador['numero']=""}
+    {include file='FormJugador.tpl' links=$equipos links=$jugador links=$nombreSelector links=$posiciones links=$TextBotonFormJugadores}
   </div>
 </div>
 <div class="row col-sm-6">

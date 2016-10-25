@@ -17,15 +17,15 @@
     </div>
     <div class="form-group">
       <label for="nombreJugador">Nombre</label>
-      <input type="text" class="form-control" id="form-jugador-nombre" name="nombre" placeholder="Lebron James" required>
+      <input type="text" class="form-control" id="form-jugador-nombre" name="nombre" placeholder="Lebron James" value="{$jugador['nombre']}" required>
     </div>
     <div class="form-group">
       <label for="numeroJugador">Numero</label>
-      <input type="number" class="form-control" id="form-jugador-numero" name="numero"  placeholder="23">
+      <input type="number" class="form-control" id="form-jugador-numero" name="numero"  placeholder="23" value="{$jugador['numero']}">
     </div>
     <div class="form-group">
       <label for="numeroJugador">Imagen</label>
       <input type="file" class="form-control" id="jugador-imagen" name="imagen" required value="">
     </div>
-    <button id="crear-jugador" class="btn btn-default center-block">Crear</button>
+    <button id="crear-jugador" class="btn btn-default center-block">{$TextBotonFormJugadores}</button>
   </form>
