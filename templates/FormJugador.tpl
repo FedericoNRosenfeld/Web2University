@@ -25,7 +25,7 @@
     </div>
     <div class="form-group">
       <label for="numeroJugador">Imagen</label>
-      <input type="file" class="form-control" id="jugador-imagen" name="imagen" required value="">
+      <input type="file" class="form-control" id="jugador-imagen" name="imagen" value="">
     </div>
-    <button id="crear-jugador" class="btn btn-default center-block">{$TextBotonFormJugadores}</button>
+    <button id="{$IdBtnForm}" class="btn btn-default center-block">{$TextBotonFormJugadores}</button>
   </form>

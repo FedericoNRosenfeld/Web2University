@@ -88,11 +88,16 @@ class AdminJugadoresController{
            ,"equipo"=>$_REQUEST['equipo']
            ,"posicion"=>$_REQUEST['posicion']
            ,"posicion"=>$_REQUEST['numero']
+           ,"imagen"=>$_FILES['imagen']
          );
-       $this->MJugadores->modificarJugador($jugador);
-       $this->MostrarAdminJugadores();
-     }
-   }
+       if($this->MJugadores->modificarJugador($jugador)){
 
+       } else {
+
+       }
+     } else {
+     echo "Datos incompletos, complete todos los campos";
+   }
+ }
 }
   ?>

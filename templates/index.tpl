@@ -26,7 +26,8 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- JS propio -->
     <script src="js/constantes.js"></script>
-    <script src="js/partialRender.js"></script>
     <script src="js/firstLoad.js"></script>
+    <script src="js/partialRender.js"></script>
+
   </body>
 </html>

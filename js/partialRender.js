@@ -68,13 +68,27 @@ function ActualizarBindeos(){
 
   //Mostrar Editar Jugador
   $("."+ACTION_MODIFICAR_JUGADOR).on("click",function(){
-    var IdElemento = $(this).attr("data-id");
-    injectContentByName(ACTION_MODIFICAR_JUGADOR,"&id="+IdElemento);
+    PlayOffs.ULTIMO_ID_JUGADOR = $(this).attr("data-id");
+    injectContentByName(ACTION_MODIFICAR_JUGADOR,"&id="+PlayOffs.ULTIMO_ID_JUGADOR);
   });
 
-  //Si se presiona el boton editar
+  //Si se presiona el boton guardar del editar formulario
   $("#"+REF_FORMULARIO_EDITA_JUGADOR).on("click",function(){
-    alert("");
+    var Info = new FormData(document.getElementById(REF_FORMULARIO_EDITA_JUGADOR));
+    Info.append("id_jugador",PlayOffs.ULTIMO_ID_JUGADOR);
+    $.post({
+        url:PREFIJO_ACTION+ACTION_MODIFICAR_JUGADOR,
+        data:Info,
+        processData: false,  // tell jQuery not to process the data
+        contentType: false   // tell jQuery not to set contentType
+      }).success(function(resultData){
+          alert(resultData);
+          injectContentByName(ACTION_MOSTRAR_ADM,"");
+
+        }).error(function(jqxml, status, errorThrown){
+          console.log(errorThrown);
+      });
+        return false;
   });
 
   //Si se apreta en el boton crear jugador
