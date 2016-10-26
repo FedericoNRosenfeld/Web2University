@@ -87,14 +87,12 @@ class AdminJugadoresController{
             "nombre"=>$_REQUEST['nombre']
            ,"equipo"=>$_REQUEST['equipo']
            ,"posicion"=>$_REQUEST['posicion']
-           ,"posicion"=>$_REQUEST['numero']
+           ,"numero"=>$_REQUEST['numero']
+           ,"id_jugador"=>$_REQUEST['id_jugador']
            ,"imagen"=>$_FILES['imagen']
          );
-       if($this->MJugadores->modificarJugador($jugador)){
-
-       } else {
-
-       }
+       $id = $_REQUEST['id_jugador'];
+       echo $this->MJugadores->modificarJugador($jugador);
      } else {
      echo "Datos incompletos, complete todos los campos";
    }

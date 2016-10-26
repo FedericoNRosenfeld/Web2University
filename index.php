@@ -62,6 +62,10 @@ else{
         $Controller = new AdminJugadoresController();
         $Controller->MostrarEditarJugador();
         break;
+    case ConfigApp::$ACTION_GUARDAR_EDICION_JUGADOR:
+        $Controller = new AdminJugadoresController();
+        $Controller->ModificarJugador();
+        break;
       //muestra la misma vista que el admin de jugadores pero filtrada por equipo
       case ConfigApp::$ACTION_ADM_JUGADOR_TEAM:
         $Controller = new AdminJugadoresController();

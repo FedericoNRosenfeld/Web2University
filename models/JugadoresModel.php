@@ -37,9 +37,24 @@ class JugadoresModel extends BaseModel {
     }
 
     function modificarJugador($jugador){
+      //reemplazamos la imagen si se quiso reemplazar
+      if ($jugador['imagen']["tmp_name"]!=null){
+        $RegistroJugador=$this->getJugador($jugador['id_jugador']);
+        $MImagenes = new ImagenesModel();
+        // si ocurrio un error al modificar la imagen mandamos un codigo -2
+        if(!$MImagenes->reemplazarImagen($RegistroJugador[0]['url'],$jugador['imagen'])) {
+          return "Ocurrio un error al intentar reemplazar/guardar la imagen";
+        }
+      }
       // ME ESTOY GUIANDO DEL UPDATE DE W3SCHOOL ('UPDATE Customers SET ContactName='Alfred Schmidt', City='Hamburg' WHERE CustomerName='Alfreds Futterkiste';
-      $consulta = $this->db->prepare('UPDATE Jugadores SET posicion= '.$jugador['posicion'].',numero='.$jugador['numero'].',imagen='.$jugador['imagen'].'WHERE id_jugador='.$jugador['id_jugador'].'');
-      $sentencia->execute(array($key));
+      try {
+        $consulta = $this->db->prepare('UPDATE Jugadores SET posicion= '.$jugador['posicion'].',numero='.$jugador['numero'].' WHERE id_jugador='.$jugador['id_jugador']);
+        $consulta->execute();
+        return "Jugador modificado correctamente";
+      }
+      catch (PDOException $ex) {
+        return "Ocurrio un error al editar la DB";
+      }
     }
 
 

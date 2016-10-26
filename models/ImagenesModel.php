@@ -27,5 +27,14 @@ class ImagenesModel extends BaseModel {
     }
 
   }
+
+  //la idea es sobreescribir el registro
+  function reemplazarImagen($archivo,$nombre){
+    if (move_uploaded_file($archivo["tmp_name"], $nombre)){
+      return true;
+    } else { //en caso de que no se haya podido subir
+      return false;
+    }
+  }
 }
 ?>

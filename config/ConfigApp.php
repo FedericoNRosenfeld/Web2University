@@ -20,6 +20,7 @@ class ConfigApp{
   public static $ACTION_AGREGAR_JUGADOR = 'agregar_jugador';
   public static $ACTION_BORRAR_JUGADOR = 'borrar_jugador';
   public static $ACTION_MODIFICAR_JUGADOR = 'modificar_jugador';
+  public static $ACTION_GUARDAR_EDICION_JUGADOR = 'guardar_mod_jugador';
   public static $ACTION_ADM_JUGADOR_TEAM = 'adm_jugador_team';
 
   // Seccion de vistas

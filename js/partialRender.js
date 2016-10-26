@@ -73,11 +73,11 @@ function ActualizarBindeos(){
   });
 
   //Si se presiona el boton guardar del editar formulario
-  $("#"+REF_FORMULARIO_EDITA_JUGADOR).on("click",function(){
+  $("#"+BOTON_EDITAR_JUGADOR).on("click",function(){
     var Info = new FormData(document.getElementById(REF_FORMULARIO_EDITA_JUGADOR));
     Info.append("id_jugador",PlayOffs.ULTIMO_ID_JUGADOR);
     $.post({
-        url:PREFIJO_ACTION+ACTION_MODIFICAR_JUGADOR,
+        url:PREFIJO_ACTION+ACTION_GUARDAR_EDICION_JUGADOR,
         data:Info,
         processData: false,  // tell jQuery not to process the data
         contentType: false   // tell jQuery not to set contentType
