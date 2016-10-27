@@ -1,13 +1,7 @@
 <?php
-include_once 'libs/Smarty.class.php';
+include_once 'BaseView.php';
 
-class IndexView{
-  private $smarty;
-
-  function __construct()
-  {
-    $this->smarty = new Smarty();
-  }
+class IndexView extends BaseView{
 
   function mostrar(){
     $this->smarty->display('templates/index.tpl');

@@ -1,12 +1,7 @@
 <?php
-include_once 'libs/Smarty.class.php';
+include_once 'BaseView.php';
 
-class AdminEquiposView{
-  private $smarty;
-
-  function __construct(){
-    $this->smarty = new Smarty();
-  }
+class AdminEquiposView extends BaseView{
 
   function mostrar($equipos){
     $this->smarty->assign('equipos', $equipos);

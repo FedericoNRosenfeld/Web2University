@@ -1,14 +1,7 @@
 <?php
-include_once 'libs/Smarty.class.php';
+include_once 'BaseView.php';
 
-class FixtureView
-{
-  private $smarty;
-
-  function __construct()
-  {
-    $this->smarty = new Smarty();
-  }
+class FixtureView extends BaseView{
 
   function mostrar(){
     $this->smarty->display('templates/fixture.tpl');
