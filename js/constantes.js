@@ -14,6 +14,7 @@ const ACTION_GUARDAR_EDICION_JUGADOR = 'guardar_mod_jugador';
 
 const ACTION_AGREGAR_POSICION = 'agregar_posicion';
 const ACTION_BORRAR_POSICION = 'borrar_posicion';
+const ACTION_EDITAR_POSICION = 'editar_posicion';
 
 const BOTON_CREAR_JUGADOR="crear-jugador";
 const BOTON_EDITAR_JUGADOR = "boton-editar-jugador";

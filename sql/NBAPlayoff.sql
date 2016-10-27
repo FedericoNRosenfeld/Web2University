@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 19, 2016 at 09:24 PM
+-- Generation Time: Oct 26, 2016 at 09:47 PM
 -- Server version: 5.7.15-0ubuntu0.16.04.1
 -- PHP Version: 5.6.24-0+deb8u1
 
@@ -89,7 +89,17 @@ INSERT INTO `Imagenes` (`rk_id_imagen`, `url`) VALUES
 (14, 'images/hornets.png'),
 (15, 'images/raptors.png'),
 (16, 'images/pacers.png'),
-
+(17, 'images/luchov.jpg'),
+(21, 'images/580810ed5b613_Foto0067.jpg'),
+(22, 'images/58081127db63e_Foto0067.jpg'),
+(23, 'images/5808113f1ac46_Foto0067.jpg'),
+(24, 'images/5808114dc1761_Foto0067.jpg'),
+(25, 'images/58081260816c0_13873223_1235372273163707_2951754966666823568_n.jpg'),
+(26, 'images/580812cf22186_2016-07-10 17.18.08.jpg'),
+(27, 'images/580812ffdbcff_2016-09-08 14.40.57.jpg'),
+(28, 'images/58082a525f10c_2016-07-10 17.18.08.jpg'),
+(29, 'images/58093e350e5e8_2016-07-10 17.18.08.jpg'),
+(30, 'images/58093ea26f16b_2016-09-08 14.40.57.jpg');
 
 -- --------------------------------------------------------
 
@@ -116,7 +126,8 @@ INSERT INTO `Jugadores` (`id_jugador`, `fk_id_equipo`, `nombre`, `posicion`, `nu
 (3, 9, 'Markel Broun', 1, 10, 0),
 (4, 9, 'Chris Andersen', 2, 0, 0),
 (5, 2, '34', 2, 2, 0),
-
+(6, 9, 'LuchoV', 1, 3, 17),
+(7, 10, 'Muddy', 2, 15, 29);
 
 -- --------------------------------------------------------
 
@@ -205,12 +216,12 @@ ALTER TABLE `Equipos`
 -- AUTO_INCREMENT for table `Imagenes`
 --
 ALTER TABLE `Imagenes`
-  MODIFY `rk_id_imagen` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `rk_id_imagen` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `Jugadores`
 --
 ALTER TABLE `Jugadores`
-  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `Partidos`
 --

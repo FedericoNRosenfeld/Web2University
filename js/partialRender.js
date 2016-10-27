@@ -44,6 +44,10 @@ function ActualizarBindeos(){
       });
       return false;
   });
+  // BOTON editar posicion
+  $("."+ACTION_EDITAR_POSICION).on("click",function(){
+    alert("");
+  });
 
   //Eliminar posicion BOTON_ELIMINAR_POSICION
   $("."+ACTION_BORRAR_POSICION).on("click",function(){
