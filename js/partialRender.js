@@ -50,6 +50,25 @@ function ActualizarBindeos(){
     injectContentByName(ACTION_VMODIFICAR_POSICION,"&id="+PlayOffs.ULTIMO_ID_POSICION);
   });
 
+  // BOTON para guardar la posicion editada
+  $("#"+BOTON_UPDATE_POSICION).on("click",function(){
+    var Info = new FormData(document.getElementById(REF_FORMULARIO_EDITA_POSICION));
+    Info.append("id",PlayOffs.ULTIMO_ID_POSICION);
+    $.post({
+        url:PREFIJO_ACTION+ACTION_MODIFICAR_POSICION,
+        data:Info,
+        processData: false,  // tell jQuery not to process the data
+        contentType: false   // tell jQuery not to set contentType
+      }).success(function(resultData){
+          alert(resultData);
+          injectContentByName(ACTION_MOSTRAR_ADM,"");
+
+        }).error(function(jqxml, status, errorThrown){
+          console.log(errorThrown);
+      });
+        return false;
+  });
+
   //Eliminar posicion BOTON_ELIMINAR_POSICION
   $("."+ACTION_BORRAR_POSICION).on("click",function(){
     $.post({

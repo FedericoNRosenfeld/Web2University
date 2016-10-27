@@ -45,8 +45,13 @@ class PosicionesModel extends BaseModel {
 
   // VERSION CON PASO DE NOMBRE E ID VIA PARAMETRO
   function modificarPosicion($posicion_nombre,$posicion_id){
-    $consulta = $this->db->prepare('UPDATE Posicion SET nombre_posicion=? WHERE rk_id_posicion=?');
-    $consulta->execute(array($posicion));
+    try {
+      $consulta = $this->db->prepare('UPDATE Posiciones SET nombre_posicion="'.$posicion_nombre.'" WHERE rk_id_posicion='.$posicion_id);
+      $consulta->execute();
+      return true;
+    } catch(PDOException $ex) {
+      return false;
+    }
   }
 }
  ?>

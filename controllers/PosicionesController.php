@@ -43,8 +43,15 @@ class PosicionesController{
   }
 
   function modificarPosicion(){
-     // VERSION CON PASO DE NOMBRE E ID VIA PARAMETRO
-      $this->MPosiciones->modificarPosicion($_POST['nombre_posicion'],$_POST['rk_id_posicion']);
+    if (isset($_REQUEST['id'])){
+     if($this->MPosiciones->modificarPosicion($_POST['posicion'],$_POST['id'])){
+       echo "Posicion modificada";
+     } else {
+       echo "Error de base de datos";
+     }
+   } else {
+     echo "Error parmetros";
+   }
   }
 
 

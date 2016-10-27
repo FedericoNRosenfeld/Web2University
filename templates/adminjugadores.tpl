@@ -9,8 +9,8 @@
 <div class="row col-sm-6">
   <div class="col-xs-12">
     <h2 class="text-center">Añadir posicion</h2>
-    {$nombreposicion=""}
-    {include file='FormPosiciones.tpl' links=$nombreposicion}
+    {$nombreposicion=""}{$IdFormularioPosicion="form-agregar-posicion"}{$IdBotonFormPosicion="nueva-posicion"}{$TextBtnFormPosicion="Crear"}
+    {include file='FormPosiciones.tpl' links=$nombreposicion links=$IdFormularioPosicion links=$TextBtnFormPosicion}
   </div>
   <div class="col-xs-12">
     <h2 class="text-center">Listado de posiciones</h2>
