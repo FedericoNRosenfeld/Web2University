@@ -32,6 +32,7 @@ class ConfigApp{
 
   //En cuanto a posiciones
   public static $ACTION_VER_POSICIONES = 'ver_posiciones';
+  public static $ACTION_VMODIFICAR_POSICION = 'vista_mod_posicion';
 
   //En cuanto a los directorios
   public static $DIRECTORIO_DE_IMAGENES = 'images/';

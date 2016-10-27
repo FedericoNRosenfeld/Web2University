@@ -48,12 +48,12 @@ class JugadoresModel extends BaseModel {
       }
       // ME ESTOY GUIANDO DEL UPDATE DE W3SCHOOL ('UPDATE Customers SET ContactName='Alfred Schmidt', City='Hamburg' WHERE CustomerName='Alfreds Futterkiste';
       try {
-        $consulta = $this->db->prepare('UPDATE Jugadores SET fk_id_equipo='.$jugador['equipo'].',posicion='.$jugador['posicion'].',numero='.$jugador['numero'].' WHERE id_jugador='.$jugador['id_jugador']);
+        $consulta = $this->db->prepare('UPDATE Jugadores SET fk_id_equipo='.$jugador['equipo'].',nombre="'.$jugador['nombre'].'" ,posicion='.$jugador['posicion'].',numero='.$jugador['numero'].' WHERE id_jugador='.$jugador['id_jugador']);
         $consulta->execute();
         return "Jugador modificado correctamente";
       }
       catch (PDOException $ex) {
-        return "Ocurrio un error al editar la DB";
+        return $ex;
       }
     }
 

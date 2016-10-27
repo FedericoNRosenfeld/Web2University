@@ -32,6 +32,10 @@ class PosicionesController{
     }
   }
 
+  function mostrarModificarPosicion(){
+    echo "Esto tiene que ser implementado";
+  }
+
   function modificarPosicion(){
      // VERSION CON PASO DE NOMBRE E ID VIA PARAMETRO
       $this->MPosiciones->modificarPosicion($_POST['nombre_posicion'],$_POST['rk_id_posicion']);

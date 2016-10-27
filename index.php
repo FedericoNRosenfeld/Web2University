@@ -82,15 +82,19 @@ else{
     $Controller->AgregarPosicion();
     break;
 
-case ConfigApp::$ACTION_BORRAR_POSICION:
+  case ConfigApp::$ACTION_BORRAR_POSICION:
     $Controller = new PosicionesController();
     $Controller->borrarPosicion();
     break;
 
+  case ConfigApp::$ACTION_VMODIFICAR_POSICION:
+    $Controller = new PosicionesController();
+    $Controller->mostrarModificarPosicion();
+    break;
   case ConfigApp::$ACTION_MODIFICAR_POSICION:
-      $Controller = new PosicionesController();
-      $Controller->ModificarPosicion();
-      break;
+    $Controller = new PosicionesController();
+    $Controller->ModificarPosicion();
+    break;
 
 //---------------------------------------------------------------------------------------------
 // Ver jugadores de un Equipo en especifico
