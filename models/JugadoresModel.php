@@ -42,7 +42,7 @@ class JugadoresModel extends BaseModel {
         $RegistroJugador=$this->getJugador($jugador['id_jugador']);
         $MImagenes = new ImagenesModel();
         // si ocurrio un error al modificar la imagen mandamos un codigo -2
-        if(!$MImagenes->reemplazarImagen($RegistroJugador[0]['url'],$jugador['imagen'])) {
+        if(!$MImagenes->reemplazarImagen($jugador['imagen'],$RegistroJugador['url'])) {
           return "Ocurrio un error al intentar reemplazar/guardar la imagen";
         }
       }
@@ -68,7 +68,7 @@ class JugadoresModel extends BaseModel {
     function getJugador($id_jugador){
       $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion INNER JOIN Imagenes ON Jugadores.fk_imagen = Imagenes.rk_id_imagen WHERE id_jugador=$id_jugador");
       $consulta->execute();
-      return $consulta->fetchAll();
+      return $consulta->fetchAll()[0];
     }
 
     function GetAll(){
