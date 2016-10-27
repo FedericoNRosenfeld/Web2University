@@ -1,5 +1,6 @@
 <?php
 include_once 'models/PosicionesModel.php';
+include_once 'views/EditPosicionesView.php';
 
 class PosicionesController{
   function __construct(){
@@ -33,7 +34,12 @@ class PosicionesController{
   }
 
   function mostrarModificarPosicion(){
-    echo "Esto tiene que ser implementado";
+    if (isset($_REQUEST['id'])){
+      $vistaEdit = new EditPosicionesView();
+      $vistaEdit->mostrar($this->MPosiciones->getPosicion($_REQUEST['id']));
+    } else {
+      echo "error";
+    }
   }
 
   function modificarPosicion(){

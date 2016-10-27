@@ -9,6 +9,12 @@ class PosicionesModel extends BaseModel {
     return $consulta->fetchAll();
   }
 
+  function getPosicion($id){
+    $consulta = $this->db->prepare("SELECT * FROM Posiciones WHERE rk_id_posicion=".$id);
+    $consulta->execute();
+    return $consulta->fetchAll()[0];
+  }
+
   function agregarPosicion($posicion){
     try {
       $consulta = $this->db->prepare('INSERT INTO Posiciones(nombre_posicion) VALUES(:nombre_posicion)');

@@ -9,7 +9,8 @@
 <div class="row col-sm-6">
   <div class="col-xs-12">
     <h2 class="text-center">Añadir posicion</h2>
-    {include file='FormPosiciones.tpl'}
+    {$nombreposicion=""}
+    {include file='FormPosiciones.tpl' links=$nombreposicion}
   </div>
   <div class="col-xs-12">
     <h2 class="text-center">Listado de posiciones</h2>

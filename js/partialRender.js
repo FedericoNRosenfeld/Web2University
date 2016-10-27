@@ -47,10 +47,7 @@ function ActualizarBindeos(){
   // BOTON editar posicion
   $("."+BOTON_EDITAR_POSICION).on("click",function(){
     PlayOffs.ULTIMO_ID_POSICION = $(this).attr("data-id");
-    injectContentByName(ACTION_VMODIFICAR_POSICION,"&id="+PlayOffs.ULTIMO_ID_JUGADOR);
-    //var ValorCampo=$("#cont-nombre-"+IdElemento).html();
-    //$("#cont-nombre-"+IdElemento).html("<input id='editor-posicion' class='form-control' type='text' value='"+ValorCampo+"'>");
-    //$(this).text("Guardar");
+    injectContentByName(ACTION_VMODIFICAR_POSICION,"&id="+PlayOffs.ULTIMO_ID_POSICION);
   });
 
   //Eliminar posicion BOTON_ELIMINAR_POSICION
