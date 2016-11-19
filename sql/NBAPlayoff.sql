@@ -2,10 +2,10 @@
 -- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 26, 2016 at 09:47 PM
--- Server version: 5.7.15-0ubuntu0.16.04.1
--- PHP Version: 5.6.24-0+deb8u1
+-- Servidor: localhost
+-- Tiempo de generación: 19-11-2016 a las 18:54:00
+-- Versión del servidor: 5.7.16-0ubuntu0.16.04.1
+-- Versión de PHP: 5.6.24-0+deb8u1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `NBAPlayoff`
+-- Base de datos: `NBAPlayoff`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Equipos`
+-- Estructura de tabla para la tabla `Equipos`
 --
 
 CREATE TABLE `Equipos` (
@@ -35,7 +35,7 @@ CREATE TABLE `Equipos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Equipos`
+-- Volcado de datos para la tabla `Equipos`
 --
 
 INSERT INTO `Equipos` (`id`, `rk_nombre_equipo`, `abreviacion`, `imagen`, `Categoria`) VALUES
@@ -59,7 +59,7 @@ INSERT INTO `Equipos` (`id`, `rk_nombre_equipo`, `abreviacion`, `imagen`, `Categ
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Imagenes`
+-- Estructura de tabla para la tabla `Imagenes`
 --
 
 CREATE TABLE `Imagenes` (
@@ -68,7 +68,7 @@ CREATE TABLE `Imagenes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Imagenes`
+-- Volcado de datos para la tabla `Imagenes`
 --
 
 INSERT INTO `Imagenes` (`rk_id_imagen`, `url`) VALUES
@@ -104,7 +104,7 @@ INSERT INTO `Imagenes` (`rk_id_imagen`, `url`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Jugadores`
+-- Estructura de tabla para la tabla `Jugadores`
 --
 
 CREATE TABLE `Jugadores` (
@@ -117,11 +117,11 @@ CREATE TABLE `Jugadores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Jugadores`
+-- Volcado de datos para la tabla `Jugadores`
 --
 
 INSERT INTO `Jugadores` (`id_jugador`, `fk_id_equipo`, `nombre`, `posicion`, `numero`, `fk_imagen`) VALUES
-(1, 1, 'Ian Clark', 1, 21, 0),
+(1, 2, 'Ian Clarki', 1, 1, 0),
 (2, 1, 'JaVale MgGee', 2, 1, 0),
 (3, 9, 'Markel Broun', 1, 10, 0),
 (4, 9, 'Chris Andersen', 2, 0, 0),
@@ -132,7 +132,7 @@ INSERT INTO `Jugadores` (`id_jugador`, `fk_id_equipo`, `nombre`, `posicion`, `nu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Partidos`
+-- Estructura de tabla para la tabla `Partidos`
 --
 
 CREATE TABLE `Partidos` (
@@ -147,7 +147,7 @@ CREATE TABLE `Partidos` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Posiciones`
+-- Estructura de tabla para la tabla `Posiciones`
 --
 
 CREATE TABLE `Posiciones` (
@@ -156,32 +156,46 @@ CREATE TABLE `Posiciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Posiciones`
+-- Volcado de datos para la tabla `Posiciones`
 --
 
 INSERT INTO `Posiciones` (`rk_id_posicion`, `nombre_posicion`) VALUES
 (1, 'Defensor'),
-(2, 'Centro');
+(2, 'Centrox');
+
+-- --------------------------------------------------------
 
 --
--- Indexes for dumped tables
+-- Estructura de tabla para la tabla `Usuarios`
+--
+
+CREATE TABLE `Usuarios` (
+  `id_user` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `pass` varchar(255) NOT NULL,
+  `salt` varchar(255) NOT NULL,
+  `tipo` smallint(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `Equipos`
+-- Indices de la tabla `Equipos`
 --
 ALTER TABLE `Equipos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `imagen` (`imagen`);
 
 --
--- Indexes for table `Imagenes`
+-- Indices de la tabla `Imagenes`
 --
 ALTER TABLE `Imagenes`
   ADD PRIMARY KEY (`rk_id_imagen`);
 
 --
--- Indexes for table `Jugadores`
+-- Indices de la tabla `Jugadores`
 --
 ALTER TABLE `Jugadores`
   ADD PRIMARY KEY (`id_jugador`),
@@ -190,7 +204,7 @@ ALTER TABLE `Jugadores`
   ADD KEY `fk_imagen` (`fk_imagen`);
 
 --
--- Indexes for table `Partidos`
+-- Indices de la tabla `Partidos`
 --
 ALTER TABLE `Partidos`
   ADD PRIMARY KEY (`id`),
@@ -198,52 +212,63 @@ ALTER TABLE `Partidos`
   ADD KEY `equipo2` (`equipo2`);
 
 --
--- Indexes for table `Posiciones`
+-- Indices de la tabla `Posiciones`
 --
 ALTER TABLE `Posiciones`
   ADD PRIMARY KEY (`rk_id_posicion`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indices de la tabla `Usuarios`
+--
+ALTER TABLE `Usuarios`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `Equipos`
+-- AUTO_INCREMENT de la tabla `Equipos`
 --
 ALTER TABLE `Equipos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
--- AUTO_INCREMENT for table `Imagenes`
+-- AUTO_INCREMENT de la tabla `Imagenes`
 --
 ALTER TABLE `Imagenes`
   MODIFY `rk_id_imagen` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
--- AUTO_INCREMENT for table `Jugadores`
+-- AUTO_INCREMENT de la tabla `Jugadores`
 --
 ALTER TABLE `Jugadores`
   MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT for table `Partidos`
+-- AUTO_INCREMENT de la tabla `Partidos`
 --
 ALTER TABLE `Partidos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `Posiciones`
+-- AUTO_INCREMENT de la tabla `Posiciones`
 --
 ALTER TABLE `Posiciones`
   MODIFY `rk_id_posicion` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT de la tabla `Usuarios`
+--
+ALTER TABLE `Usuarios`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `Equipos`
+-- Filtros para la tabla `Equipos`
 --
 ALTER TABLE `Equipos`
   ADD CONSTRAINT `imagen` FOREIGN KEY (`imagen`) REFERENCES `Imagenes` (`rk_id_imagen`);
 
 --
--- Constraints for table `Jugadores`
+-- Filtros para la tabla `Jugadores`
 --
 ALTER TABLE `Jugadores`
   ADD CONSTRAINT `Jugadores_ibfk_1` FOREIGN KEY (`fk_imagen`) REFERENCES `Imagenes` (`rk_id_imagen`) ON DELETE NO ACTION,
@@ -251,7 +276,7 @@ ALTER TABLE `Jugadores`
   ADD CONSTRAINT `posicion` FOREIGN KEY (`posicion`) REFERENCES `Posiciones` (`rk_id_posicion`);
 
 --
--- Constraints for table `Partidos`
+-- Filtros para la tabla `Partidos`
 --
 ALTER TABLE `Partidos`
   ADD CONSTRAINT `equipo1` FOREIGN KEY (`equipo1`) REFERENCES `Equipos` (`id`),
