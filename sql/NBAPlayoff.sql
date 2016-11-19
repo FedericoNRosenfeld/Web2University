@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-11-2016 a las 18:54:00
+-- Tiempo de generación: 19-11-2016 a las 19:56:05
 -- Versión del servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versión de PHP: 5.6.24-0+deb8u1
 
@@ -19,6 +19,20 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `NBAPlayoff`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `Comentarios`
+--
+
+CREATE TABLE `Comentarios` (
+  `id` int(11) NOT NULL,
+  `id_user_coment` int(11) NOT NULL,
+  `comentario` varchar(500) NOT NULL,
+  `item_valorado` int(11) NOT NULL,
+  `valoracion` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -182,6 +196,14 @@ CREATE TABLE `Usuarios` (
 --
 
 --
+-- Indices de la tabla `Comentarios`
+--
+ALTER TABLE `Comentarios`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_user_coment` (`id_user_coment`),
+  ADD KEY `item_valorado` (`item_valorado`);
+
+--
 -- Indices de la tabla `Equipos`
 --
 ALTER TABLE `Equipos`
@@ -228,6 +250,11 @@ ALTER TABLE `Usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `Comentarios`
+--
+ALTER TABLE `Comentarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `Equipos`
 --
 ALTER TABLE `Equipos`
@@ -260,6 +287,13 @@ ALTER TABLE `Usuarios`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `Comentarios`
+--
+ALTER TABLE `Comentarios`
+  ADD CONSTRAINT `Comentarios_ibfk_1` FOREIGN KEY (`id_user_coment`) REFERENCES `Usuarios` (`id_user`),
+  ADD CONSTRAINT `Comentarios_ibfk_2` FOREIGN KEY (`item_valorado`) REFERENCES `Jugadores` (`id_jugador`);
 
 --
 -- Filtros para la tabla `Equipos`

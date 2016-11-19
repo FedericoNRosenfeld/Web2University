@@ -76,5 +76,9 @@ class JugadoresModel extends BaseModel {
       $consulta->execute();
       return $consulta->fetchAll();
     }
+
+    private function getValoracion($id){
+      return 5;
+    }
 }
  ?>
