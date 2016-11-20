@@ -1,5 +1,6 @@
 <?php
 require_once "BaseModel.php";
+require_once "ImagenesModel.php";
 
 class JugadoresModel extends BaseModel {
 
