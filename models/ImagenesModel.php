@@ -2,19 +2,18 @@
 require_once "BaseModel.php";
 
 class ImagenesModel extends BaseModel {
-  private $DirectorioImg = "images/";
-  private $path;
-  private $id_img;
 
-  function getIdImg(){
-    return $this->id_img;
-  }
 
-  function agregarImagen($archivo){
+  function agregarImagen($id_jugador,$imagen){
     //agregamos la imagen a la estructura de directorios
-    $this->path=$this->DirectorioImg.uniqid()."_".$archivo["name"];
-
-    if (move_uploaded_file($archivo["tmp_name"], $this->path)){
+    foreach ($imagenes as $key => $imagen) {
+          $path="images/".uniqid()."_".$imagen["name"];
+          move_uploaded_file($imagen["tmp_name"],$path);
+          $insertImagen = $this->db->prepare("INSERT INTO Imagenes(id_jugador,url) VALUES(?,?)");
+          $insertImagen->execute(array($id_jugador,$path));
+        }
+/*
+    if (move_uploaded_file($imagen["tmp_name"], $this->path)){
       //agregamos el registro a la base de datos
       $consulta = $this->db->prepare('INSERT INTO Imagenes(url) VALUES(:url)');
       $consulta->execute(array(":url"=> $this->path));
@@ -24,17 +23,18 @@ class ImagenesModel extends BaseModel {
       return true;
     } else { //en caso de que no se haya podido subir
       return false;
-    }
-
+    }*/
   }
 
-  //la idea es sobreescribir el registro
-  function reemplazarImagen($archivo,$nombre){
-    if (move_uploaded_file($archivo["tmp_name"], $nombre)){
-      return true;
-    } else { //en caso de que no se haya podido subir
-      return false;
+    function borrarImagenes($key){
+      $consulta = $this->db->prepare('DELETE FROM Imagenes WHERE id_jugador=?');
+      $consulta->execute(array($key));
     }
+  }
+
+  function borrarImagen($key){
+    $consulta = $this->db->prepare('DELETE FROM Imagenes WHERE rk_id_imagen=?');
+    $consulta->execute(array($key));
   }
 }
 ?>

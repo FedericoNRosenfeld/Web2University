@@ -6,7 +6,6 @@ include_once 'views/EditJugadoresView.php';
 include_once 'models/EquiposModel.php';
 include_once 'models/JugadoresModel.php';
 include_once 'models/PosicionesModel.php';
-include_once 'models/ImagenesModel.php';
 
 class AdminJugadoresController{
 
@@ -91,13 +90,12 @@ class AdminJugadoresController{
            ,"posicion"=>$_REQUEST['posicion']
            ,"numero"=>$_REQUEST['numero']
            ,"id_jugador"=>$_REQUEST['id_jugador']
-           ,"imagen"=>$_FILES['imagen']
          );
        //$id = $_REQUEST['id_jugador'];
        echo $this->MJugadores->modificarJugador($jugador);
      } else {
      echo "Datos incompletos, complete todos los campos";
    }
- }
+  }
 }
   ?>

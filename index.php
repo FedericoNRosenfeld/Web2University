@@ -77,6 +77,18 @@ else{
         $Controller = new AdminJugadoresController();
         $Controller-> MostrarAdmJugadorTeam();
         break;
+  //---------------------------------------------------------------------------------------------
+  // Acciones respecto a los Imagenes
+
+  case ConfigApp::$ACTION_AGREGAR_IMAGEN:
+      $Controller = new ImagenesController();
+      $Controller->AgregarImagen();
+      break;
+    //muestra la misma vista que el admin de jugadores pero filtrada por equipo
+    case ConfigApp::$ACTION_BORRAR_IMAGEN:
+      $Controller = new ImagenesController();
+      $Controller-> EliminarImagen();
+      break;
   //-------------------------------------------------------------------------------------------
   //acciones respecto a Equipos
 

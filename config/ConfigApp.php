@@ -23,7 +23,9 @@ class ConfigApp{
   public static $ACTION_MODIFICAR_JUGADOR = 'modificar_jugador';
   public static $ACTION_GUARDAR_EDICION_JUGADOR = 'guardar_mod_jugador';
   public static $ACTION_ADM_JUGADOR_TEAM = 'adm_jugador_team';
-
+  // Acciones respecto a los Jugadores
+  public static $ACTION_AGREGAR_IMAGEN = 'agregar_imagen';
+  public static $ACTION_BORRAR_IMAGEN = 'borrar_imagen';
   // Seccion de vistas
   public static $ACTION_VER_JUGADORES_EQUIPO = 'ver_jugadores_equipo';
   public static $ACTION_VER_JUGADORES = 'ver_jugadores';
