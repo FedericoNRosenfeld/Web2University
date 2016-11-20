@@ -10,6 +10,7 @@ include_once 'controllers/AdminJugadoresController.php';
 include_once 'controllers/JugadoresController.php';
 include_once 'controllers/AdminEquiposController.php';
 include_once 'controllers/PosicionesController.php';
+include_once 'controllers/ComentariosController.php';
 
 $indexController = new indexController();
 
@@ -48,6 +49,11 @@ else{
     break;
   //---------------------------------------------------------------------------------------------
     // Acciones respecto a los Jugadores
+
+    case ConfigApp::$ACTION_MOSTRAR_JUGADORES_GRAL:
+      $Controller = new JugadoresController();
+      $Controller->MostrarJugadoresGral();
+      break;
 
     case ConfigApp::$ACTION_AGREGAR_JUGADOR:
       $Controller = new AdminJugadoresController();

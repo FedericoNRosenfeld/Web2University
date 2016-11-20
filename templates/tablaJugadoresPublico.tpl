@@ -4,6 +4,7 @@
     <th>Posicion</th>
     <th>Numero</th>
     <th>Equipo</th>
+    <th>Valoraciones</th>
     <th>Foto</th>
   </thead>
   <tbody id="tablaJugadoresAdmin">
@@ -13,6 +14,7 @@
       <td>{$jugador['nombre_posicion']}</td>
       <td>{$jugador['numero']}</td>
       <td>{$jugador['rk_nombre_equipo']}</td>
+      <td>5 <button type="button" class="btn btn-default">Ver comentarios</button> </td>
       <td><img class="EnlaceEquipo img-responsive" src="{$jugador['url']}"></img></td>
     </tr>
     {/foreach}

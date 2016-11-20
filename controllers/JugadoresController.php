@@ -17,12 +17,14 @@ class JugadoresController {
   }
 
     function ListarJugadoresTeam(){
-
-      $this->view->mostrarEquipo($this->model->getJugadoresEquipo($_REQUEST['id']));// con esto va a mostrar los juagdores que tengan como equipo el id del Equipo solicitado
+      $this->view->mostrarPublico($this->model->getJugadoresEquipo($_REQUEST['id']));// con esto va a mostrar los juagdores que tengan como equipo el id del Equipo solicitado
     }
 
     function ListarJugadores(){
        $jugadores = $this->modelo->GetAllJugadores();
     }
 
+    function MostrarJugadoresGral(){
+      $this->view->mostrarPublico($this->model->GetAll());
+    }
 }

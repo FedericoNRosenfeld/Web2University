@@ -2,6 +2,7 @@
 
 include_once 'views/AdminJugadoresView.php';
 include_once 'views/EditJugadoresView.php';
+
 include_once 'models/EquiposModel.php';
 include_once 'models/JugadoresModel.php';
 include_once 'models/PosicionesModel.php';
@@ -49,6 +50,7 @@ class AdminJugadoresController{
       $this->view->mostrar($Jugadores,$Equipos,$Posiciones);
     }
   }
+
 // SECTOR DE JUGADORES
   function AgregarJugador(){ // agregar un jugador a la BD ---> JUGADORES
     if( (isset($_REQUEST['nombre']))
