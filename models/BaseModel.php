@@ -1,5 +1,5 @@
 <?php
-require_once "config/ConfigDB.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/tpeweb2/config/ConfigDB.php";
 
 // la idea de este modelo es la de ocuparse de la conexion con la base de datos
 class BaseModel {

@@ -1,15 +1,11 @@
 <?php
-require_once 'comentarios_api.php';
+require_once 'ComentariosApi.php';
 
 $url_elements = explode('/', rtrim($_REQUEST['parametros'], '/'));  // divido la accion con los parametros
 if(count($url_elements)>0){                                         // si existen parametros actúo
   $api_name = ucfirst($url_elements[0]) . 'Api';
-  if (!($api_name == 'Api') && class_exists($api_name)) { //que sea API + categoria/noticia
-      $api = new $api_name($_REQUEST['parametros']); //api es un nuevo api cat según nombre parametro
-      echo $api->processAPI();
-      return;
-  }
+  $api = new ComentariosApi($_REQUEST['parametros']);
+  echo $api->processAPI();
 }
 
-echo "No endpoint ".$url_elements[0];
 ?>
