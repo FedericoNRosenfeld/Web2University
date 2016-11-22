@@ -8,9 +8,8 @@ class UsuariosModel extends BaseModel {
   }
 
   function autenticar($usuario){
-    $salt = "hola esto es un salt inseguro?";
     $hash = "";
-    if (password_verify($usuario["pass"]+$salt, $hash)) {
+    if (password_verify($usuario["pass"], $hash)) {
       //comenzamos la Sesion
       session_start();
       $_SESSION["id"] = $usuario["id"];

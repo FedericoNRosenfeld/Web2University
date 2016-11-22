@@ -34,6 +34,10 @@ include_once 'views/ErrorsView.php';
       return true;
     }
 
+    function esUser(){
+      return true;
+    }
+
     function crearUser(){
       //capturamos los parametros del formulario
       if (isset($_POST["user"]) && isset($_POST["pass"])){

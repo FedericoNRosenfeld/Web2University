@@ -12,6 +12,7 @@ include_once 'controllers/AdminEquiposController.php';
 include_once 'controllers/PosicionesController.php';
 include_once 'controllers/ComentariosController.php';
 include_once 'controllers/SesionController.php';
+include_once 'controllers/AdminComentariosController.php';
 
 $indexController = new indexController();
 
@@ -119,6 +120,11 @@ else{
   case ConfigApp::$ACTION_COMENTARIOS_JUGADOR:
       $Controller = new ComentariosController();
       $Controller->MostrarPaginaComentarios();
+      break;
+
+  case ConfigApp::$ACTION_IR_ADM_COMENTARIOS:
+      $Controller = new AdminComentariosController();
+      $Controller->MostrarAdminComentarios();
       break;
 //---------------------------------------------------------------------------------------------
 // Sesiones de usuario

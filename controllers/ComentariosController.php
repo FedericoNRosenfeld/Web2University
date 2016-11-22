@@ -20,8 +20,7 @@ class ComentariosController extends SesionController {
   function MostrarPaginaComentarios(){
     //comprobamos si tenemos el id para mostrar la pagina de comentarios
     if (isset($_REQUEST['id'])){
-        $Parametros["Jugador"]=$this->modelJ->getJugador($_REQUEST['id']);
-        $this->vista->mostrar($Parametros);
+        $this->vista->mostrar($this->modelJ->getJugador($_REQUEST['id']),$this->esUser());
     }
   }
 }

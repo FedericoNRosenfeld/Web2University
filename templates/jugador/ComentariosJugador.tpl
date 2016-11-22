@@ -7,3 +7,9 @@
 <h2>Comentarios:</h2>
 <div id="zona_de_comentarios">
 </div>
+{if esUser}
+  <div class="col-sm-3">
+    <h3>Comentar</h3>
+    {include file='form/FormComentarios.tpl'}
+  </div>
+{/if}
