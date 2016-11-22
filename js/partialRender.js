@@ -6,6 +6,10 @@ $("document").ready(function(){
 });
 
 function ActualizarBindeos(){
+  // si ya hay un intervalo de actualizacion lo cancelamos
+  if(PlayOffs.ID_INTERVALO_ACTUALIZA_COMENTARIOS !==null){
+    
+  }
   // bindeo de comentarios
   BindeosComentarios();
 

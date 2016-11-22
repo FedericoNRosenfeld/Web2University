@@ -31,3 +31,5 @@ const REF_FORMULARIO_EDITA_POSICION = "form-edita-posicion";
 
 //comentarios de Jugadores
 const ACTION_COMENTARIOS_JUGADOR = 'comentarios_jugador';
+const REF_ID_AREA_COMENTARIOS = "zona_de_comentarios";
+const INTERVALO_DE_ACTUALIZACION = 2000;
