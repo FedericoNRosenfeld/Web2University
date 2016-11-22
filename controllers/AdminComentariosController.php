@@ -1,8 +1,10 @@
 <?php
+include_once 'controllers/SesionController.php';
+
 include_once 'models/ComentariosModel.php';
 include_once 'models/JugadoresModel.php';
 
-class AdminComentariosController{
+class AdminComentariosController extends SesionController{
   private $vista;
   private $modelC;
   private $modelJ;

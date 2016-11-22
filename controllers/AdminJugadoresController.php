@@ -1,4 +1,5 @@
 <?php
+include_once 'controllers/SesionController.php';
 
 include_once 'views/AdminJugadoresView.php';
 include_once 'views/EditJugadoresView.php';
@@ -7,7 +8,7 @@ include_once 'models/EquiposModel.php';
 include_once 'models/JugadoresModel.php';
 include_once 'models/PosicionesModel.php';
 
-class AdminJugadoresController{
+class AdminJugadoresController extends SesionController{
 
   private $view;
   private $MJugadores;

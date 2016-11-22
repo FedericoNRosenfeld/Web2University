@@ -1,9 +1,12 @@
 <?php
+include_once 'controllers/SesionController.php';
+
 include_once 'views/ComentariosJugadoresView.php';
+
 include_once 'models/ComentariosModel.php';
 include_once 'models/JugadoresModel.php';
 
-class ComentariosController{
+class ComentariosController extends SesionController {
   private $vista;
   private $modelC;
   private $modelJ;

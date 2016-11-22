@@ -1,4 +1,6 @@
 <?php
+// de este controlador tienen que heredar todos los que usen sesiones
+
 include_once 'views/LoginView.php';
 
   class SesionController{
@@ -14,7 +16,10 @@ include_once 'views/LoginView.php';
     }
 
     function autenticacion(){
+      //capturamos los parametros del formulario
+      if (isset($_POST["user"]) && isset($_POST["pass"])){
 
+      }
     }
 
     function desAutenticacion(){

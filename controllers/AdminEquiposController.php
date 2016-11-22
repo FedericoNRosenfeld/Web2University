@@ -1,8 +1,11 @@
 <?php
+include_once 'controllers/SesionController.php';
+
 include_once "models/EquiposModel.php";
+
 include_once "views/AdminEquiposView.php";
 
-class AdminEquiposController {
+class AdminEquiposController extends SesionController {
   private $modeloEquipo;
   private $viewEquipo;
 

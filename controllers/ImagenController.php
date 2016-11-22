@@ -1,8 +1,9 @@
 <?php
+include_once 'controllers/SesionController.php';
 
 include_once 'models/ImagenesModel.php';
 
-class ImagenesController{
+class ImagenesController extends SesionController{
 
   private $model;
 

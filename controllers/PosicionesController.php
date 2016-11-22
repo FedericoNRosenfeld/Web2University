@@ -2,7 +2,7 @@
 include_once 'models/PosicionesModel.php';
 include_once 'views/EditPosicionesView.php';
 
-class PosicionesController{
+class PosicionesController extends SesionController{
   function __construct(){
     $this->MPosiciones = new PosicionesModel();
   }
