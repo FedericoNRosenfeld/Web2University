@@ -10,6 +10,10 @@ var PlayOffs = {
 
 //funciones comunes
 function injectContentByName(name,params){
+  // si ya hay un intervalo de actualizacion lo cancelamos
+  if(PlayOffs.ID_INTERVALO_ACTUALIZA_COMENTARIOS !==null){
+    clearTimeout(PlayOffs.ID_INTERVALO_ACTUALIZA_COMENTARIOS);
+  }
   $.ajax({
     url:PREFIJO_ACTION+name+params,
     method:"GET",
