@@ -36,71 +36,91 @@ class AdminJugadoresController extends SesionController{
   }
 
   function MostrarEditarJugador(){
-    if(isset($_REQUEST['id']))  {
-      $Jugador = $this->MJugadores->getJugador($_REQUEST['id']);
-      $Equipos = $this->MEquipos-> getAll();
-      $Posiciones = $this->MPosiciones->getAll();
+    if ($this->esAdmin()){
+      if(isset($_REQUEST['id']))  {
+        $Jugador = $this->MJugadores->getJugador($_REQUEST['id']);
+        $Equipos = $this->MEquipos-> getAll();
+        $Posiciones = $this->MPosiciones->getAll();
 
-      $view = new EditJugadoresView();
-      $view->mostrar($Jugador,$Equipos,$Posiciones);
+        $view = new EditJugadoresView();
+        $view->mostrar($Jugador,$Equipos,$Posiciones);
+      }
+    } else {
+      $this->zonaRestringida();
     }
   }
 
   function MostrarAdmJugadorTeam(){
-    if(isset($_REQUEST['id']))  {
-      $Jugadores = $this->MJugadores->getJugadoresEquipo($_REQUEST['id']);
-      $Equipos = $this->MEquipos-> getAll();
-      $Posiciones = $this->MPosiciones->getAll();
-      $this->view->mostrar($Jugadores,$Equipos,$Posiciones);
+    if ($this->esAdmin()){
+      if(isset($_REQUEST['id']))  {
+        $Jugadores = $this->MJugadores->getJugadoresEquipo($_REQUEST['id']);
+        $Equipos = $this->MEquipos-> getAll();
+        $Posiciones = $this->MPosiciones->getAll();
+        $this->view->mostrar($Jugadores,$Equipos,$Posiciones);
+      }
+    } else {
+      $this->zonaRestringida();
     }
   }
 
 // SECTOR DE JUGADORES
   function AgregarJugador(){ // agregar un jugador a la BD ---> JUGADORES
-    if( (isset($_REQUEST['nombre']))
-     && (isset($_REQUEST['equipo']))
-     && (isset($_REQUEST['posicion']))
-     && (isset($_REQUEST['numero']))
-     && (isset($_FILES['imagen'])))  {
-       $jugador = array(
-         "nombre"=>$_REQUEST['nombre'],
-         "equipo"=>$_REQUEST['equipo'],
-         "posicion"=>$_REQUEST['posicion'] ,
-         "numero"=>$_REQUEST['numero'],
-         "imagen"=>$_FILES['imagen']
-         );
-       if (!$this->MJugadores->agregarJugador($jugador)){
-         echo "error al subir a la DB";
-       } else {
-         echo "Jugador cargado satisfactoriamente";
-       }
-     }
-     else{
-       echo "jugador con datos incompletos";
-     }
-   }
+    if ($this->esAdmin()){
+      if( (isset($_REQUEST['nombre']))
+      && (isset($_REQUEST['equipo']))
+      && (isset($_REQUEST['posicion']))
+      && (isset($_REQUEST['numero']))
+      && (isset($_FILES['imagen'])))  {
+        $jugador = array(
+          "nombre"=>$_REQUEST['nombre'],
+          "equipo"=>$_REQUEST['equipo'],
+          "posicion"=>$_REQUEST['posicion'] ,
+          "numero"=>$_REQUEST['numero'],
+          "imagen"=>$_FILES['imagen']
+          );
+          if (!$this->MJugadores->agregarJugador($jugador)){
+            echo "error al subir a la DB";
+          } else {
+            echo "Jugador cargado satisfactoriamente";
+          }
+        }
+        else{
+          echo "jugador con datos incompletos";
+        }
+    } else {
+      $this->zonaRestringida();
+    }
+  }
 
  function EliminarJugador(){ //ELIMINA UN JUGADOR DE LA BASE DE DATOS Y ACOMODA LA VISTA EN LA TABLA DE ADMINJUGADORES
+   if ($this->esAdmin()){
        $key = $_GET['id'];
        //$this->modelimagen->borrarImagen($this->modelImagenes($this->modelJ->getImagenAsociada('id')));  BORRAR LA IAMGEN ASOCIADA AL JUGADOR
        $this->MJugadores->eliminarJugador($key);
        $this->MostrarAdminJugadores();
+   } else {
+     $this->zonaRestringida();
+   }
  }
 
   function ModificarJugador(){
-    if( (isset($_REQUEST['nombre'])) && (isset($_REQUEST['equipo']))  && (isset($_REQUEST['posicion'])) && (isset($_REQUEST['numero'])))  {
-       $jugador = array(
+    if ($this->esAdmin()){
+      if( (isset($_REQUEST['nombre'])) && (isset($_REQUEST['equipo']))  && (isset($_REQUEST['posicion'])) && (isset($_REQUEST['numero'])))  {
+        $jugador = array(
             "nombre"=>$_REQUEST['nombre']
            ,"equipo"=>$_REQUEST['equipo']
            ,"posicion"=>$_REQUEST['posicion']
            ,"numero"=>$_REQUEST['numero']
            ,"id_jugador"=>$_REQUEST['id_jugador']
          );
-       //$id = $_REQUEST['id_jugador'];
-       echo $this->MJugadores->modificarJugador($jugador);
-     } else {
-     echo "Datos incompletos, complete todos los campos";
-   }
+         //$id = $_REQUEST['id_jugador'];
+         echo $this->MJugadores->modificarJugador($jugador);
+        } else {
+          echo "Datos incompletos, complete todos los campos";
+        }
+    } else {
+      $this->zonaRestringida();
+    }
   }
 }
   ?>

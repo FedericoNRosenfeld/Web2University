@@ -42,6 +42,7 @@ include_once 'views/ErrorsView.php';
       return "Invitado";
     }
 
+    //esta funcioin sirve para "mostrar" un tpl con el cartel zona restringida, el tpl esta en nav/AccesoNoAutorizado.tpl
     function zonaRestringida(){
       $this->VistaError = new ErrorsView();
       $this->VistaError->MsgzonaRestringida();
