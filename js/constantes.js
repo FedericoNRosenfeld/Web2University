@@ -37,3 +37,6 @@ const INTERVALO_DE_ACTUALIZACION = 2000;
 
 //mensajes
 const MSG_NO_COMENTS = "No se pudieron obtener los comentarios";
+
+//Login
+const REF_BTN_INGRESAR = "boton_ingresar";

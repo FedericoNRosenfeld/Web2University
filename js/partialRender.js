@@ -9,6 +9,11 @@ function ActualizarBindeos(){
   // bindeo de comentarios
   BindeosComentarios();
 
+  //Si se hace click en el boton ingresar
+  $("#"+REF_BTN_INGRESAR).on("click",function(){
+    alert("Todavia no implementado");
+  });
+
   //Se hace click en los botones identificatorios de los equipos
   $(".EnlaceEquipo").on("click",function(){
     injectContentByName(ACTION_VER_JUGADORES_EQUIPO,"&id="+$(this).attr("id"));
