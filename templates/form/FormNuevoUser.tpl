@@ -8,5 +8,5 @@
     <label for="NombrePosicion">Contraseña</label>
     <input type="password" class="form-control" name="pass" required>
   </div>
-  <button class="btn btn-default" id="boton_ingresar">Crear usuario</button>
+  <button class="btn btn-default" id="guardar_user">Crear usuario</button>
 </form>
