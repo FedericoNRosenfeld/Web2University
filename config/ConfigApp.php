@@ -48,6 +48,7 @@ class ConfigApp{
   public static $ACTION_IR_A_LOGIN = "ingresar";
   public static $ACTION_IR_A_REGISTRO  = "ir_registrarse";
   public static $ACTION_REGISTRAR_USER = "guardar_user";
+  public static $USER_COMUN = "1";
 }
 
  ?>

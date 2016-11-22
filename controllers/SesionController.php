@@ -45,7 +45,9 @@ include_once 'views/ErrorsView.php';
     function crearUser(){
       //capturamos los parametros del formulario
       if (isset($_POST["user"]) && isset($_POST["pass"])){
-        $this->ModelUser->crear();
+        $usuario["user"]=$_POST["user"];
+        $usuario["pass"]=$_POST["pass"];
+        $this->ModelUser->crear($usuario);
       }
     }
 

@@ -4,7 +4,15 @@ require_once "BaseModel.php";
 class UsuariosModel extends BaseModel {
 
   function crear($datos) {
-    $clave = password_hash($datos['pass']);
+  //  try {
+      $consulta = $this->db->prepare('INSERT INTO Usuarios(nombre, pass, tipo) VALUES(?,?,?)');
+      $consulta->execute(array($datos['user'],password_hash($datos['pass'], PASSWORD_DEFAULT),2));
+      return true;
+  //  }
+    //catch(PDOException $ex)
+  //  {
+  //    return false;
+  //  }
   }
 
   function autenticar($usuario){

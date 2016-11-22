@@ -138,6 +138,11 @@ else{
       $Controller->mostrarRegistrarse();
       break;
 
+  case ConfigApp::$ACTION_REGISTRAR_USER:
+      $Controller = new SesionController();
+      $Controller->crearUser();
+      break;
+
 //---------------------------------------------------------------------------------------------
 // Ver jugadores de un Equipo en especifico
   case ConfigApp::$ACTION_VER_JUGADORES_EQUIPO:
