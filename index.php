@@ -133,6 +133,11 @@ else{
       $Controller->mostrarLogin();
       break;
 
+  case ConfigApp::$ACTION_IR_A_REGISTRO:
+      $Controller = new SesionController();
+      $Controller->mostrarRegistrarse();
+      break;
+
 //---------------------------------------------------------------------------------------------
 // Ver jugadores de un Equipo en especifico
   case ConfigApp::$ACTION_VER_JUGADORES_EQUIPO:

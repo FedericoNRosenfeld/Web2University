@@ -3,6 +3,12 @@ $("document").ready(function(){
   $(".navItem").click(function(){
     injectContentByName($(this).attr("name"),"");
   });
+
+  //si se hace click en admin comentarios
+  $("#ADMComents").on("click",function(){
+    injectContentByName($(this).attr("name"),"");
+    CargarTablaComents(REF_TABLA_ADM_COMENTARIOS);
+  });
 });
 
 function ActualizarBindeos(){
@@ -16,7 +22,7 @@ function ActualizarBindeos(){
 
   //Si se hace click en el boton crear nuevo usuraio
   $("#"+REF_BTN_IR_A_NUEVO_USER).on("click",function(){
-    alert("Este boton deberioa ir a la pantalla de creacion de un nuevo usuario");
+      injectContentByName(ACTION_IR_A_NUEVO_USER,"");
   });
 
   //Se hace click en los botones identificatorios de los equipos

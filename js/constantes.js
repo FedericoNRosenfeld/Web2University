@@ -41,4 +41,6 @@ const MSG_NO_COMENTS = "No se pudieron obtener los comentarios";
 
 //Login
 const REF_BTN_INGRESAR = "boton_ingresar";
-const REF_BTN_IR_A_NUEVO_USER = "mostrar_nuevo_user";
+const REF_BTN_IR_A_NUEVO_USER = "ir_registrarse";
+const ACTION_IR_A_NUEVO_USER = "ir_registrarse";
+const ACTION_REGISTRAR_USER = "guardar_user";

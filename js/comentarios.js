@@ -8,7 +8,7 @@ function HTMLComentario(Coment){
 }
 
 function HTMLTablaComentario(Coment){
-  var HTML="<div><p>Valoracion:"+Coment.valoracion+"</p><p>"+Coment.comentario+"</p></div>";
+  var HTML="<tr><p>Valoracion:"+Coment.valoracion+"</p><p>"+Coment.comentario+"</p></tr>";
   return HTML;
 }
 
@@ -19,7 +19,7 @@ function CargarTablaComents(RefTabla){
     JSON.parse(data).forEach(function(coment){
       Html+=HTMLComentario(coment);
     });
-    $("#"+RefTabla).html("Aca deberia cargarse una lista enorme de comentarios");
+    $("#"+RefTabla).html(Html);
   }).error(function(){
     $("#"+REF_ID_AREA_COMENTARIOS).html(MSG_NO_COMENTS);
   });
@@ -47,10 +47,5 @@ function BindeosComentarios(){
     //llamamos a la funcion que mostrar los comentarios ActualizarBindeos
     PlayOffs.ID_INTERVALO_ACTUALIZA_COMENTARIOS=setInterval(function(){ ActualizarComentarios();}, INTERVALO_DE_ACTUALIZACION);
 
-  });
-
-  //si se hace click en admin comentarios
-  $("#ADMComents").on("click",function(){
-    injectContentByName($(this).attr("name"),"",CargarTablaComents(REF_TABLA_ADM_COMENTARIOS));
   });
 }

@@ -18,6 +18,10 @@ include_once 'views/ErrorsView.php';
     function mostrarLogin(){
       $this->VistaLogin->mostrar();
     }
+    // mostramos un formulario para registrase un nuevo usuario (publico)
+    function mostrarRegistrarse(){
+      $this->VistaLogin->mostrarRegistrarse();
+    }
 
     function autenticacion(){
       //capturamos los parametros del formulario
