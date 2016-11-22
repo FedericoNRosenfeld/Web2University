@@ -34,6 +34,7 @@ const ACTION_COMENTARIOS_JUGADOR = 'comentarios_jugador';
 const REF_ID_AREA_COMENTARIOS = "zona_de_comentarios";
 const URL_API_COMENTS = "./api/comentario/";
 const INTERVALO_DE_ACTUALIZACION = 500;
+const REF_TABLA_ADM_COMENTARIOS = "tabla-Comentarios-Admin";
 
 //mensajes
 const MSG_NO_COMENTS = "No se pudieron obtener los comentarios";

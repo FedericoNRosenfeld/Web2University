@@ -1,5 +1,5 @@
 $("document").ready(function(){
-  //se hace click en los elemntos de avegacion
+  //se hace click en los elemntos de navegacion
   $(".navItem").click(function(){
     injectContentByName($(this).attr("name"),"");
   });

@@ -6,6 +6,6 @@
     <th>Comentario</th>
     <th>Acciones</th>
   </thead>
-  <tbody id="tablaComentariosAdmin">
+  <tbody id="tabla-Comentarios-Admin">
   </tbody>
 </table>
