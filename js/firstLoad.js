@@ -6,3 +6,19 @@ var PlayOffs = {
   ULTIMO_ID_JUGADOR:null,
   ULTIMO_ID_POSICION:null
 };
+
+//funciones comunes
+function injectContentByName(name,params){
+  $.ajax({
+    url:PREFIJO_ACTION+name+params,
+    method:"GET",
+    dataType:"html",
+    success: function(resultData){
+      $("#mainContent").html(resultData);
+      ActualizarBindeos()
+    },
+    error:function(jqxml, status, errorThrown){
+      console.log(errorThrown);
+    }
+  });
+}

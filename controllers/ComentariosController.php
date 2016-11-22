@@ -8,7 +8,7 @@ class ComentariosController{
     $this->vista = new ComentariosJugadoresView ();
   }
 
-  function MostrarContacto(){
+  function MostrarPaginaComentarios(){
     $this->vista->mostrar();
   }
 }

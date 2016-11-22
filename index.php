@@ -113,6 +113,12 @@ else{
     $Controller = new PosicionesController();
     $Controller->ModificarPosicion();
     break;
+//--------------------------------------------------------------------------------------------
+// con respecto a los comentarios de los jugadores
+  case ConfigApp::$ACTION_COMENTARIOS_JUGADOR:
+      $Controller = new ComentariosController();
+      $Controller->MostrarPaginaComentarios();
+      break;
 
 //---------------------------------------------------------------------------------------------
 // Ver jugadores de un Equipo en especifico

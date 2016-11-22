@@ -5,26 +5,9 @@ $("document").ready(function(){
   });
 });
 
-function injectContentByName(name,params){
-  $.ajax({
-    url:PREFIJO_ACTION+name+params,
-    method:"GET",
-    dataType:"html",
-    success: function(resultData){
-      $("#mainContent").html(resultData);
-      ActualizarBindeos()
-    },
-    error:function(jqxml, status, errorThrown){
-      console.log(errorThrown);
-    }
-  });
-}
-
 function ActualizarBindeos(){
-  //Si se hace click en los botones para ir a la seccion de comentarios de los jugadores
-  $("."+ACTION_COMENTARIOS_JUGADOR).on("click",function(){
-    alert();
-  });
+  // bindeo de comentarios
+  BindeosComentarios();
 
   //Se hace click en los botones identificatorios de los equipos
   $(".EnlaceEquipo").on("click",function(){
