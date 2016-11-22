@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-11-2016 a las 19:56:05
+-- Tiempo de generación: 22-11-2016 a las 01:55:46
 -- Versión del servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versión de PHP: 5.6.24-0+deb8u1
 
@@ -33,6 +33,13 @@ CREATE TABLE `Comentarios` (
   `item_valorado` int(11) NOT NULL,
   `valoracion` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `Comentarios`
+--
+
+INSERT INTO `Comentarios` (`id`, `id_user_coment`, `comentario`, `item_valorado`, `valoracion`) VALUES
+(2, 1, 'El Pipita de la NBA', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -78,42 +85,43 @@ INSERT INTO `Equipos` (`id`, `rk_nombre_equipo`, `abreviacion`, `imagen`, `Categ
 
 CREATE TABLE `Imagenes` (
   `rk_id_imagen` int(6) NOT NULL,
-  `url` varchar(250) NOT NULL
+  `url` varchar(250) NOT NULL,
+  `fk_id_jugador` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `Imagenes`
 --
 
-INSERT INTO `Imagenes` (`rk_id_imagen`, `url`) VALUES
-(0, 'images/sin-imagen.png'),
-(1, 'images/warriors.png'),
-(2, 'images/rockets.png'),
-(3, 'images/clippers.png'),
-(4, 'images/blazers.png'),
-(5, 'images/thunder.png'),
-(6, 'images/mavericks.png'),
-(7, 'images/spurs.png'),
-(8, 'images/grizzlies.png'),
-(9, 'images/cavaliers.png'),
-(10, 'images/pistons.png'),
-(11, 'images/hawks.png'),
-(12, 'images/celtics.png'),
-(13, 'images/heat.png'),
-(14, 'images/hornets.png'),
-(15, 'images/raptors.png'),
-(16, 'images/pacers.png'),
-(17, 'images/luchov.jpg'),
-(21, 'images/580810ed5b613_Foto0067.jpg'),
-(22, 'images/58081127db63e_Foto0067.jpg'),
-(23, 'images/5808113f1ac46_Foto0067.jpg'),
-(24, 'images/5808114dc1761_Foto0067.jpg'),
-(25, 'images/58081260816c0_13873223_1235372273163707_2951754966666823568_n.jpg'),
-(26, 'images/580812cf22186_2016-07-10 17.18.08.jpg'),
-(27, 'images/580812ffdbcff_2016-09-08 14.40.57.jpg'),
-(28, 'images/58082a525f10c_2016-07-10 17.18.08.jpg'),
-(29, 'images/58093e350e5e8_2016-07-10 17.18.08.jpg'),
-(30, 'images/58093ea26f16b_2016-09-08 14.40.57.jpg');
+INSERT INTO `Imagenes` (`rk_id_imagen`, `url`, `fk_id_jugador`) VALUES
+(0, 'images/sin-imagen.png', 1),
+(1, 'images/warriors.png', 2),
+(2, 'images/rockets.png', 3),
+(3, 'images/clippers.png', 4),
+(4, 'images/blazers.png', 5),
+(5, 'images/thunder.png', 6),
+(6, 'images/mavericks.png', 7),
+(7, 'images/spurs.png', 1),
+(8, 'images/grizzlies.png', 1),
+(9, 'images/cavaliers.png', 2),
+(10, 'images/pistons.png', 3),
+(11, 'images/hawks.png', 6),
+(12, 'images/celtics.png', 1),
+(13, 'images/heat.png', 2),
+(14, 'images/hornets.png', 3),
+(15, 'images/raptors.png', 4),
+(16, 'images/pacers.png', 5),
+(17, 'images/luchov.jpg', 6),
+(21, 'images/580810ed5b613_Foto0067.jpg', 7),
+(22, 'images/58081127db63e_Foto0067.jpg', 2),
+(23, 'images/5808113f1ac46_Foto0067.jpg', 3),
+(24, 'images/5808114dc1761_Foto0067.jpg', 4),
+(25, 'images/58081260816c0_13873223_1235372273163707_2951754966666823568_n.jpg', 4),
+(26, 'images/580812cf22186_2016-07-10 17.18.08.jpg', 2),
+(27, 'images/580812ffdbcff_2016-09-08 14.40.57.jpg', 6),
+(28, 'images/58082a525f10c_2016-07-10 17.18.08.jpg', 0),
+(29, 'images/58093e350e5e8_2016-07-10 17.18.08.jpg', 0),
+(30, 'images/58093ea26f16b_2016-09-08 14.40.57.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -192,6 +200,13 @@ CREATE TABLE `Usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Volcado de datos para la tabla `Usuarios`
+--
+
+INSERT INTO `Usuarios` (`id_user`, `nombre`, `pass`, `salt`, `tipo`) VALUES
+(1, 'admin', 'sdlfjñsklfsjkafjkadsnfas', 'dasfadsfds', 1);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -214,7 +229,8 @@ ALTER TABLE `Equipos`
 -- Indices de la tabla `Imagenes`
 --
 ALTER TABLE `Imagenes`
-  ADD PRIMARY KEY (`rk_id_imagen`);
+  ADD PRIMARY KEY (`rk_id_imagen`),
+  ADD KEY `fk_id_jugador` (`fk_id_jugador`);
 
 --
 -- Indices de la tabla `Jugadores`
@@ -253,7 +269,7 @@ ALTER TABLE `Usuarios`
 -- AUTO_INCREMENT de la tabla `Comentarios`
 --
 ALTER TABLE `Comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `Equipos`
 --
@@ -283,7 +299,7 @@ ALTER TABLE `Posiciones`
 -- AUTO_INCREMENT de la tabla `Usuarios`
 --
 ALTER TABLE `Usuarios`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --
@@ -305,7 +321,7 @@ ALTER TABLE `Equipos`
 -- Filtros para la tabla `Jugadores`
 --
 ALTER TABLE `Jugadores`
-  ADD CONSTRAINT `Jugadores_ibfk_1` FOREIGN KEY (`fk_imagen`) REFERENCES `Imagenes` (`rk_id_imagen`) ON DELETE NO ACTION,
+  ADD CONSTRAINT `Jugadores_ibfk_1` FOREIGN KEY (`id_jugador`) REFERENCES `Imagenes` (`fk_id_jugador`),
   ADD CONSTRAINT `equipo` FOREIGN KEY (`fk_id_equipo`) REFERENCES `Equipos` (`id`),
   ADD CONSTRAINT `posicion` FOREIGN KEY (`posicion`) REFERENCES `Posiciones` (`rk_id_posicion`);
 
