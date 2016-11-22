@@ -5,7 +5,7 @@ class EquiposView extends BaseView{
 
   function mostrar($equipos){
     $this->smarty->assign('equipos',$equipos);
-    $this->smarty->display('templates/equipos.tpl');
+    $this->smarty->display('equipo/equipos.tpl');
   }
 
 }

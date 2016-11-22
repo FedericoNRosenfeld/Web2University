@@ -8,7 +8,7 @@ class AdminJugadoresView extends BaseView{
     $this->smarty->assign('equipos', $equipos);
     $this->smarty->assign('posiciones', $posiciones);
     $this->smarty->assign('TextBotonFormJugadores',"Crear");
-    $this->smarty->display('templates/adminjugadores.tpl');
+    $this->smarty->display('jugador/adminjugadores.tpl');
   }
 }
  ?>

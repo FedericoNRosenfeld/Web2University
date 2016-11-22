@@ -8,7 +8,7 @@ class EditJugadoresView extends BaseView{
     $this->smarty->assign('posiciones', $posiciones);
     $this->smarty->assign('TextBotonFormJugadores', "Guardar");
     $this->smarty->assign('jugador',$jugador);
-    $this->smarty->display('templates/EditJugador.tpl');
+    $this->smarty->display('jugador/EditJugador.tpl');
   }
 }
  ?>
