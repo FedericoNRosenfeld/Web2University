@@ -14,7 +14,7 @@ class ComentariosApi extends ApiBase {
     switch ($this->method) {
       case 'GET':
         if(count($this->args) > 0){
-          return json_encode($this->model->getComentarioJugador($this->args[0])); //para ver comentarios correspondientes a un jugador determinado
+          return json_encode($this->model->getComentariosJugador($this->args[0])); //para ver comentarios correspondientes a un jugador determinado
         }
         else{
           return json_encode($this->model->getAll()); //Para ver todos los comentarios

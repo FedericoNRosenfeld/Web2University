@@ -3,8 +3,10 @@ require_once "BaseModel.php";
 
 class ComentariosModel extends BaseModel {
 
-  function getComentarioJugador($Id_Jugador){
-    return "no implementado ".$Id_Jugador;
+  function getComentariosJugador($id_jugador){
+    $consulta = $this->db->prepare("SELECT * FROM Comentarios WHERE id_user_coment=".$id_jugador);
+    $consulta->execute();
+    return $consulta->fetchAll();
   }
 
   function getAll(){
@@ -26,7 +28,7 @@ class ComentariosModel extends BaseModel {
   }
 
   function getUserValoracion($id_jugador){
-    $consulta = $this->db->prepare("SELECT * FROM Comentarios");
+    $consulta = $this->db->prepare("SELECT * FROM Comentarios WHERE id_user_coment=".$id_jugador);
     $consulta->execute();
     return $consulta->fetchAll();
   }
