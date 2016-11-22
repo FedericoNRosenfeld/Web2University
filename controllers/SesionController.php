@@ -24,7 +24,7 @@ include_once 'views/ErrorsView.php';
     }
 
     function esAdmin(){
-      return false;
+      return true;
     }
 
     function crearUser(){
