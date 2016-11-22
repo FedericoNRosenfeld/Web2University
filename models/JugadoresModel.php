@@ -17,7 +17,7 @@ class JugadoresModel extends BaseModel {
             ,":numero"=>$jugador['numero']
           ));
           $id = $this->db->lastInsertId();
-          $MImagenes->agregarImagen($id,$jugador['imagen']));
+          $MImagenes->agregarImagen($id,$jugador['imagen']);
           return true;
         }
         catch(PDOException $ex)

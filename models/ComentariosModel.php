@@ -8,7 +8,9 @@ class ComentariosModel extends BaseModel {
   }
 
   function getAll(){
-    return "todavia falta";
+    $consulta = $this->db->prepare("SELECT * FROM Comentarios");
+    $consulta->execute();
+    return $consulta->fetchAll();
   }
 
   function create($Comentario){

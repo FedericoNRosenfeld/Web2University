@@ -30,7 +30,7 @@ class ImagenesModel extends BaseModel {
       $consulta = $this->db->prepare('DELETE FROM Imagenes WHERE id_jugador=?');
       $consulta->execute(array($key));
     }
-  }
+  
 
   function borrarImagen($key){
     $consulta = $this->db->prepare('DELETE FROM Imagenes WHERE rk_id_imagen=?');
