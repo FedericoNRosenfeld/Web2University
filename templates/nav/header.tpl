@@ -22,7 +22,8 @@
         <li class="navItem" name="jugadores"><a href="#">Jugadores</a></li>
         <li class="navItem" name="contacto"><a href="#">Contacto</a></li>
         <li class="navItem" name="ingresar"><a href="#">Ingresar</a></li>
-        <li class="navItem" name="adminjugadores"><a href="#">Admin Jugadores</a></li>
+        {if $UserActual['Admin']}<li class="navItem" name="adminjugadores"><a href="#">Admin Jugadores</a></li>{/if}
+        <li> <a>Usuario: {$UserActual['Nombre']}</a></li>
         <!--<li class="navItem" name="adminequipos"><a href="#">Admin Equipos</a></li> -->
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -14,6 +14,11 @@ function ActualizarBindeos(){
     alert("Todavia no implementado");
   });
 
+  //Si se hace click en el boton crear nuevo usuraio
+  $("#"+REF_BTN_IR_A_NUEVO_USER).on("click",function(){
+    alert("Este boton deberioa ir a la pantalla de creacion de un nuevo usuario");
+  });
+
   //Se hace click en los botones identificatorios de los equipos
   $(".EnlaceEquipo").on("click",function(){
     injectContentByName(ACTION_VER_JUGADORES_EQUIPO,"&id="+$(this).attr("id"));

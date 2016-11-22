@@ -45,6 +45,7 @@ class ConfigApp{
 
   //con respecto a  sesiones de usuario
   public static $ACTION_IR_A_LOGIN = "ingresar";
+  public static $ACTION_IR_A_NUEVO_USER  = "mostrar_nuevo_user";
 }
 
  ?>

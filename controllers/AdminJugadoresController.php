@@ -22,13 +22,17 @@ class AdminJugadoresController extends SesionController{
   }
 
   function MostrarAdminJugadores(){
-    $Jugadores = $this->MJugadores->getAll();
-    $Equipos = $this->MEquipos-> getAll();
-    $Posiciones = $this->MPosiciones->getAll();
+    if ($this->esAdmin()){
+      $Jugadores = $this->MJugadores->getAll();
+      $Equipos = $this->MEquipos-> getAll();
+      $Posiciones = $this->MPosiciones->getAll();
 
-    $view = new AdminJugadoresView();
-    $view->mostrar($Jugadores,$Equipos,$Posiciones);
+      $view = new AdminJugadoresView();
+      $view->mostrar($Jugadores,$Equipos,$Posiciones);
 
+    } else {
+      $this->zonaRestringida();
+    }
   }
 
   function MostrarEditarJugador(){

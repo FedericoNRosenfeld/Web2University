@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    {include file='nav/header.tpl'}
+    {include file='nav/header.tpl' links=$UserActual}
 
     <!-- Seccion principal donde se injecta contenido -->
     <section id="mainContent" class="container">
