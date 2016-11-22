@@ -2,9 +2,15 @@
 include_once 'views/LoginView.php';
 
   class SesionController{
-    // comprobemos todos los datos por si las moscas
-    function pantallaLogin(){
+    private $VistaLogin;
 
+    function  __construct(){
+      $this->VistaLogin = new LoginView();
+    }
+
+    // comprobemos todos los datos por si las moscas
+    function mostrarLogin(){
+      $this->VistaLogin->mostrar();
     }
 
     function autenticacion(){

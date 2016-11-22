@@ -3,7 +3,7 @@ include_once 'BaseView.php';
 
 class LoginView extends BaseView{
 
-  function mostrarLogin(){
+  function mostrar(){
     $this->smarty->display('form/FormSesion.tpl');
   }
 }

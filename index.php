@@ -11,6 +11,7 @@ include_once 'controllers/JugadoresController.php';
 include_once 'controllers/AdminEquiposController.php';
 include_once 'controllers/PosicionesController.php';
 include_once 'controllers/ComentariosController.php';
+include_once 'controllers/SesionController.php';
 
 $indexController = new indexController();
 
@@ -118,6 +119,12 @@ else{
   case ConfigApp::$ACTION_COMENTARIOS_JUGADOR:
       $Controller = new ComentariosController();
       $Controller->MostrarPaginaComentarios();
+      break;
+//---------------------------------------------------------------------------------------------
+// Sesiones de usuario
+  case ConfigApp::$ACTION_IR_A_LOGIN:
+      $Controller = new SesionController();
+      $Controller->mostrarLogin();
       break;
 
 //---------------------------------------------------------------------------------------------
