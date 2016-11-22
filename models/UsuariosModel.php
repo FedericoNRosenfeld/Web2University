@@ -1,14 +1,13 @@
 <?php
 require_once "BaseModel.php";
 
-class PosicionesModel extends BaseModel {
+class UsuariosModel extends BaseModel {
 
-  function nuevo($datos) {
-    $salt = "hola esto es un salt inseguro?";
-    $clave = password_hash($datos['pass']+$salt, DEFAULT);
+  function crear($datos) {
+    $clave = password_hash($datos['pass']);
   }
 
-  function verificar($usuario){
+  function autenticar($usuario){
     $salt = "hola esto es un salt inseguro?";
     $hash = "";
     if (password_verify($usuario["pass"]+$salt, $hash)) {
@@ -25,8 +24,12 @@ class PosicionesModel extends BaseModel {
     }
   }
 
-  function salir(){
+  function desAutenticar(){
     session_destroy();
+  }
+
+  function modificar(){
+
   }
 
 }

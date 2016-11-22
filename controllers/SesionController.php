@@ -1,14 +1,17 @@
 <?php
 // de este controlador tienen que heredar todos los que usen sesiones
 
+include_once 'models/UsuariosModel.php';
 include_once 'views/LoginView.php';
 include_once 'views/ErrorsView.php';
 
   class SesionController{
     private $VistaLogin;
+    private $ModelUser;
 
     function  __construct(){
       $this->VistaLogin = new LoginView();
+      $this->ModelUser = new UsuariosModel();
     }
 
     // comprobemos todos los datos por si las moscas
@@ -19,7 +22,7 @@ include_once 'views/ErrorsView.php';
     function autenticacion(){
       //capturamos los parametros del formulario
       if (isset($_POST["user"]) && isset($_POST["pass"])){
-        return "";
+        $this->ModelUser->autenticar();
       }
     }
 
@@ -27,15 +30,19 @@ include_once 'views/ErrorsView.php';
       return true;
     }
 
+    function esDuenio(){
+      return true;
+    }
+
     function crearUser(){
       //capturamos los parametros del formulario
       if (isset($_POST["user"]) && isset($_POST["pass"])){
-        return "";
+        $this->ModelUser->crear();
       }
     }
 
     function desAutenticacion(){
-
+      $this->ModelUser->desAutenticar();
     }
 
     function usuarioActivo(){

@@ -42,6 +42,7 @@ class ConfigApp{
 
   //seccion de comentarios de jugadores
   public static $ACTION_COMENTARIOS_JUGADOR = 'comentarios_jugador';
+  public static $ACTION_IR_ADM_COMENTARIOS = 'admincomentarios';
 
   //con respecto a  sesiones de usuario
   public static $ACTION_IR_A_LOGIN = "ingresar";

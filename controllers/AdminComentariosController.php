@@ -16,7 +16,10 @@ class AdminComentariosController extends SesionController{
   }
 
   function MostrarAdminComentarios(){
-
+    if ($this->esAdmin()){
+    } else {
+      $this->zonaRestringida();
+    }
   }
 }
 ?>
