@@ -24,5 +24,11 @@ class ComentariosModel extends BaseModel {
   function delete($id_comentario){
 
   }
+
+  function getUserValoracion($id_jugador){
+    $consulta = $this->db->prepare("SELECT * FROM Comentarios");
+    $consulta->execute();
+    return $consulta->fetchAll();
+  }
 }
  ?>

@@ -39,6 +39,9 @@ class ConfigApp{
 
   //En cuanto a los directorios
   public static $DIRECTORIO_DE_IMAGENES = 'images/';
+
+  //seccion de comentarios de jugadores
+  public static $ACTION_COMENTARIOS_JUGADOR = 'comentarios_jugador';
 }
 
  ?>

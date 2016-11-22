@@ -21,6 +21,11 @@ function injectContentByName(name,params){
 }
 
 function ActualizarBindeos(){
+  //Si se hace click en los botones para ir a la seccion de comentarios de los jugadores
+  $("."+ACTION_COMENTARIOS_JUGADOR).on("click",function(){
+    alert();
+  });
+
   //Se hace click en los botones identificatorios de los equipos
   $(".EnlaceEquipo").on("click",function(){
     injectContentByName(ACTION_VER_JUGADORES_EQUIPO,"&id="+$(this).attr("id"));

@@ -28,3 +28,6 @@ const REF_FORMULARIO_CARGA_JUGADOR = "form-carga-jugador";
 const REF_FORMULARIO_CARGA_POSICION = "form-agregar-posicion";
 const REF_FORMULARIO_EDITA_JUGADOR = "form-editar-jugador";
 const REF_FORMULARIO_EDITA_POSICION = "form-edita-posicion";
+
+//comentarios de Jugadores
+const ACTION_COMENTARIOS_JUGADOR = 'comentarios_jugador';

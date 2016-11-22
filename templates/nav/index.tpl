@@ -12,13 +12,13 @@
   </head>
 
   <body>
-    {include file='header.tpl'}
+    {include file='nav/header.tpl'}
 
     <!-- Seccion principal donde se injecta contenido -->
     <section id="mainContent" class="container">
     </section>
 
-    {include file='footer.tpl'}
+    {include file='nav/footer.tpl'}
 
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
