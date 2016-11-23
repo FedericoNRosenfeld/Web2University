@@ -45,6 +45,13 @@ class JugadoresModel extends BaseModel {
       }
     }
 
+    private function AgregarValoraciones($consulta){
+      $ModelComentarios = new ComentariosModel();
+      for ($c=0;$c<count($consulta);$c++){
+        $consulta[$c]["valoracion"] = $ModelComentarios->getUserValoracion($consulta[$c]["id_jugador"]);
+      }
+      return $consulta;
+    }
 
     function getJugadoresEquipo($id_equipo){
       // Estas linea aparte de hacer la consulta une la tabla jugadores con la de posiciones y equipos para poder usar las claves foraneas
@@ -52,11 +59,7 @@ class JugadoresModel extends BaseModel {
       $consulta->execute();
       $consulta = $consulta->fetchAll();
 
-      $ModelComentarios = new ComentariosModel();
-      for ($c=0;$c<count($consulta);$c++){
-        $consulta[$c]["valoracion"] = $ModelComentarios->getUserValoracion($consulta[$c]["id_jugador"]);
-      }
-      return $consulta;
+      return $this->AgregarValoraciones($consulta);
     }
 
     function getJugador($id_jugador){
@@ -68,13 +71,9 @@ class JugadoresModel extends BaseModel {
     function GetAll(){
       $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion ");
       $consulta->execute();
-
       $consulta = $consulta->fetchAll();
-      $ModelComentarios = new ComentariosModel();
-      for ($c=0;$c<count($consulta);$c++){
-        $consulta[$c]["valoracion"] = $ModelComentarios->getUserValoracion($consulta[$c]["id_jugador"]);
-      }
-      return $consulta;
+
+      return $this->AgregarValoraciones($consulta);
     }
 }
  ?>

@@ -52,7 +52,7 @@ class ComentariosModel extends BaseModel {
     if ($Cantidad == 0){
       return "No hay valoraciones";
     } else {
-      return $Suma/($Cantidad+1);
+      return $Suma/($Cantidad);
     }
   }
 }
