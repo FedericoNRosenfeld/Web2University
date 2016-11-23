@@ -37,7 +37,7 @@ include_once dirname(__DIR__).'/views/ErrorsView.php';
       $User= SesionController::usuarioActivo();
       if ($User != "-1"){
         $ModelUser = new UsuariosModel();
-        return $ModelUser->getTipo($User)==ConfigApp::$USER_ADMIN;
+        return $ModelUser->getTipo($User)==ConfigApp::$USER_ADMIN || $ModelUser->getTipo($User)==ConfigApp::$USER_DUENIO;
       } else {
         return false;
       }
