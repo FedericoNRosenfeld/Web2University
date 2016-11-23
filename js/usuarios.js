@@ -17,10 +17,13 @@ function BindeosUsuarios(){
         type:"POST"
       })
       .success(function(data){
-        alert(data);
+        if (data){
+            alert("Usuario creado satisfactoriamente");
+            injectContentByName(ACTION_MOSTRAR_INICIO,"");
+        }
       })
       .error(function(jqxml, status, errorThrown){
-        console.log(errorThrown);
+        alert(TEXT_USER_NO_CREADO);
       });
       return false;
   });

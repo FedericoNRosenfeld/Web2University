@@ -47,7 +47,7 @@ include_once 'views/ErrorsView.php';
       if (isset($_POST["user"]) && isset($_POST["pass"])){
         $usuario["user"]=$_POST["user"];
         $usuario["pass"]=$_POST["pass"];
-        $this->ModelUser->crear($usuario);
+        return $this->ModelUser->crear($usuario);
       }
     }
 

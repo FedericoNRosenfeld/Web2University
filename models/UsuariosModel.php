@@ -4,15 +4,15 @@ require_once "BaseModel.php";
 class UsuariosModel extends BaseModel {
 
   function crear($datos) {
-  //  try {
+    try {
       $consulta = $this->db->prepare('INSERT INTO Usuarios(nombre, pass, tipo) VALUES(?,?,?)');
-      $consulta->execute(array($datos['user'],password_hash($datos['pass'], PASSWORD_DEFAULT),2));
+      $consulta->execute(array($datos['user'],password_hash($datos['pass'], PASSWORD_DEFAULT),ConfigApp::$USER_COMUN)); // por defecto son usuarios sin pribvilegios
       return true;
-  //  }
-    //catch(PDOException $ex)
-  //  {
-  //    return false;
-  //  }
+    }
+    catch(PDOException $ex)
+    {
+      return false;
+    }
   }
 
   function autenticar($usuario){

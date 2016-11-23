@@ -3,6 +3,7 @@
 const PREFIJO_ACTION ="index.php?action=";
 //navegacion
 const ACTION_MOSTRAR_ADM = 'adminjugadores';
+const ACTION_MOSTRAR_INICIO = 'home';
 
 const ACTION_VER_JUGADORES_EQUIPO = 'ver_jugadores_equipo';
 const ACTION_ADM_JUGADOR_TEAM = 'adm_jugador_team';
