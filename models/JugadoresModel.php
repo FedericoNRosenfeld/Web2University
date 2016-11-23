@@ -1,5 +1,6 @@
 <?php
 require_once "BaseModel.php";
+require_once "ComentariosModel.php";
 require_once "ImagenesModel.php";
 
 class JugadoresModel extends BaseModel {
@@ -49,7 +50,13 @@ class JugadoresModel extends BaseModel {
       // Estas linea aparte de hacer la consulta une la tabla jugadores con la de posiciones y equipos para poder usar las claves foraneas
       $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion WHERE fk_id_equipo=$id_equipo");
       $consulta->execute();
-      return $consulta->fetchAll();
+      $consulta = $consulta->fetchAll();
+
+      $ModelComentarios = new ComentariosModel();
+      for ($c=0;$c<count($consulta);$c++){
+        $consulta[$c]["valoracion"] = $ModelComentarios->getUserValoracion($consulta[$c]["id_jugador"]);
+      }
+      return $consulta;
     }
 
     function getJugador($id_jugador){
@@ -61,7 +68,13 @@ class JugadoresModel extends BaseModel {
     function GetAll(){
       $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion ");
       $consulta->execute();
-      return $consulta->fetchAll();
+
+      $consulta = $consulta->fetchAll();
+      $ModelComentarios = new ComentariosModel();
+      for ($c=0;$c<count($consulta);$c++){
+        $consulta[$c]["valoracion"] = $ModelComentarios->getUserValoracion($consulta[$c]["id_jugador"]);
+      }
+      return $consulta;
     }
 }
  ?>

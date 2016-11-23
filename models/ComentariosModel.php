@@ -38,9 +38,22 @@ class ComentariosModel extends BaseModel {
   }
 
   function getUserValoracion($id_jugador){
-    $consulta = $this->db->prepare("SELECT * FROM Comentarios WHERE id_user_coment=".$id_jugador);
+    $consulta = $this->db->prepare("SELECT * FROM Comentarios WHERE item_valorado=:v1");
+    $consulta->bindParam(':v1',$id_jugador);
     $consulta->execute();
-    return $consulta->fetchAll();
+
+    $consulta = $consulta->fetchAll();
+    $Cantidad=count($consulta);
+    $Suma=0;
+    foreach ($consulta as $c => $data) {
+      $Suma += $data['valoracion'];
+    }
+
+    if ($Cantidad == 0){
+      return "No hay valoraciones";
+    } else {
+      return $Suma/($Cantidad+1);
+    }
   }
 }
  ?>
