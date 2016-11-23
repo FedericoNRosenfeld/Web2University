@@ -2,13 +2,13 @@
 include_once 'models/PosicionesModel.php';
 include_once 'views/EditPosicionesView.php';
 
-class PosicionesController extends SesionController{
+class PosicionesController {
   function __construct(){
     $this->MPosiciones = new PosicionesModel();
   }
 
   function agregarPosicion(){
-    if ($this->esAdmin()){
+    if (SesionController::esAdmin()){
       if(isset($_REQUEST['posicion'])){
         if(!(empty($_REQUEST['posicion']))){
             if($this->MPosiciones->agregarPosicion($_REQUEST['posicion'])) {
@@ -26,7 +26,7 @@ class PosicionesController extends SesionController{
   }
 
   function borrarPosicion(){
-    if ($this->esAdmin()){
+    if (SesionController::esAdmin()){
       if(isset($_REQUEST['rk_id_posicion'])){
         if($this->MPosiciones->borrarPosicion($_REQUEST['rk_id_posicion'])) {
           echo "Posicion borrada satisfactoriamente";
@@ -42,7 +42,7 @@ class PosicionesController extends SesionController{
   }
 
   function mostrarModificarPosicion(){
-    if ($this->esAdmin()){
+    if (SesionController::esAdmin()){
       if (isset($_REQUEST['id'])){
         $vistaEdit = new EditPosicionesView();
         $vistaEdit->mostrar($this->MPosiciones->getPosicion($_REQUEST['id']));
@@ -55,7 +55,7 @@ class PosicionesController extends SesionController{
   }
 
   function modificarPosicion(){
-    if ($this->esAdmin()){
+    if (SesionController::esAdmin()){
       if (isset($_REQUEST['id'])){
         if($this->MPosiciones->modificarPosicion($_POST['posicion'],$_POST['id'])){
           echo "Posicion modificada";

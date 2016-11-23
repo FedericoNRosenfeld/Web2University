@@ -3,7 +3,7 @@ include_once 'controllers/SesionController.php';
 
 include_once 'views/IndexView.php';
 
-class indexController extends SesionController{
+class indexController{
   private $vista;
 
   function __construct(){
@@ -11,8 +11,8 @@ class indexController extends SesionController{
   }
 
   function mostrarIndex(){
-    $UserActual["Nombre"]=$this->usuarioActivo();
-    $UserActual["Admin"]=$this->esAdmin();
+    $UserActual["Nombre"]=SesionController::usuarioActivo();
+    $UserActual["Admin"]=SesionController::esAdmin();
 
     $this->vista->mostrar($UserActual);
   }

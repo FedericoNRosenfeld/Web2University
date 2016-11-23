@@ -5,7 +5,7 @@ include_once 'models/ComentariosModel.php';
 
 include_once 'views/ComentariosJugadoresView.php';
 
-class AdminComentariosController extends SesionController{
+class AdminComentariosController {
   private $vista;
   private $modelC;
 
@@ -15,7 +15,7 @@ class AdminComentariosController extends SesionController{
   }
 
   function MostrarAdminComentarios(){
-    if ($this->esAdmin()){
+    if (SesionController::esAdmin()){
       $this->vista->mostrarAdmin($this->modelC->getAll());
     } else {
       $this->zonaRestringida();

@@ -5,7 +5,7 @@ include_once "models/EquiposModel.php";
 
 include_once "views/AdminEquiposView.php";
 
-class AdminEquiposController extends SesionController {
+class AdminEquiposController {
   private $modeloEquipo;
   private $viewEquipo;
 

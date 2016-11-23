@@ -10,6 +10,7 @@ include_once 'views/ErrorsView.php';
     private $ModelUser;
 
     function  __construct(){
+      session_start();
       $this->VistaLogin = new LoginView();
     }
 
@@ -33,7 +34,7 @@ include_once 'views/ErrorsView.php';
     }
 
     function esAdmin(){
-      $User= $this->usuarioActivo();
+      $User= SesionController::usuarioActivo();
       if ($User != "-1"){
         $ModelUser = new UsuariosModel();
         return $ModelUser->getTipo($User)==ConfigApp::$USER_ADMIN;
@@ -43,7 +44,7 @@ include_once 'views/ErrorsView.php';
     }
 
     function esDuenio(){
-      $User= $this->usuarioActivo();
+      $User= SesionController::usuarioActivo();
       if ($User != "-1"){
         $ModelUser = new UsuariosModel();
         return $ModelUser->getTipo($User)==ConfigApp::$USER_DUENIO;
@@ -53,7 +54,7 @@ include_once 'views/ErrorsView.php';
     }
 
     function esUser(){
-      $User= $this->usuarioActivo();
+      $User= SesionController::usuarioActivo();
       if ($User != "-1"){
         return true;
       } else {
@@ -78,7 +79,6 @@ include_once 'views/ErrorsView.php';
     }
 
     function usuarioActivo(){
-      session_start();
       if (isset($_SESSION["nombre"])){
         return $_SESSION["nombre"];
       } else {

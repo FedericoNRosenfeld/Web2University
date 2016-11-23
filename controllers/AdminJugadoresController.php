@@ -8,7 +8,7 @@ include_once 'models/EquiposModel.php';
 include_once 'models/JugadoresModel.php';
 include_once 'models/PosicionesModel.php';
 
-class AdminJugadoresController extends SesionController{
+class AdminJugadoresController{
 
   private $view;
   private $MJugadores;
@@ -22,7 +22,7 @@ class AdminJugadoresController extends SesionController{
   }
 
   function MostrarAdminJugadores(){
-    if ($this->esAdmin()){
+    if (SesionController::esAdmin()){
       $Jugadores = $this->MJugadores->getAll();
       $Equipos = $this->MEquipos-> getAll();
       $Posiciones = $this->MPosiciones->getAll();
@@ -36,7 +36,7 @@ class AdminJugadoresController extends SesionController{
   }
 
   function MostrarEditarJugador(){
-    if ($this->esAdmin()){
+    if (SesionController::esAdmin()){
       if(isset($_REQUEST['id']))  {
         $Jugador = $this->MJugadores->getJugador($_REQUEST['id']);
         $Equipos = $this->MEquipos-> getAll();
@@ -51,7 +51,7 @@ class AdminJugadoresController extends SesionController{
   }
 
   function MostrarAdmJugadorTeam(){
-    if ($this->esAdmin()){
+    if (SesionController::esAdmin()){
       if(isset($_REQUEST['id']))  {
         $Jugadores = $this->MJugadores->getJugadoresEquipo($_REQUEST['id']);
         $Equipos = $this->MEquipos-> getAll();
@@ -65,7 +65,7 @@ class AdminJugadoresController extends SesionController{
 
 // SECTOR DE JUGADORES
   function AgregarJugador(){ // agregar un jugador a la BD ---> JUGADORES
-    if ($this->esAdmin()){
+    if (SesionController::esAdmin()){
       if( (isset($_REQUEST['nombre']))
       && (isset($_REQUEST['equipo']))
       && (isset($_REQUEST['posicion']))
@@ -93,7 +93,7 @@ class AdminJugadoresController extends SesionController{
   }
 
  function EliminarJugador(){ //ELIMINA UN JUGADOR DE LA BASE DE DATOS Y ACOMODA LA VISTA EN LA TABLA DE ADMINJUGADORES
-   if ($this->esAdmin()){
+   if (SesionController::esAdmin()){
        $key = $_GET['id'];
        //$this->modelimagen->borrarImagen($this->modelImagenes($this->modelJ->getImagenAsociada('id')));  BORRAR LA IAMGEN ASOCIADA AL JUGADOR
        $this->MJugadores->eliminarJugador($key);
@@ -104,7 +104,7 @@ class AdminJugadoresController extends SesionController{
  }
 
   function ModificarJugador(){
-    if ($this->esAdmin()){
+    if (SesionController::esAdmin()){
       if( (isset($_REQUEST['nombre'])) && (isset($_REQUEST['equipo']))  && (isset($_REQUEST['posicion'])) && (isset($_REQUEST['numero'])))  {
         $jugador = array(
             "nombre"=>$_REQUEST['nombre']

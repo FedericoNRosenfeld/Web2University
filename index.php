@@ -15,6 +15,7 @@ include_once 'controllers/SesionController.php';
 include_once 'controllers/AdminComentariosController.php';
 
 $indexController = new indexController();
+$Sesion_Controller = new SesionController();
 
 if(!array_key_exists(ConfigApp::$ACTION, $_REQUEST))
 {
@@ -127,30 +128,26 @@ else{
       $Controller->MostrarAdminComentarios();
       break;
 
-  case ConfigApp::$ACTION_LOGIN:
-      $Controller = new AdminComentariosController();
-      $Controller->autenticar();
-      break;
 //---------------------------------------------------------------------------------------------
 // Sesiones de usuario
   case ConfigApp::$ACTION_IR_A_LOGIN:
-      $Controller = new SesionController();
-      $Controller->mostrarLogin();
+      $Sesion_Controller->mostrarLogin();
       break;
 
   case ConfigApp::$ACTION_IR_A_REGISTRO:
-      $Controller = new SesionController();
-      $Controller->mostrarRegistrarse();
+      $Sesion_Controller->mostrarRegistrarse();
       break;
 
   case ConfigApp::$ACTION_REGISTRAR_USER:
-      $Controller = new SesionController();
-      $Controller->crearUser();
+      $Sesion_Controller->crearUser();
       break;
 
   case ConfigApp::$ACTION_CERRAR_SESION:
-      $Controller = new SesionController();
-      $Controller->desAutenticacion();
+      $Sesion_Controller->desAutenticacion();
+      break;
+
+  case ConfigApp::$ACTION_LOGIN:
+      $Sesion_Controller->autenticar();
       break;
 //---------------------------------------------------------------------------------------------
 // Ver jugadores de un Equipo en especifico

@@ -6,7 +6,7 @@ include_once 'views/ComentariosJugadoresView.php';
 include_once 'models/ComentariosModel.php';
 include_once 'models/JugadoresModel.php';
 
-class ComentariosController extends SesionController {
+class ComentariosController {
   private $vista;
   private $modelC;
   private $modelJ;
@@ -20,7 +20,7 @@ class ComentariosController extends SesionController {
   function MostrarPaginaComentarios(){
     //comprobamos si tenemos el id para mostrar la pagina de comentarios
     if (isset($_REQUEST['id'])){
-        $this->vista->mostrar($this->modelJ->getJugador($_REQUEST['id']),$this->esUser());
+        $this->vista->mostrar($this->modelJ->getJugador($_REQUEST['id']),SesionController::esUser());
     }
   }
 }

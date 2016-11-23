@@ -37,8 +37,7 @@ class UsuariosModel extends BaseModel {
     $consulta=$consulta->fetchAll();
 
     if (password_verify($usuario["pass"], $consulta[0]['pass'])) {
-      //comenzamos la Sesion
-      session_start();
+      //manejamos los datos el sesion start se lo delegamos al controlador
       $_SESSION["nombre"] = $usuario["user"];
       return "hola ".$usuario['user'];
     } else {
@@ -48,7 +47,6 @@ class UsuariosModel extends BaseModel {
   }
 
   function desAutenticar(){
-    session_start();
     session_destroy();
   }
 

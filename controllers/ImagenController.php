@@ -8,6 +8,7 @@ class ImagenesController extends SesionController{
   private $model;
 
   function __construct() {
+    parent::__construct();
     $this->$model = new ImagenesModel();
   }
 
