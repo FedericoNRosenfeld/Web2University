@@ -44,7 +44,7 @@ function BindeosComentarios(){
     var Info = new FormData(document.getElementById(REF_FORM_NUEVO_COMENT));
     Info.append("item_valorado",$(this).attr("data-elemento"));
     $.post({
-      url:"./api/comentario/",
+      url:URL_API_COMENTS,
       data:Info,
       processData: false,  // tell jQuery not to process the data
       contentType: false   // tell jQuery not to set contentType
