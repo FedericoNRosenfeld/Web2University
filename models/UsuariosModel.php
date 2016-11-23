@@ -15,19 +15,18 @@ class UsuariosModel extends BaseModel {
     }
   }
 
-  function autenticar($usuario){
-    $hash = "";
-    if (password_verify($usuario["pass"], $hash)) {
+  function login($usuario){
+    $consulta = $this->db->prepare('SELECT * FROM Usuarios WHERE nombre=?');
+    $consulta->execute(array($usuario["user"]));
+    $consulta=$consulta->fetchAll();
+    if (password_verify($usuario["pass"], $consulta[0]["pass"])) {
       //comenzamos la Sesion
       session_start();
-      $_SESSION["id"] = $usuario["id"];
-      $_SESSION["id"]["nombre"] = $usuario["nombre"];
-      $_SESSION["id"]["tipo"] = 1;
-      return true;
+      $_SESSION["nombre"] = $usuario["user"];
+      return "hola ".$usuario["user"];
     } else {
       //si no lo podemos verificar redireccionamos
-      header("location:index.php");
-      die();
+      return "no se pudo ingresar ".$consulta[0]["pass"];
     }
   }
 

@@ -126,6 +126,11 @@ else{
       $Controller = new AdminComentariosController();
       $Controller->MostrarAdminComentarios();
       break;
+
+  case ConfigApp::$ACTION_LOGIN:
+      $Controller = new AdminComentariosController();
+      $Controller->autenticar();
+      break;
 //---------------------------------------------------------------------------------------------
 // Sesiones de usuario
   case ConfigApp::$ACTION_IR_A_LOGIN:

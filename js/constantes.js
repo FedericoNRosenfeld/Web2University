@@ -41,9 +41,12 @@ const REF_TABLA_ADM_COMENTARIOS = "tabla-Comentarios-Admin";
 const MSG_NO_COMENTS = "No se pudieron obtener los comentarios";
 const TEXT_USER_NO_CREADO = "Ocurrio un error al intentar crear el usuario";
 
-//Login
+//Usuarios
 const REF_BTN_INGRESAR = "boton_ingresar";
 const REF_BTN_IR_A_NUEVO_USER = "ir_registrarse";
+const REF_FORM_LOGIN = "form-sesion";
+const REF_FORM_REGISTRAR_USER = "form-nuevo-user";
+
 const ACTION_IR_A_NUEVO_USER = "ir_registrarse";
 const ACTION_REGISTRAR_USER = "guardar_user";
-const REF_FORM_REGISTRAR_USER = "form-nuevo-user";
+const ACTION_LOGIN = "login_user";

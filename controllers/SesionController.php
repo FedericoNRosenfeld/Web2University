@@ -11,7 +11,6 @@ include_once 'views/ErrorsView.php';
 
     function  __construct(){
       $this->VistaLogin = new LoginView();
-      $this->ModelUser = new UsuariosModel();
     }
 
     // comprobemos todos los datos por si las moscas
@@ -23,10 +22,13 @@ include_once 'views/ErrorsView.php';
       $this->VistaLogin->mostrarRegistrarse();
     }
 
-    function autenticacion(){
+    function autenticar(){
       //capturamos los parametros del formulario
       if (isset($_POST["user"]) && isset($_POST["pass"])){
-        $this->ModelUser->autenticar();
+        $ModelUser = new UsuariosModel();
+        $usuario["user"]=$_POST["user"];
+        $usuario["pass"]=$_POST["pass"];
+        echo $ModelUser->login($usuario);
       }
     }
 
@@ -45,9 +47,10 @@ include_once 'views/ErrorsView.php';
     function crearUser(){
       //capturamos los parametros del formulario
       if (isset($_POST["user"]) && isset($_POST["pass"])){
+        $ModelUser = new UsuariosModel();
         $usuario["user"]=$_POST["user"];
         $usuario["pass"]=$_POST["pass"];
-        return $this->ModelUser->crear($usuario);
+        return $ModelUser->crear($usuario);
       }
     }
 

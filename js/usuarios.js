@@ -1,7 +1,18 @@
 function BindeosUsuarios(){
   //Si se hace click en el boton ingresar
   $("#"+REF_BTN_INGRESAR).on("click",function(){
-
+    $.ajax({
+      url:PREFIJO_ACTION+ACTION_LOGIN,
+      data:$("#"+REF_FORM_LOGIN).serialize(),
+      type:"POST"
+    })
+    .success(function(data){
+      alert(data);
+    })
+    .error(function(jqxml, status, errorThrown){
+      alert(TEXT_USER_NO_CREADO);
+    });
+    return false;
   });
 
   //Si se hace click en el boton crear nuevo usuraio
@@ -9,8 +20,8 @@ function BindeosUsuarios(){
       injectContentByName(ACTION_IR_A_NUEVO_USER,"");
   });
 
+  //Si se hace click en el boton de registrar un nuevo usuario
   $("#"+ACTION_REGISTRAR_USER).on("click",function(){
-      //Si se hace click en el boton de registrar un nuevo usuario
       $.ajax({
         url:PREFIJO_ACTION+ACTION_REGISTRAR_USER,
         data:$("#"+REF_FORM_REGISTRAR_USER).serialize(),
