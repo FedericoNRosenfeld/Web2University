@@ -55,13 +55,18 @@ include_once 'views/ErrorsView.php';
     }
 
     function desAutenticacion(){
-      $this->ModelUser->desAutenticar();
+      $ModelUser = new UsuariosModel();
+      $ModelUser->desAutenticar();
+      echo "chauu!";
     }
 
     function usuarioActivo(){
       session_start();
-      return $_SESSION["nombre"];
-      //return "Invitado";
+      if (isset($_SESSION["nombre"])){
+        return $_SESSION["nombre"];
+      } else {
+        return "-1";
+      }
     }
 
     //esta funcioin sirve para "mostrar" un tpl con el cartel zona restringida, el tpl esta en nav/AccesoNoAutorizado.tpl

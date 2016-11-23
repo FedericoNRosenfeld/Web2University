@@ -13,6 +13,7 @@ class indexController extends SesionController{
   function mostrarIndex(){
     $UserActual["Nombre"]=$this->usuarioActivo();
     $UserActual["Admin"]=$this->esAdmin();
+
     $this->vista->mostrar($UserActual);
   }
 

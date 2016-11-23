@@ -2,6 +2,9 @@
 require_once "BaseModel.php";
 
 class UsuariosModel extends BaseModel {
+  function __construct(){
+    session_start();
+  }
 
   function crear($datos) {
     try {

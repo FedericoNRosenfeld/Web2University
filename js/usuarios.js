@@ -1,4 +1,12 @@
 function BindeosUsuarios(){
+  //Si se hace click en el boton salir
+  $("#"+ACTION_CERRAR_SESION).on("click",function(){
+    $.ajax({url:PREFIJO_ACTION+ACTION_CERRAR_SESION}).success(function(data){
+      alert(data);
+      location.href="./";
+    });
+  });
+
   //Si se hace click en el boton ingresar
   $("#"+REF_BTN_INGRESAR).on("click",function(){
     $.ajax({

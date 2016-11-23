@@ -26,7 +26,7 @@
           <li class="navItem" name="adminjugadores"><a href="#">Admin Jugadores</a></li>
           <li id="ADMComents" name="admincomentarios"><a href="#">Admin Comentarios</a></li>
         {/if}
-        <li> <a>Usuario: {$UserActual['Nombre']}</a></li>
+        <li> <a {if $UserActual['Nombre']!='-1'} id="cerrar_sesion"{/if}>Usuario: {if $UserActual['Nombre']=='-1'} Invitado {else} {$UserActual['Nombre']} (Salir) {/if}</a></li>
         <!--<li class="navItem" name="adminequipos"><a href="#">Admin Equipos</a></li> -->
       </ul>
     </div><!-- /.navbar-collapse -->

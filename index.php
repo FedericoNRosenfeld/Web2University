@@ -148,6 +148,10 @@ else{
       $Controller->crearUser();
       break;
 
+  case ConfigApp::$ACTION_CERRAR_SESION:
+      $Controller = new SesionController();
+      $Controller->desAutenticacion();
+      break;
 //---------------------------------------------------------------------------------------------
 // Ver jugadores de un Equipo en especifico
   case ConfigApp::$ACTION_VER_JUGADORES_EQUIPO:

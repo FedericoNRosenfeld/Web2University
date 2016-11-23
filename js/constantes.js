@@ -50,3 +50,4 @@ const REF_FORM_REGISTRAR_USER = "form-nuevo-user";
 const ACTION_IR_A_NUEVO_USER = "ir_registrarse";
 const ACTION_REGISTRAR_USER = "guardar_user";
 const ACTION_LOGIN = "login_user";
+const ACTION_CERRAR_SESION = "cerrar_sesion";
