@@ -41,15 +41,16 @@ function ActualizarComentarios(){
 function BindeosComentarios(){
   //Si se hace click en el boton de nuevo comentario
   $("#"+BTN_NUEVO_COMENT).on("click",function(){
-    $.ajax({
-      url:URL_API_COMENTS,
-      data:$("#"+REF_FORM_NUEVO_COMENT).serialize(),
-      type:"POST"
+    var Info = new FormData(document.getElementById(REF_FORM_NUEVO_COMENT));
+    Info.append("item_valorado",$(this).attr("data-elemento"));
+    $.post({
+      url:"./api/comentario/",
+      data:Info,
+      processData: false,  // tell jQuery not to process the data
+      contentType: false   // tell jQuery not to set contentType
     })
     .success(function(data){
       alert(data);
-      //recargamos la pagina
-      location.href="./";
     })
     .error(function(jqxml, status, errorThrown){
       alert(TEXT_ERROR_GENERICO);

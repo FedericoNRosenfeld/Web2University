@@ -1,14 +1,19 @@
 <?php
 require_once 'api_base.php';
 include_once '../models/ComentariosModel.php';
+include_once '../models/UsuariosModel.php';
 include_once "../controllers/SesionController.php";
 
 class ComentariosApi extends ApiBase {
   private $model;
+  private $UsrModel;
+  private $SesionContrl;
 
   function __construct($request){
     parent::__construct($request);
     $this->model = new ComentariosModel();
+    $this->UsrModel = new UsuariosModel();
+    $this->SesionContrl = new SesionController();
   }
 
   function comentario(){
@@ -25,8 +30,8 @@ class ComentariosApi extends ApiBase {
         if(count($this->args) > 0) return $this->model->delete($this->args[0]);
         break;
       case 'POST':
-        if(isset($_POST['id_user_coment']) && isset($_POST['comentario']) && isset($_POST['item_valorado']) && isset($_POST['valoracion'])){
-          $comentario['id_user_coment'] = $_POST['id_user_coment'];
+        if(isset($_POST['comentario']) && isset($_POST['valoracion']) && isset($_POST['item_valorado'])){
+          $comentario['id_user_coment'] = $this->UsrModel->getId($this->SesionContrl->usuarioActivo());
           $comentario['comentario'] = $_POST['comentario'];
           $comentario['item_valorado'] = $_POST['item_valorado'];
           $comentario['valoracion'] = $_POST['valoracion'];
