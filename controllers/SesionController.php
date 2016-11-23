@@ -55,8 +55,7 @@ include_once 'views/ErrorsView.php';
     function esUser(){
       $User= $this->usuarioActivo();
       if ($User != "-1"){
-        $ModelUser = new UsuariosModel();
-        return $ModelUser->getTipo($User)==ConfigApp::$USER_COMUN;
+        return true;
       } else {
         return false;
       }
