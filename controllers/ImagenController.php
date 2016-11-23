@@ -3,12 +3,11 @@ include_once 'controllers/SesionController.php';
 
 include_once 'models/ImagenesModel.php';
 
-class ImagenesController extends SesionController{
+class ImagenesController{
 
   private $model;
 
   function __construct() {
-    parent::__construct();
     $this->$model = new ImagenesModel();
   }
 

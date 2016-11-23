@@ -5,7 +5,6 @@ class UsuariosModel extends BaseModel {
 
   function crear($datos) {
     try {
-
       $consulta = $this->db->prepare('INSERT INTO Usuarios(nombre, pass, tipo) VALUES(:v1,:v2,:v3)');//The SQL engine checks each parameter to ensure that it is correct for its column and are treated literally, and not as part of the SQL to be executed.
       $consulta->bindParam(':v1',$datos['user']);
       $consulta->bindParam(':v2',password_hash($datos['pass'], PASSWORD_DEFAULT));
