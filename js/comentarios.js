@@ -39,6 +39,24 @@ function ActualizarComentarios(){
 }
 
 function BindeosComentarios(){
+  //Si se hace click en el boton de nuevo comentario
+  $("#"+BTN_NUEVO_COMENT).on("click",function(){
+    $.ajax({
+      url:URL_API_COMENTS,
+      data:$("#"+REF_FORM_NUEVO_COMENT).serialize(),
+      type:"POST"
+    })
+    .success(function(data){
+      alert(data);
+      //recargamos la pagina
+      location.href="./";
+    })
+    .error(function(jqxml, status, errorThrown){
+      alert(TEXT_ERROR_GENERICO);
+    });
+    return false;
+  });
+
   //Si se hace click en los botones para ir a la seccion de comentarios de los jugadores
   $("."+ACTION_COMENTARIOS_JUGADOR).on("click",function(){
     //obtenemos el id

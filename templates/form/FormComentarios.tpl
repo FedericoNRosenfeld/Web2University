@@ -1,4 +1,4 @@
-<form id="form-comentarios">
+<form id="form-nuevo-comentario">
   <div class="form-group">
     <label for="NombrePosicion">Valoración</label>
     <input type="text" class="form-control" name="user" required>

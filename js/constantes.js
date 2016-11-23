@@ -35,11 +35,16 @@ const ACTION_COMENTARIOS_JUGADOR = 'comentarios_jugador';
 const REF_ID_AREA_COMENTARIOS = "zona_de_comentarios";
 const URL_API_COMENTS = "./api/comentario/";
 const INTERVALO_DE_ACTUALIZACION = 500;
+
+const BTN_NUEVO_COMENT = "enviar-coment";
+
 const REF_TABLA_ADM_COMENTARIOS = "tabla-Comentarios-Admin";
+const REF_FORM_NUEVO_COMENT = "form-nuevo-comentario";
 
 //mensajes
 const MSG_NO_COMENTS = "No se pudieron obtener los comentarios";
 const TEXT_USER_NO_CREADO = "Ocurrio un error al intentar crear el usuario";
+const TEXT_ERROR_GENERICO = "Ocurrio un error";
 
 //Usuarios
 const REF_BTN_INGRESAR = "boton_ingresar";

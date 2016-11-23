@@ -1,5 +1,5 @@
 <?php
-require_once "BaseModel.php";
+require_once dirname(__DIR__)."/models/BaseModel.php";
 
 class UsuariosModel extends BaseModel {
 

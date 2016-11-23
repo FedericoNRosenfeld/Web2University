@@ -1,9 +1,9 @@
 <?php
 // de este controlador tienen que heredar todos los que usen sesiones
 
-include_once 'models/UsuariosModel.php';
-include_once 'views/LoginView.php';
-include_once 'views/ErrorsView.php';
+include_once dirname(__DIR__).'/models/UsuariosModel.php';
+include_once dirname(__DIR__).'/views/LoginView.php';
+include_once dirname(__DIR__).'/views/ErrorsView.php';
 
   class SesionController{
     private $VistaLogin;
