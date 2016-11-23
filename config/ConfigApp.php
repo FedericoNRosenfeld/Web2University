@@ -52,7 +52,9 @@ class ConfigApp{
   public static $ACTION_CERRAR_SESION = "cerrar_sesion";
 
   //config de tipos de usuario
-  public static $USER_COMUN = "1";
+  public static $USER_COMUN = 1;
+  public static $USER_ADMIN = 2;
+  public static $USER_DUENIO = 3;
 }
 
  ?>

@@ -33,24 +33,33 @@ include_once 'views/ErrorsView.php';
     }
 
     function esAdmin(){
-      //$ModelUser = new UsuariosModel();
-      // if (this->$ModelUser->verificarJerarquia() == 2)
-      return true;
-      // else return false;
+      $User= $this->usuarioActivo();
+      if ($User != "-1"){
+        $ModelUser = new UsuariosModel();
+        return $ModelUser->getTipo($User)==ConfigApp::$USER_ADMIN;
+      } else {
+        return false;
+      }
     }
 
     function esDuenio(){
-      //$ModelUser = new UsuariosModel();
-      // if (this->$ModelUser->verificarJerarquia() == 1)
-      return true;
-      // else return false;
+      $User= $this->usuarioActivo();
+      if ($User != "-1"){
+        $ModelUser = new UsuariosModel();
+        return $ModelUser->getTipo($User)==ConfigApp::$USER_DUENIO;
+      } else {
+        return false;
+      }
     }
 
     function esUser(){
-      //$ModelUser = new UsuariosModel();
-      // if (this->$ModelUser->verificarJerarquia() == 3)
-      return true;
-      // else return false;
+      $User= $this->usuarioActivo();
+      if ($User != "-1"){
+        $ModelUser = new UsuariosModel();
+        return $ModelUser->getTipo($User)==ConfigApp::$USER_COMUN;
+      } else {
+        return false;
+      }
     }
 
     function crearUser(){
