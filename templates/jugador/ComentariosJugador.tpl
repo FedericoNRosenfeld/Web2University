@@ -12,4 +12,6 @@
     <h3>Comentar</h3>
     {include file='form/FormComentarios.tpl'}
   </div>
+{else}
+  <h3>Solo los usuarios registrados pueden comentar</h3>
 {/if}
