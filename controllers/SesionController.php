@@ -59,7 +59,9 @@ include_once 'views/ErrorsView.php';
     }
 
     function usuarioActivo(){
-      return "Invitado";
+      session_start();
+      return $_SESSION["nombre"];
+      //return "Invitado";
     }
 
     //esta funcioin sirve para "mostrar" un tpl con el cartel zona restringida, el tpl esta en nav/AccesoNoAutorizado.tpl

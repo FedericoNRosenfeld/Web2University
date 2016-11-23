@@ -8,6 +8,8 @@ function BindeosUsuarios(){
     })
     .success(function(data){
       alert(data);
+      //recargamos la pagina
+      location.href="./";
     })
     .error(function(jqxml, status, errorThrown){
       alert(TEXT_USER_NO_CREADO);
