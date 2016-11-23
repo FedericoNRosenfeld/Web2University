@@ -33,15 +33,24 @@ include_once 'views/ErrorsView.php';
     }
 
     function esAdmin(){
+      //$ModelUser = new UsuariosModel();
+      // if (this->$ModelUser->verificarJerarquia() == 2)
       return true;
+      // else return false;
     }
 
     function esDuenio(){
+      //$ModelUser = new UsuariosModel();
+      // if (this->$ModelUser->verificarJerarquia() == 1)
       return true;
+      // else return false;
     }
 
     function esUser(){
+      //$ModelUser = new UsuariosModel();
+      // if (this->$ModelUser->verificarJerarquia() == 3)
       return true;
+      // else return false;
     }
 
     function crearUser(){
