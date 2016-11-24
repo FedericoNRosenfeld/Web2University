@@ -55,9 +55,9 @@ class AdminUsersController{
 
   function modificaUser(){
     if (SesionController::esAdmin()){
-      if (isset($_POST["id"])){
+      if (isset($_POST["id"]) && isset($_POST["tipo"])){
         $ModelUser = new UsuariosModel();
-        return $ModelUser->modificar($_POST["id"]);
+        echo $ModelUser->modificar($_POST["id"],$_POST["tipo"]);
       }
     } else {
       $this->zonaRestringida();

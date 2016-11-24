@@ -53,6 +53,7 @@ const REF_BTN_IR_A_NUEVO_USER = "ir_registrarse";
 const REF_BTN_BORRAR_USR = "borrar_user";
 const REF_BTN_MODIFICA_USR = "btn_mod_user";
 const REF_BTN_G_USER_MOD ="boton_Guardar_usr";
+const REF_FORM_EDIT_PERMISO ="form-tipo-edit";
 
 const REF_FORM_LOGIN = "form-sesion";
 const REF_FORM_REGISTRAR_USER = "form-nuevo-user";
@@ -64,3 +65,4 @@ const ACTION_CERRAR_SESION = "cerrar_sesion";
 const ACTION_BORRAR_USER = "delete_user";
 const ACTION_MODIFICAR_USER = "modificar_user";
 const ACTION_IR_MOD_USER = "ir_edit_user";
+const ACTION_IR_ADM_USER = "adminusuarios";

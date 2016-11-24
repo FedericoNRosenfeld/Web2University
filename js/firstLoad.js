@@ -5,6 +5,7 @@ $("document").ready(function(){
 var PlayOffs = {
   ULTIMO_ID_JUGADOR:null,
   ULTIMO_ID_POSICION:null,
+  ULTIMO_ID_USER:null,
   ID_INTERVALO_ACTUALIZA_COMENTARIOS:null,
 };
 

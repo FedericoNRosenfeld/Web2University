@@ -87,8 +87,17 @@ class UsuariosModel extends BaseModel {
     session_destroy();
   }
 
-  function modificar(){
-
+  function modificar($id_user,$tipo){
+    try {
+      $consulta = $this->db->prepare('UPDATE Usuarios SET tipo=:v1 WHERE id_user=:v2');
+      $consulta->bindParam(':v1',$tipo);
+      $consulta->bindParam(':v2',$id_user);
+      $consulta->execute();
+      return "permisos actualizados";
+    }
+    catch (PDOException $ex) {
+      return $ex;
+    }
   }
 
 }
