@@ -15,7 +15,9 @@
       <td class="cont-numero">{$jugador['numero']}</td>
       <td class="cont-equipo" data-id="{$jugador['id']}">{$jugador['rk_nombre_equipo']}</td>
       <td>
-        <img class=" img-responsive " alt="Imagen no Disponible" src="{$jugador['url']}"></img>
+        {foreach from=$jugador['imgs'] key=index item=img}
+          <div class="col-sm-6"><img class="img-responsive" src="{$img['url']}"></img></div>
+        {/foreach}
       </td>
       <td>
         <div class="btn btn-danger btn-eliminar borrar_jugador btn-xs" data-id="{$jugador['id_jugador']}">Borrar</div>
