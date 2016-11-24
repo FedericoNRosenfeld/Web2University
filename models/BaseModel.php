@@ -6,8 +6,7 @@ class BaseModel {
   protected $db;
 
   function __construct() {
-    $DBConfig = ConfigDB::getDBParams();
-    $this->db = new PDO('mysql:host='.$DBConfig["Server"].';dbname='.$DBConfig["DBName"].';charset=utf8',$DBConfig["User"],$DBConfig["Pass"]);
+    $this->db = new PDO('mysql:host='.Server.';dbname='.DBName.';charset=utf8',User,Pass);
     $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
 }

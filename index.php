@@ -161,6 +161,7 @@ else{
       $Controller = new EquiposController();
       $Controller->ListarJugadores();
       break;
+
 // Ver todas las posiciones existentes
   case ConfigApp::$ACTION_VER_POSICIONES:
       $Controller = new AdminJugadoresController();

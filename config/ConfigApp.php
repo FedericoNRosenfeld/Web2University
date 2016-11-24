@@ -55,6 +55,9 @@ class ConfigApp{
   public static $USER_COMUN = 1;
   public static $USER_ADMIN = 2;
   public static $USER_DUENIO = 3;
+
+  //Instalacion de la web
+  public static $ARCHIVO_SQL = "sql/NBAPlayoff.sql";
 }
 
  ?>

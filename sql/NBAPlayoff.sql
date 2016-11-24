@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-11-2016 a las 01:55:46
+-- Tiempo de generación: 23-11-2016 a las 21:52:42
 -- Versión del servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versión de PHP: 5.6.24-0+deb8u1
 
@@ -39,7 +39,12 @@ CREATE TABLE `Comentarios` (
 --
 
 INSERT INTO `Comentarios` (`id`, `id_user_coment`, `comentario`, `item_valorado`, `valoracion`) VALUES
-(2, 1, 'El Pipita de la NBA', 1, 1);
+(2, 1, 'El Pipita de la NBA', 1, 1),
+(3, 8, 'asdsadasd', 1, 3),
+(4, 8, 'asdsadasd', 1, 3),
+(5, 8, 'asdsadasd', 1, 3),
+(6, 8, 'asdsadasd', 1, 3),
+(7, 8, 'asdsad', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -195,7 +200,6 @@ CREATE TABLE `Usuarios` (
   `id_user` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `pass` varchar(255) NOT NULL,
-  `salt` varchar(255) NOT NULL,
   `tipo` smallint(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -203,8 +207,11 @@ CREATE TABLE `Usuarios` (
 -- Volcado de datos para la tabla `Usuarios`
 --
 
-INSERT INTO `Usuarios` (`id_user`, `nombre`, `pass`, `salt`, `tipo`) VALUES
-(1, 'admin', 'sdlfjñsklfsjkafjkadsnfas', 'dasfadsfds', 1);
+INSERT INTO `Usuarios` (`id_user`, `nombre`, `pass`, `tipo`) VALUES
+(1, 'admin', 'sdlfjñsklfsjkafjkadsnfas', 1),
+(7, 'hola', '$2y$10$WpYRGJa7iLvNEIYrXndCS.8eEnJI0oNFYLTj3h5I2jXmDT2QQdaKO', 1),
+(8, 'luchov', '$2y$10$SZA/Wh.BvKhxqKzjM6lq7uBBwoycl6.3fC/NFuLU/WE00CU0VXWWy', 3),
+(9, 'yenet', '$2y$10$8.PMeKptXwHYwmnYjzfsQuoXQyojSKDmUmp.lzB/S1.GXVlsNLRmm', 1);
 
 --
 -- Índices para tablas volcadas
@@ -269,7 +276,7 @@ ALTER TABLE `Usuarios`
 -- AUTO_INCREMENT de la tabla `Comentarios`
 --
 ALTER TABLE `Comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `Equipos`
 --
@@ -299,7 +306,7 @@ ALTER TABLE `Posiciones`
 -- AUTO_INCREMENT de la tabla `Usuarios`
 --
 ALTER TABLE `Usuarios`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- Restricciones para tablas volcadas
 --
