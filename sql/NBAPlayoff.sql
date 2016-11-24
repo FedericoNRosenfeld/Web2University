@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 24-11-2016 a las 04:00:02
+-- Tiempo de generación: 24-11-2016 a las 06:07:42
 -- Versión del servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versión de PHP: 5.6.24-0+deb8u1
 
@@ -224,8 +224,9 @@ CREATE TABLE `Usuarios` (
 --
 
 INSERT INTO `Usuarios` (`id_user`, `nombre`, `pass`, `tipo`) VALUES
-(1, 'admin', 'sdlfjñsklfsjkafjkadsnfas', 1),
-(8, 'luchov', '$2y$10$SZA/Wh.BvKhxqKzjM6lq7uBBwoycl6.3fC/NFuLU/WE00CU0VXWWy', 3);
+(1, 'admin', 'sdlfjñsklfsjkafjkadsnfas', 2),
+(8, 'luchov', '$2y$10$SZA/Wh.BvKhxqKzjM6lq7uBBwoycl6.3fC/NFuLU/WE00CU0VXWWy', 3),
+(11, 'muddy', '$2y$10$bFiLKye2TsJfSEQIAtS64eko4yEO4GjFNygBQtcmgb2PrXkEzKERa', 2);
 
 --
 -- Índices para tablas volcadas
@@ -329,7 +330,7 @@ ALTER TABLE `Posiciones`
 -- AUTO_INCREMENT de la tabla `Usuarios`
 --
 ALTER TABLE `Usuarios`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Restricciones para tablas volcadas
 --
