@@ -25,7 +25,7 @@
     </div>
     <div class="form-group">
       <label for="numeroJugador">Imagen</label>
-      <input type="file" class="form-control" id="jugador-imagen" name="imagen" value="">
+      <input type="file" class="form-control" id="jugador-imagen" name="imagen[]" value="" multiple>
     </div>
     <button id="{$IdBtnForm}" class="btn btn-default center-block">{$TextBotonFormJugadores}</button>
   </form>

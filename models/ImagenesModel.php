@@ -4,7 +4,7 @@ require_once "BaseModel.php";
 class ImagenesModel extends BaseModel {
 
 
-  function agregarImagen($id_jugador,$imagen){
+  function agregarImagen($id_jugador,$imagenes){
     //agregamos la imagen a la estructura de directorios
     foreach ($imagenes as $key => $imagen) {
           $path="images/".uniqid()."_".$imagen["name"];
