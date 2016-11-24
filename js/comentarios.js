@@ -3,12 +3,12 @@ function getAPIComents(params){
 }
 
 function HTMLComentario(Coment){
-  var HTML="<div><p>Valoracion:"+Coment.valoracion+"</p><p>"+Coment.comentario+"</p></div>";
+  var HTML="<div class='col-sm-4'><p>De <b>"+Coment.nombre+"</b></p><p>Valoracion:"+Coment.valoracion+"</p><p>"+Coment.comentario+"</p></div>";
   return HTML;
 }
 
 function HTMLTablaComentario(Coment){
-  var HTML="<tr id='com"+Coment.id+"'><td><td></td></td><td>"+Coment.valoracion+"</td><td>"+Coment.comentario+"</td><td><div class='btn btn-danger btn-eliminar "+BTN_ELIMINA_COMENT+" btn-xs' data-id="+Coment.id+">Borrar</div></td></tr>";
+  var HTML="<tr id='com"+Coment.id+"'><td>"+Coment.nombre+"</td><td>"+Coment.valoracion+"</td><td>"+Coment.comentario+"</td><td><div class='btn btn-danger btn-eliminar "+BTN_ELIMINA_COMENT+" btn-xs' data-id="+Coment.id+">Borrar</div></td></tr>";
   return HTML;
 }
 

@@ -5,7 +5,7 @@
   <p>Numero: {$jugador['numero']}</p>
 </div>
 <h2>Comentarios:</h2>
-<div id="zona_de_comentarios">
+<div class="col-xs-12" id="zona_de_comentarios">
 </div>
 {if $esUser}
   <div class="col-sm-3">

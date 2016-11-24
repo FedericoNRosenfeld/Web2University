@@ -4,13 +4,14 @@ require_once "BaseModel.php";
 class ComentariosModel extends BaseModel {
 
   function getComentariosJugador($id_jugador){
-    $consulta = $this->db->prepare("SELECT * FROM Comentarios WHERE item_valorado=".$id_jugador);
+    $consulta = $this->db->prepare("SELECT Usuarios.nombre,Comentarios.valoracion, Comentarios.id, Comentarios.comentario FROM Comentarios INNER JOIN Usuarios ON Comentarios.id_user_coment=Usuarios.id_user WHERE item_valorado=:v1");
+    $consulta->bindParam(':v1',$id_jugador);
     $consulta->execute();
     return $consulta->fetchAll();
   }
 
   function getAll(){
-    $consulta = $this->db->prepare("SELECT * FROM Comentarios");
+    $consulta = $this->db->prepare("SELECT Usuarios.nombre,Comentarios.valoracion, Comentarios.id, Comentarios.comentario FROM Comentarios INNER JOIN Usuarios ON Comentarios.id_user_coment=Usuarios.id_user");
     $consulta->execute();
     return $consulta->fetchAll();
   }
