@@ -8,7 +8,7 @@ function HTMLComentario(Coment){
 }
 
 function HTMLTablaComentario(Coment){
-  var HTML="<tr><td><td></td></td><td>"+Coment.valoracion+"</td><td>"+Coment.comentario+"</td><td><div class='btn btn-danger btn-eliminar "+BTN_ELIMINA_COMENT+" btn-xs' data-id="+Coment.id+">Borrar</div></td></tr>";
+  var HTML="<tr id='com"+Coment.id+"'><td><td></td></td><td>"+Coment.valoracion+"</td><td>"+Coment.comentario+"</td><td><div class='btn btn-danger btn-eliminar "+BTN_ELIMINA_COMENT+" btn-xs' data-id="+Coment.id+">Borrar</div></td></tr>";
   return HTML;
 }
 
@@ -22,11 +22,12 @@ function CargarTablaComents(RefTabla){
     $("#"+RefTabla).html(Html);
     //Si se hace click en el boton borrar comentario
     $("."+BTN_ELIMINA_COMENT).on("click",function(){
+      var IdComent=$(this).attr("data-id");
       $.ajax({
-        url:URL_API_COMENTS+"/"+$(this).attr("data-id"),
+        url:URL_API_COMENTS+"/"+IdComent,
         type:"DELETE"
       }).success(function(data){
-        alert(data);
+        $("#com"+IdComent).remove();
       })
       .error(function(jqxml, status, errorThrown){
         alert(TEXT_ERROR_GENERICO);
