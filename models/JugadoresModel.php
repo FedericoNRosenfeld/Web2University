@@ -67,7 +67,7 @@ class JugadoresModel extends BaseModel {
       $consulta->execute();
       $consulta = $consulta->fetchAll();
 
-      return $this->AgregarValoraciones($consulta);
+      return $this->AgregarValoracionesEImgs($consulta);
     }
 
     function getJugador($id_jugador){
