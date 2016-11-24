@@ -12,8 +12,8 @@
         {$user["rango"]}
       </td>
       <td>
-        {if $user['tipo']!=3}<div class="btn btn-danger btn-eliminar borrar_user btn-xs" data-id="{$user['id_user']}">Borrar</div>{/if}
-        <div class="btn btn-info btn-editar btn_mod_user btn-xs" data-id="{$user['id_user']}">Editar</div>
+        {if $user['tipo']!=3}<div class="btn btn-danger btn-eliminar borrar_user btn-xs" data-id="{$user['id_user']}">Borrar</div>
+        <div class="btn btn-info btn-editar btn_mod_user btn-xs" data-id="{$user['id_user']}">Editar</div>{/if}
       </td>
     </tr>
     {/foreach}

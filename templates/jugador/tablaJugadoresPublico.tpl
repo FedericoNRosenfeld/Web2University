@@ -15,7 +15,10 @@
       <td>{$jugador['numero']}</td>
       <td>{$jugador['rk_nombre_equipo']}</td>
       <td>{$jugador['valoracion']}<button type="button" data-id="{$jugador['id_jugador']}" class="btn btn-default comentarios_jugador">Ver comentarios</button> </td>
-      <td><img class="EnlaceEquipo img-responsive" src="{$jugador['url']}"></img></td>
+      <td>
+        {foreach from=$jugador['imgs'] key=index item=img}
+          <img class="EnlaceEquipo img-responsive" src="{$img}"></img></td>
+        {/foreach}
     </tr>
     {/foreach}
   </tbody>

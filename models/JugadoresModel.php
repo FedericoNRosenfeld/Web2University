@@ -30,13 +30,18 @@ class JugadoresModel extends BaseModel {
     function eliminarJugador($key){
       $MImagenes = new ImagenesModel();
       $MImagenes->borrarImagenes($key);
-      $consulta = $this->db->prepare('DELETE FROM Jugadores WHERE id_jugador=?');
-      $consulta->execute(array($key));
+      $consulta = $this->db->prepare('DELETE FROM Jugadores WHERE id_jugador=:v1');
+      $consulta->bindParam(':v1',$key);
+      $consulta->execute();
     }
 
     function modificarJugador($jugador){
       try {
-        $consulta = $this->db->prepare('UPDATE Jugadores SET fk_id_equipo='.$jugador['equipo'].',nombre="'.$jugador['nombre'].'" ,posicion='.$jugador['posicion'].',numero='.$jugador['numero'].' WHERE id_jugador='.$jugador['id_jugador']);
+        $consulta = $this->db->prepare('UPDATE Jugadores SET fk_id_equipo=:v1,nombre=:v2 ,posicion=:v3,numero='.$jugador['numero'].' WHERE id_jugador=:v4');
+        $consulta->bindParam(':v1',$jugador['equipo']);
+        $consulta->bindParam(':v2',$jugador['nombre']);
+        $consulta->bindParam(':v3',$jugador['posicion']);
+        $consulta->bindParam(':v4',$jugador['id_jugador']);
         $consulta->execute();
         return "Jugador modificado correctamente";
       }
@@ -55,7 +60,8 @@ class JugadoresModel extends BaseModel {
 
     function getJugadoresEquipo($id_equipo){
       // Estas linea aparte de hacer la consulta une la tabla jugadores con la de posiciones y equipos para poder usar las claves foraneas
-      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion WHERE fk_id_equipo=$id_equipo");
+      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion WHERE fk_id_equipo=:v1");
+      $consulta->bindParam(':v1',$id_equipo);
       $consulta->execute();
       $consulta = $consulta->fetchAll();
 
@@ -63,7 +69,8 @@ class JugadoresModel extends BaseModel {
     }
 
     function getJugador($id_jugador){
-      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion  WHERE id_jugador=$id_jugador");
+      $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion  WHERE id_jugador=:v1");
+      $consulta->bindParam(':v1',$id_jugador);
       $consulta->execute();
       return $consulta->fetchAll()[0];
     }
