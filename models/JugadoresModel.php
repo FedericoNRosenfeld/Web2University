@@ -50,10 +50,12 @@ class JugadoresModel extends BaseModel {
       }
     }
 
-    private function AgregarValoraciones($consulta){
+    private function AgregarValoracionesEImgs($consulta){
       $ModelComentarios = new ComentariosModel();
+      $ImgModel=new ImagenesModel();
       for ($c=0;$c<count($consulta);$c++){
         $consulta[$c]["valoracion"] = $ModelComentarios->getUserValoracion($consulta[$c]["id_jugador"]);
+        $consulta[$c]["imgs"]=$ImgModel->getImgJugador($consulta[$c]["id_jugador"]);
       }
       return $consulta;
     }
@@ -69,18 +71,21 @@ class JugadoresModel extends BaseModel {
     }
 
     function getJugador($id_jugador){
+      $ImgModel=new ImagenesModel();
       $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion  WHERE id_jugador=:v1");
       $consulta->bindParam(':v1',$id_jugador);
       $consulta->execute();
-      return $consulta->fetchAll()[0];
+      $consulta=$consulta->fetchAll()[0];
+      //agregamos las Imagenes
+      $consulta["imgs"]=$ImgModel->getImgJugador($id_jugador);
+      return $consulta;
     }
 
     function GetAll(){
       $consulta = $this->db->prepare("SELECT * FROM Jugadores INNER JOIN Equipos ON Jugadores.fk_id_equipo = Equipos.id INNER JOIN Posiciones ON Jugadores.posicion = Posiciones.rk_id_posicion ");
       $consulta->execute();
       $consulta = $consulta->fetchAll();
-
-      return $this->AgregarValoraciones($consulta);
+      return $this->AgregarValoracionesEImgs($consulta);
     }
 }
  ?>

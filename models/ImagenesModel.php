@@ -26,11 +26,17 @@ class ImagenesModel extends BaseModel {
     }*/
   }
 
+    function getImgJugador($id_jugador){
+      $consulta = $this->db->prepare("SELECT * FROM Imagenes WHERE fk_id_jugador=:v1");
+      $consulta->bindParam(':v1',$id_jugador);
+      $consulta->execute();
+      return $consulta->fetchAll();
+    }
+
     function borrarImagenes($key){
       $consulta = $this->db->prepare('DELETE FROM Imagenes WHERE id_jugador=?');
       $consulta->execute(array($key));
     }
-  
 
   function borrarImagen($key){
     $consulta = $this->db->prepare('DELETE FROM Imagenes WHERE rk_id_imagen=?');
