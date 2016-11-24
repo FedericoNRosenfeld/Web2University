@@ -51,6 +51,8 @@ class ConfigApp{
   public static $ACTION_LOGIN = "login_user";
   public static $ACTION_CERRAR_SESION = "cerrar_sesion";
 
+  public static $ACTION_IR_ADM_USER = "adminusuarios";
+
   //config de tipos de usuario
   public static $USER_COMUN = 1;
   public static $USER_ADMIN = 2;

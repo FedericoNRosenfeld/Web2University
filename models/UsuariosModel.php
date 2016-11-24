@@ -34,6 +34,11 @@ class UsuariosModel extends BaseModel {
     return $consulta[0]["id_user"];
   }
 
+  function getAll(){
+    $consulta = $this->db->prepare("SELECT * FROM Usuarios");$consulta->execute();
+    return $consulta->fetchAll();
+  }
+
   function login($usuario){
 
     //$_usuario = /*mysql_real_escape_string(*/$usuario["user"];//);

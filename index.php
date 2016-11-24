@@ -1,6 +1,7 @@
 <?php
 
 include_once 'config/ConfigApp.php';
+
 include_once 'controllers/IndexController.php';
 include_once 'controllers/HomeController.php';
 include_once 'controllers/FixtureController.php';
@@ -13,6 +14,7 @@ include_once 'controllers/PosicionesController.php';
 include_once 'controllers/ComentariosController.php';
 include_once 'controllers/SesionController.php';
 include_once 'controllers/AdminComentariosController.php';
+include_once 'controllers/AdminUsersController.php';
 
 $indexController = new indexController();
 $Sesion_Controller = new SesionController();
@@ -148,6 +150,11 @@ else{
 
   case ConfigApp::$ACTION_LOGIN:
       $Sesion_Controller->autenticar();
+      break;
+
+ case ConfigApp::$ACTION_IR_ADM_USER:
+      $Controller = new AdminUsersController();
+      $Controller->mostrarADMUsers();
       break;
 //---------------------------------------------------------------------------------------------
 // Ver jugadores de un Equipo en especifico
