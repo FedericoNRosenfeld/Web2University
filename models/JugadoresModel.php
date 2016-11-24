@@ -9,7 +9,7 @@ class JugadoresModel extends BaseModel {
       // agrega un jugador a la BD
       //agregamos la imagen
       $MImagenes = new ImagenesModel();
-        try {
+      //  try {
           $consulta = $this->db->prepare('INSERT INTO Jugadores(nombre, fk_id_equipo, posicion, numero) VALUES(:nombre, :fk_id_equipo, :posicion, :numero)');
           $consulta->execute(array(
             ":nombre"=>$jugador['nombre']
@@ -20,11 +20,11 @@ class JugadoresModel extends BaseModel {
           $id = $this->db->lastInsertId();
           $MImagenes->agregarImagen($id,$jugador['imagen']);
           return true;
-        }
-        catch(PDOException $ex)
-        {
-          return false;
-        }
+    //    }
+      //  catch(PDOException $ex)
+      //  {
+      //    return false;
+      //  }
     }
 
     function eliminarJugador($key){
