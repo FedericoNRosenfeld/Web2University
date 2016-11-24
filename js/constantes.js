@@ -50,6 +50,8 @@ const TEXT_ERROR_GENERICO = "Ocurrio un error";
 //Usuarios
 const REF_BTN_INGRESAR = "boton_ingresar";
 const REF_BTN_IR_A_NUEVO_USER = "ir_registrarse";
+const REF_BTN_BORRAR_USR = "borrar_user";
+
 const REF_FORM_LOGIN = "form-sesion";
 const REF_FORM_REGISTRAR_USER = "form-nuevo-user";
 
@@ -57,3 +59,4 @@ const ACTION_IR_A_NUEVO_USER = "ir_registrarse";
 const ACTION_REGISTRAR_USER = "guardar_user";
 const ACTION_LOGIN = "login_user";
 const ACTION_CERRAR_SESION = "cerrar_sesion";
+const ACTION_BORRAR_USER = "delete_user";

@@ -141,7 +141,8 @@ else{
       break;
 
   case ConfigApp::$ACTION_REGISTRAR_USER:
-      $Sesion_Controller->crearUser();
+      $Controller = new AdminUsersController();
+      $Controller->crearUser();
       break;
 
   case ConfigApp::$ACTION_CERRAR_SESION:
@@ -155,6 +156,11 @@ else{
  case ConfigApp::$ACTION_IR_ADM_USER:
       $Controller = new AdminUsersController();
       $Controller->mostrarADMUsers();
+      break;
+
+  case ConfigApp::$ACTION_BORRAR_USER:
+      $Controller = new AdminUsersController();
+      $Controller->borraUser();
       break;
 //---------------------------------------------------------------------------------------------
 // Ver jugadores de un Equipo en especifico

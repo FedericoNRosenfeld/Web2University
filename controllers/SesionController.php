@@ -63,16 +63,6 @@ include_once dirname(__DIR__).'/views/ErrorsView.php';
       }
     }
 
-    function crearUser(){
-      //capturamos los parametros del formulario
-      if (isset($_POST["user"]) && isset($_POST["pass"])){
-        $ModelUser = new UsuariosModel();
-        $usuario["user"]=$_POST["user"];
-        $usuario["pass"]=$_POST["pass"];
-        return $ModelUser->crear($usuario);
-      }
-    }
-
     function desAutenticacion(){
       $ModelUser = new UsuariosModel();
       $ModelUser->desAutenticar();

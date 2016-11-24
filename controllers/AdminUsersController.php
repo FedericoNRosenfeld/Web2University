@@ -20,6 +20,23 @@ class AdminUsersController{
       $this->zonaRestringida();
     }
   }
+
+  function crearUser(){
+    //capturamos los parametros del formulario
+    if (isset($_POST["user"]) && isset($_POST["pass"])){
+      $ModelUser = new UsuariosModel();
+      $usuario["user"]=$_POST["user"];
+      $usuario["pass"]=$_POST["pass"];
+      return $ModelUser->crear($usuario);
+    }
+  }
+
+  function borraUser(){
+    if (isset($_POST["id"])){
+      $ModelUser = new UsuariosModel();
+      return $ModelUser->borrar($_POST["id"]);
+    }
+  }
 }
 
 ?>

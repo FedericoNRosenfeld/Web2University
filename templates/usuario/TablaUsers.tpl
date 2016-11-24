@@ -6,7 +6,7 @@
   </thead>
   <tbody id="tablaJugadoresAdmin">
     {foreach from=$users key=index item=user}
-    <tr id="rj-{$jugador['id_jugador']}">
+    <tr id="usr{$user['id_user']}">
       <td class="cont-nombre">{$user['nombre']}</td>
       <td class="cont-rango" >{$user['tipo']}</td>
       <td>

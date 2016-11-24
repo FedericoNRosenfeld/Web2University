@@ -34,6 +34,18 @@ class UsuariosModel extends BaseModel {
     return $consulta[0]["id_user"];
   }
 
+  function borrar($id){
+    try {
+      $consulta = $this->db->prepare('DELETE FROM Usuarios WHERE id_user=:id');
+      $consulta->bindParam(':id',$id);
+      $consulta->execute();
+      return true;
+    }  catch(PDOException $ex)
+    {
+      return false;
+    }
+  }
+
   function getAll(){
     $consulta = $this->db->prepare("SELECT * FROM Usuarios");$consulta->execute();
     return $consulta->fetchAll();
