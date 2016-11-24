@@ -8,7 +8,7 @@ function HTMLComentario(Coment){
 }
 
 function HTMLTablaComentario(Coment){
-  var HTML="<tr><p>Valoracion:"+Coment.valoracion+"</p><p>"+Coment.comentario+"</p></tr>";
+  var HTML="<tr><td><td></td></td><td>"+Coment.valoracion+"</td><td>"+Coment.comentario+"</td><td><div class='btn btn-danger btn-eliminar "+BTN_ELIMINA_COMENT+" btn-xs' data-id="+Coment.id+">Borrar</div></td></tr>";
   return HTML;
 }
 
@@ -17,9 +17,21 @@ function CargarTablaComents(RefTabla){
   getAPIComents("").success(function(data){
     var Html="";
     JSON.parse(data).forEach(function(coment){
-      Html+=HTMLComentario(coment);
+      Html+=HTMLTablaComentario(coment);
     });
     $("#"+RefTabla).html(Html);
+    //Si se hace click en el boton borrar comentario
+    $("."+BTN_ELIMINA_COMENT).on("click",function(){
+      $.ajax({
+        url:URL_API_COMENTS+"/"+$(this).attr("data-id"),
+        type:"DELETE"
+      }).success(function(data){
+        alert(data);
+      })
+      .error(function(jqxml, status, errorThrown){
+        alert(TEXT_ERROR_GENERICO);
+      });
+    });
   }).error(function(){
     $("#"+REF_ID_AREA_COMENTARIOS).html(MSG_NO_COMENTS);
   });

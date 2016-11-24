@@ -37,6 +37,7 @@ const URL_API_COMENTS = "./api/comentario/";
 const INTERVALO_DE_ACTUALIZACION = 2000;
 
 const BTN_NUEVO_COMENT = "enviar-coment";
+const BTN_ELIMINA_COMENT = "borrar_coment";
 
 const REF_TABLA_ADM_COMENTARIOS = "tabla-Comentarios-Admin";
 const REF_FORM_NUEVO_COMENT = "form-nuevo-comentario";
