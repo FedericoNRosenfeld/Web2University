@@ -53,10 +53,11 @@ class AdminJugadoresController{
   function MostrarAdmJugadorTeam(){
     if (SesionController::esAdmin()){
       if(isset($_REQUEST['id']))  {
+        $view = new AdminJugadoresView();
         $Jugadores = $this->MJugadores->getJugadoresEquipo($_REQUEST['id']);
         $Equipos = $this->MEquipos-> getAll();
         $Posiciones = $this->MPosiciones->getAll();
-        $this->view->mostrar($Jugadores,$Equipos,$Posiciones);
+        $view->mostrar($Jugadores,$Equipos,$Posiciones);
       }
     } else {
       $this->zonaRestringida();

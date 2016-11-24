@@ -23,7 +23,7 @@
     {$nombreSelector='PlayersSelectEquipo'}
     {$ItemsSelector=$equipos}
     {$CampoId='id'}
-    {$CampoNombre='rk_nombre_equipo'}
+    {$CampoNombre='rk_nombre_equipo'}{$OpcionSelecionada=""}
     {include file='form/Selector.tpl' links=$ItemsSelector links=$CampoId links=$CampoNombre links=$nombreSelector}
     {include file='jugador/tablaJugadores.tpl' links=$jugadores}
   </div>

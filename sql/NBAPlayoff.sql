@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 24-11-2016 a las 06:07:42
+-- Tiempo de generación: 24-11-2016 a las 06:26:56
 -- Versión del servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versión de PHP: 5.6.24-0+deb8u1
 
@@ -95,7 +95,7 @@ CREATE TABLE `Imagenes` (
 --
 
 INSERT INTO `Imagenes` (`rk_id_imagen`, `url`, `fk_id_jugador`) VALUES
-(0, 'images/sin-imagen.png', 1),
+(0, 'images/sin-imagen.jpg', 1),
 (1, 'images/warriors.png', 2),
 (2, 'images/rockets.png', 3),
 (3, 'images/clippers.png', 4),
