@@ -26,6 +26,14 @@ class UsuariosModel extends BaseModel {
     return $consulta[0]["tipo"];
   }
 
+  function getData($user){
+    $consulta = $this->db->prepare("SELECT id_user,nombre,tipo, Rangos.rango FROM Usuarios INNER JOIN Rangos ON Usuarios.tipo = Rangos.id_rango WHERE id_user=:id");
+    $consulta->bindParam(':id',$user);
+    $consulta->execute();
+    $consulta=$consulta->fetchAll();
+    return $consulta[0];
+  }
+
   function getId($user){
     $consulta = $this->db->prepare("SELECT id_user FROM Usuarios WHERE nombre=:nombre");
     $consulta->bindParam(':nombre',$user);
@@ -47,7 +55,12 @@ class UsuariosModel extends BaseModel {
   }
 
   function getAll(){
-    $consulta = $this->db->prepare("SELECT * FROM Usuarios");$consulta->execute();
+    $consulta = $this->db->prepare("SELECT id_user, nombre, tipo, Rangos.rango FROM Usuarios INNER JOIN Rangos ON Usuarios.tipo = Rangos.id_rango");$consulta->execute();
+    return $consulta->fetchAll();
+  }
+
+  function getRangos(){
+    $consulta = $this->db->prepare("SELECT * FROM Rangos");$consulta->execute();
     return $consulta->fetchAll();
   }
 

@@ -53,6 +53,8 @@ class ConfigApp{
 
   public static $ACTION_BORRAR_USER = "delete_user";
   public static $ACTION_IR_ADM_USER = "adminusuarios";
+  public static $ACTION_IR_MOD_USER = "ir_edit_user";
+  public static $ACTION_MODIFICAR_USER = "modificar_user";
 
   //config de tipos de usuario
   public static $USER_COMUN = 1;

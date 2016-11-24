@@ -162,6 +162,16 @@ else{
       $Controller = new AdminUsersController();
       $Controller->borraUser();
       break;
+
+   case ConfigApp::$ACTION_MODIFICAR_USER:
+      $Controller = new AdminUsersController();
+      $Controller->modificaUser();
+      break;
+
+    case ConfigApp::$ACTION_IR_MOD_USER:
+      $Controller = new AdminUsersController();
+      $Controller->IrModificaUser();
+      break;
 //---------------------------------------------------------------------------------------------
 // Ver jugadores de un Equipo en especifico
   case ConfigApp::$ACTION_VER_JUGADORES_EQUIPO:

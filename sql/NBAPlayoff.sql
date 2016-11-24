@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-11-2016 a las 21:52:42
+-- Tiempo de generación: 24-11-2016 a las 04:00:02
 -- Versión del servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versión de PHP: 5.6.24-0+deb8u1
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `NBAPlayoff`
+-- Base de datos: `NbAPlays`
 --
 
 -- --------------------------------------------------------
@@ -40,11 +40,7 @@ CREATE TABLE `Comentarios` (
 
 INSERT INTO `Comentarios` (`id`, `id_user_coment`, `comentario`, `item_valorado`, `valoracion`) VALUES
 (2, 1, 'El Pipita de la NBA', 1, 1),
-(3, 8, 'asdsadasd', 1, 3),
-(4, 8, 'asdsadasd', 1, 3),
-(5, 8, 'asdsadasd', 1, 3),
-(6, 8, 'asdsadasd', 1, 3),
-(7, 8, 'asdsad', 2, 4);
+(8, 8, 'el mejor de todos los tiempos', 4, 5);
 
 -- --------------------------------------------------------
 
@@ -193,6 +189,26 @@ INSERT INTO `Posiciones` (`rk_id_posicion`, `nombre_posicion`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `Rangos`
+--
+
+CREATE TABLE `Rangos` (
+  `id_rango` smallint(2) NOT NULL,
+  `rango` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `Rangos`
+--
+
+INSERT INTO `Rangos` (`id_rango`, `rango`) VALUES
+(1, 'Usuario comun'),
+(2, 'Admin'),
+(3, 'Dueño');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `Usuarios`
 --
 
@@ -209,9 +225,7 @@ CREATE TABLE `Usuarios` (
 
 INSERT INTO `Usuarios` (`id_user`, `nombre`, `pass`, `tipo`) VALUES
 (1, 'admin', 'sdlfjñsklfsjkafjkadsnfas', 1),
-(7, 'hola', '$2y$10$WpYRGJa7iLvNEIYrXndCS.8eEnJI0oNFYLTj3h5I2jXmDT2QQdaKO', 1),
-(8, 'luchov', '$2y$10$SZA/Wh.BvKhxqKzjM6lq7uBBwoycl6.3fC/NFuLU/WE00CU0VXWWy', 3),
-(9, 'yenet', '$2y$10$8.PMeKptXwHYwmnYjzfsQuoXQyojSKDmUmp.lzB/S1.GXVlsNLRmm', 1);
+(8, 'luchov', '$2y$10$SZA/Wh.BvKhxqKzjM6lq7uBBwoycl6.3fC/NFuLU/WE00CU0VXWWy', 3);
 
 --
 -- Índices para tablas volcadas
@@ -263,10 +277,19 @@ ALTER TABLE `Posiciones`
   ADD PRIMARY KEY (`rk_id_posicion`);
 
 --
+-- Indices de la tabla `Rangos`
+--
+ALTER TABLE `Rangos`
+  ADD PRIMARY KEY (`id_rango`),
+  ADD KEY `id_rango` (`id_rango`);
+
+--
 -- Indices de la tabla `Usuarios`
 --
 ALTER TABLE `Usuarios`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id_user`),
+  ADD KEY `tipo` (`tipo`),
+  ADD KEY `tipo_2` (`tipo`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -276,7 +299,7 @@ ALTER TABLE `Usuarios`
 -- AUTO_INCREMENT de la tabla `Comentarios`
 --
 ALTER TABLE `Comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `Equipos`
 --
@@ -338,6 +361,12 @@ ALTER TABLE `Jugadores`
 ALTER TABLE `Partidos`
   ADD CONSTRAINT `equipo1` FOREIGN KEY (`equipo1`) REFERENCES `Equipos` (`id`),
   ADD CONSTRAINT `equipo2` FOREIGN KEY (`equipo2`) REFERENCES `Equipos` (`id`);
+
+--
+-- Filtros para la tabla `Usuarios`
+--
+ALTER TABLE `Usuarios`
+  ADD CONSTRAINT `Usuarios_ibfk_1` FOREIGN KEY (`tipo`) REFERENCES `Rangos` (`id_rango`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

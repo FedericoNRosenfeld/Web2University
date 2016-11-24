@@ -8,10 +8,12 @@
     {foreach from=$users key=index item=user}
     <tr id="usr{$user['id_user']}">
       <td class="cont-nombre">{$user['nombre']}</td>
-      <td class="cont-rango" >{$user['tipo']}</td>
+      <td class="cont-rango" >
+        {$user["rango"]}
+      </td>
       <td>
-        <div class="btn btn-danger btn-eliminar borrar_user btn-xs" data-id="{$user['id_user']}">Borrar</div>
-        <div class="btn btn-info btn-editar modificar_user btn-xs" data-id="{$user['id_user']}">Editar</div>
+        {if $user['tipo']!=3}<div class="btn btn-danger btn-eliminar borrar_user btn-xs" data-id="{$user['id_user']}">Borrar</div>{/if}
+        <div class="btn btn-info btn-editar btn_mod_user btn-xs" data-id="{$user['id_user']}">Editar</div>
       </td>
     </tr>
     {/foreach}

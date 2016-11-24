@@ -32,9 +32,35 @@ class AdminUsersController{
   }
 
   function borraUser(){
-    if (isset($_POST["id"])){
-      $ModelUser = new UsuariosModel();
-      return $ModelUser->borrar($_POST["id"]);
+    if (SesionController::esAdmin()){
+      if (isset($_POST["id"])){
+        $ModelUser = new UsuariosModel();
+        return $ModelUser->borrar($_POST["id"]);
+      }
+    } else {
+      $this->zonaRestringida();
+    }
+  }
+
+  function IrModificaUser(){
+    if (SesionController::esAdmin()){
+      if (isset($_POST["id"])){
+        $ModelUser = new UsuariosModel();
+        $this->view->mostrarFormEditUser($ModelUser->getData($_POST["id"]),$ModelUser->getRangos());
+      }
+    } else {
+      $this->zonaRestringida();
+    }
+  }
+
+  function modificaUser(){
+    if (SesionController::esAdmin()){
+      if (isset($_POST["id"])){
+        $ModelUser = new UsuariosModel();
+        return $ModelUser->modificar($_POST["id"]);
+      }
+    } else {
+      $this->zonaRestringida();
     }
   }
 }
