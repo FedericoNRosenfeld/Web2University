@@ -46,7 +46,7 @@ class AdminUsersController{
     if (SesionController::esAdmin()){
       if (isset($_POST["id"])){
         $ModelUser = new UsuariosModel();
-        $this->view->mostrarFormEditUser($ModelUser->getData($_POST["id"]),$ModelUser->getRangos());
+        $this->view->mostrarFormEditUser($ModelUser->getData($_POST["id"]));
       }
     } else {
       $this->zonaRestringida();

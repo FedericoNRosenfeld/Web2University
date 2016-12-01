@@ -72,15 +72,16 @@ class UsuariosModel extends BaseModel {
     $consulta->bindParam(':nombre',$usuario['user']);
     $consulta->execute();
     $consulta=$consulta->fetchAll();
-
-    if (password_verify($usuario["pass"], $consulta[0]['pass'])) {
-      //manejamos los datos el sesion start se lo delegamos al controlador
-      $_SESSION["nombre"] = $usuario["user"];
-      return "hola ".$usuario['user'];
+    if (isset($consulta[0])){
+      if (password_verify($usuario["pass"], $consulta[0]['pass'])) {
+        //manejamos los datos el sesion start se lo delegamos al controlador
+        $_SESSION["nombre"] = $usuario["user"];
+        return "hola ".$usuario['user'];
+      }
     } else {
-      //si no lo podemos verificar redireccionamos
-      return "no se pudo ingresar ".$consulta[0];
+      return "no se pudo ingresar ";
     }
+
   }
 
   function desAutenticar(){

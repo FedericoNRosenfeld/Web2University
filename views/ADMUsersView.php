@@ -8,9 +8,10 @@ class ADMUsersView extends BaseView{
     $this->smarty->display('usuario/ADMUsers.tpl');
   }
 
-  function mostrarFormEditUser($Usuario,$Rangos){
+  function mostrarFormEditUser($Usuario){
     $this->smarty->assign("user",$Usuario);
-    $this->smarty->assign("tipos",$Rangos);
+    $Tipos=[["id_rango"=>1,"rango"=>"Usuario comun"],["id_rango"=>2,"rango"=>"Admin"]];
+    $this->smarty->assign("tipos",$Tipos);
     $this->smarty->assign("modo","Edit_permiso");
     $this->smarty->display('form/FormUserPriv.tpl');
   }
