@@ -10,7 +10,8 @@ class PosicionesModel extends BaseModel {
   }
 
   function getPosicion($id){
-    $consulta = $this->db->prepare("SELECT * FROM Posiciones WHERE rk_id_posicion=".$id);
+    $consulta = $this->db->prepare("SELECT * FROM Posiciones WHERE rk_id_posicion=:v1");
+    $consulta->bindParam(':v1',$id);
     $consulta->execute();
     return $consulta->fetchAll()[0];
   }
@@ -46,7 +47,9 @@ class PosicionesModel extends BaseModel {
   // VERSION CON PASO DE NOMBRE E ID VIA PARAMETRO
   function modificarPosicion($posicion_nombre,$posicion_id){
     try {
-      $consulta = $this->db->prepare('UPDATE Posiciones SET nombre_posicion="'.$posicion_nombre.'" WHERE rk_id_posicion='.$posicion_id);
+      $consulta = $this->db->prepare('UPDATE Posiciones SET nombre_posicion=:v1 WHERE rk_id_posicion=:v2');
+      $consulta->bindParam(':v1',$posicion_nombre);
+      $consulta->bindParam(':v2',$posicion_id);
       $consulta->execute();
       return true;
     } catch(PDOException $ex) {
